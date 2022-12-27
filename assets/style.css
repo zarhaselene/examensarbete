@@ -1,0 +1,180 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Typography styling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Varela Round", sans-serif;
+}
+
+p,
+span {
+	font-family: "Lato", sans-serif;
+}
+/* Button styling */
+.primary-btn {
+}
+.secondary-btn {
+}
+.slider-btn {
+}
+.submit-btn {
+}
+
+/* Reusable classes */
+
+/* Flex */
+.display-flex {
+	display: flex;
+}
+.direction-column {
+	flex-direction: column;
+}
+.direction-row {
+	flex-direction: row;
+}
+.align-items-center {
+	align-items: center;
+}
+.justify-end {
+	justify-content: flex-end;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	min-height: 100%;
+	flex-direction: row;
+}
+/* Columns */
+.col-1 {
+	width: calc((100% / 24) * 1);
+}
+
+.col-2 {
+	width: calc((100% / 24) * 2);
+}
+
+.col-3 {
+	width: calc((100% / 24) * 3);
+}
+
+.col-4 {
+	width: calc((100% / 24) * 4);
+}
+
+.col-5 {
+	width: calc((100% / 24) * 5);
+}
+
+.col-6 {
+	width: calc((100% / 24) * 6);
+}
+
+.col-7 {
+	width: calc((100% / 24) * 7);
+}
+
+.col-8 {
+	width: calc((100% / 24) * 8);
+}
+
+.col-9 {
+	width: calc((100% / 24) * 9);
+}
+
+.col-10 {
+	width: calc((100% / 24) * 10);
+}
+
+.col-11 {
+	width: calc((100% / 24) * 11);
+}
+
+.col-12 {
+	width: calc((100% / 24) * 12);
+}
+
+.col-13 {
+	width: calc((100% / 24) * 13);
+}
+
+.col-14 {
+	width: calc((100% / 24) * 14);
+}
+
+.col-15 {
+	width: calc((100% / 24) * 15);
+}
+
+.col-16 {
+	width: calc((100% / 24) * 16);
+}
+
+.col-17 {
+	width: calc((100% / 24) * 17);
+}
+
+.col-18 {
+	width: calc((100% / 24) * 18);
+}
+
+.col-19 {
+	width: calc((100% / 24) * 19);
+}
+
+.col-20 {
+	width: calc((100% / 24) * 20);
+}
+
+.col-21 {
+	width: calc((100% / 24) * 21);
+}
+
+.col-22 {
+	width: calc((100% / 24) * 22);
+}
+
+.col-23 {
+	width: calc((100% / 24) * 23);
+}
+
+.col-24 {
+	width: 100%;
+}
+
+/* Margin and padding  */
+.m-z {
+	margin: 0;
+}
+.p-z {
+	padding: 0;
+}
+.p-v-2 {
+	padding: 15px 0;
+}
+
+/* Colors */
+.color-pink {
+	color: #ef6d9f;
+}
+.color-light-pink {
+	color: #ff9cb2;
+}
+.color-white {
+	color: #fff;
+}
+.color-black {
+	color: #1a1a1a;
+}
+.color-grey {
+	color: #9e9999;
+}

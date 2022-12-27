@@ -1,9 +1,9 @@
 <?php
-
 class Template
 {
     public static function header($title)
     {
+        $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 
 ?>
         <!DOCTYPE html>
@@ -15,6 +15,7 @@ class Template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title> <?= $title ?> </title>
             <link rel="stylesheet" href="/exa/assets/style.css">
+
             <!-- Fonts -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

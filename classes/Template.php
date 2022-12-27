@@ -30,6 +30,8 @@ class Template
             <!-- Font Awesome -->
             <script src="https://kit.fontawesome.com/57a104828d.js" crossorigin="anonymous"></script>
 
+            <!-- Link Swiper's CSS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
         </head>
 
         <body>
@@ -81,6 +83,10 @@ class Template
             </footer>
 
 
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+            <!-- JS file -->
+            <script src="/exa/assets/script.js"></script>
         </body>
 
         </html>

@@ -16,7 +16,9 @@ h6 {
 }
 
 p,
-span {
+span,
+label,
+small {
 	font-family: "Lato", sans-serif;
 }
 /* Button styling */
@@ -28,8 +30,6 @@ span {
 }
 .submit-btn {
 }
-
-/* Reusable classes */
 
 /* Flex */
 .display-flex {
@@ -44,6 +44,9 @@ span {
 .align-items-center {
 	align-items: center;
 }
+.justify-center {
+	justify-content: center;
+}
 .justify-end {
 	justify-content: flex-end;
 }
@@ -54,6 +57,13 @@ span {
 	min-height: 100%;
 	flex-direction: row;
 }
+
+/* Reusable classes */
+.show-tablet {
+	display: none;
+}
+
+
 /* Columns */
 .col-1 {
 	width: calc((100% / 24) * 1);
@@ -161,6 +171,9 @@ span {
 .p-v-2 {
 	padding: 15px 0;
 }
+.p-h-2 {
+	padding: 0 15px;
+}
 
 /* Colors */
 .color-pink {
@@ -177,4 +190,79 @@ span {
 }
 .color-grey {
 	color: #9e9999;
+}
+
+/* Global styles */
+body {
+	background-color: pink;
+}
+
+/*** Navigation ***/
+nav {
+	border: 2px solid white;
+}
+.logo {
+	padding-left: 100px;
+	padding-bottom: 15px;
+}
+
+.icons {
+	padding-right: 100px;
+}
+
+.icon {
+	padding: 15px;
+	font-size: 1.3em;
+}
+.cart {
+	position: relative;
+}
+.cart a {
+	text-decoration: none;
+}
+
+.basket-circle {
+	position: absolute;
+	top: 0;
+	border: 2px solid white;
+	font-size: 0.9em;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	display: inline-block;
+	line-height: 22px;
+	width: 25px;
+	text-align: center;
+}
+
+/*** Media queries ***/
+
+@media only screen and (max-width: 810px) {
+	.hide-tablet {
+		display: none;
+	}
+	.show-tablet {
+		display: flex;
+	}
+}
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
+	.col-12-tablet {
+		width: calc((100% / 24) * 12);
+	}
+	.logo {
+		padding-left: 20px;
+	}
+	.icons {
+		padding-right: 50px;
+	}
+}
+/* Large phone */
+@media only screen and (max-width: 425px) {
+	.col-24-lg-phone {
+		width: 100%;
+		padding: 0;
+		justify-content: center;
+	}
 }

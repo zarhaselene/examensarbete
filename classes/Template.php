@@ -1,8 +1,14 @@
 <?php
+require_once __DIR__ . "/User.php";
+session_start();
 class Template
 {
     public static function header($title)
     {
+        $is_logged_in = isset($_SESSION['user']);
+        $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+        $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
+
         $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 
 ?>
@@ -27,7 +33,43 @@ class Template
         </head>
 
         <body>
+            <nav class="row display-flex p-v-2">
+                <div class="logo col-4 col-12-tablet col-24-lg-phone display-flex  align-items-center">
+                    <a href="/exa/index.php"> <img src="/exa/assets/img/logo.png" alt="logo"></a>
+                </div>
 
+                <div class="icons col-20 col-12-tablet col-24-lg-phone display-flex align-items-center justify-end">
+
+                    <!-- If not logged in -->
+                    <?php if (!$is_logged_in) : ?>
+                        <div class="login"><a href="/exa/pages/login.php" class="color-white"><i class="icon fa-solid fa-user color-white"></i></a></div>
+                    <?php endif; ?>
+
+                    <!-- If logged in -->
+                    <?php if ($is_logged_in) : ?>
+                        <div class="logged-in-user hide-tablet display-flex">
+                            <p>
+                                <b>Logged in as:</b>
+                                <?= $logged_in_user->username ?>
+                            <form class="logout-btn p-h-2" action="/exa/scripts/post-logout.php" method="post">
+                                <input type="submit" value="Log out">
+                            </form>
+                            </p>
+                        </div>
+
+                        <?php if ($is_admin) : ?>
+                            <div class="dashboard"><a href="/exa/pages/admin.php"><i class="icon fa-solid fa-gear color-white"></i></a></div>
+
+                        <?php endif; ?>
+                        <div class="account"><a href="/exa/pages/account.php" class="color-white"><i class="icon fa-solid fa-user color-white"></i></a></div>
+
+                    <?php endif; ?>
+
+                    <!-- Always show -->
+                    <div class="cart"><a href="/exa/pages/cart.php" class="color-white"><i class="icon fa-solid fa-basket-shopping color-white"></i> <span class="basket-circle"><?= $cart_count ?></span></a></div>
+                </div>
+
+            </nav>
         </body>
 
         </html>

@@ -70,6 +70,17 @@ class Template
                 </div>
 
             </nav>
+        <?php
+    }
+
+    public static function footer()
+    { ?>
+
+            <footer>
+
+            </footer>
+
+
         </body>
 
         </html>

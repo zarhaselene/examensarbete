@@ -6,3 +6,5 @@ require_once __DIR__ . "/classes/Template.php";
 <?php
 Template::header('444');
 ?>
+<?php
+Template::footer();

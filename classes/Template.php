@@ -51,8 +51,8 @@ class Template
                     <?php if ($is_logged_in) : ?>
                         <div class="logged-in-user hide-tablet display-flex">
                             <p>
-                                <b>Logged in as:</b>
-                                <?= $logged_in_user->username ?>
+                            <p class="color-white p-h-1">Logged in as: </p>
+                            <p class="color-pink text-uppercase"> <?= $logged_in_user->username ?> </p>
                             <form class="logout-btn p-h-2" action="/exa/scripts/post-logout.php" method="post">
                                 <input type="submit" value="Log out">
                             </form>
@@ -81,10 +81,9 @@ class Template
             <footer>
 
             </footer>
-
             <!-- Swiper JS -->
             <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
+            <!-- jQuery -->
             <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
             <!-- JS file -->
             <script src="/exa/assets/script.js"></script>

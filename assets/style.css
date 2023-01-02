@@ -72,7 +72,15 @@ a {
 .show-tablet {
 	display: none;
 }
-
+.text-uppercase {
+	text-transform: uppercase;
+}
+.m-standard {
+	margin: 80px 0;
+}
+.p-standard {
+	padding: 80px 0;
+}
 /* Columns */
 .col-1 {
 	width: calc((100% / 24) * 1);
@@ -176,6 +184,12 @@ a {
 }
 .p-z {
 	padding: 0;
+}
+.p-v-1 {
+	padding: 10px 0;
+}
+.p-h-1 {
+	padding: 0 10px;
 }
 .p-v-2 {
 	padding: 15px 0;

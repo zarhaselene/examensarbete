@@ -3,7 +3,7 @@ require_once __DIR__ . '/../classes/Template.php';
 
 Template::header("Matley - Register");
 ?>
-<div class="register-container">
+<div class="register-container" style="padding-top:500px">
     <form action="/exa/scripts/post-register-user.php" method="post">
         <div class="username">
             <label for="username">Username</label>

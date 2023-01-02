@@ -1,5 +1,5 @@
 <?php
-// http://localhost:8081/exa/
+// http://localhost:8081/exa-test/
 require_once __DIR__ . "/classes/Template.php";
 ?>
 
@@ -68,7 +68,7 @@ Template::header('Matley sound');
     </div>
     </div>
 </section>
-<section class="USP" style="height: 50vh;">
+<section class="USP" style="height: 200vh;">
 
 </section>
 <?php

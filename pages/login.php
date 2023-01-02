@@ -12,7 +12,7 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalid_credentials') : ?>
     <p class="invalid-credentials">Invalid username or password!</p>
 <?php endif; ?>
 
-<div class="login-container">
+<div class="login-container" style="padding-top:500px">
     <form action="/exa/scripts/post-login.php" method="post">
         <div class="username">
             <label for="username">Username</label>

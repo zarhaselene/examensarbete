@@ -190,20 +190,25 @@ a {
 }
 
 /* Margin and padding  */
+
+/*removes all margins*/
 .m-z {
 	margin: 0 !important;
 }
+/*removes all paddings*/
 .p-z {
 	padding: 0 !important;
 }
+/*padding vertical*/
 .p-v-1 {
 	padding: 10px 0;
 }
-.p-h-1 {
-	padding: 0 10px;
-}
 .p-v-2 {
 	padding: 15px 0;
+}
+/*padding horizontal*/
+.p-h-1 {
+	padding: 0 10px;
 }
 .p-h-2 {
 	padding: 0 15px;

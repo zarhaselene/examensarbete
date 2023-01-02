@@ -18,15 +18,25 @@ h6 {
 p,
 span,
 label,
-small {
+small,
+a {
 	font-family: "Lato", sans-serif;
 }
 /* Button styling */
+.btn {
+	text-decoration: none;
+	font-size: 18px;
+	margin: 45px 0px 0px;
+	padding: 15px 30px;
+	display: inline-block;
+}
 .primary-btn {
 }
 .secondary-btn {
 }
 .slider-btn {
+	color: white;
+	background-color: #ef6d9f;
 }
 .submit-btn {
 }
@@ -253,9 +263,32 @@ nav {
 	overflow: hidden;
 }
 
-.hero-text-container {
+.swiper-slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.swiper-button-next {
+	background-color: #ef6d9f;
+	padding: 20px;
+	color: white !important;
+}
+.swiper-button-prev {
+	background-color: #ef6d9f;
+	padding: 20px;
+	color: white !important;
+}
+.swiper-button-prev:after {
+	font-size: 1em !important;
+}
+.swiper-button-next:after {
+	font-size: 1em !important;
+}
+
+.hero-container {
 	position: absolute;
-	min-width: 630px;
+	min-width: 650px;
 	height: 100%;
 	padding: 20px;
 	top: 0;
@@ -266,28 +299,33 @@ nav {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
-	/* max-width: 650px; */
+	transform: translate(-25%, -50%);
 }
+.headings {
+	min-width: 700px;
+}
+
 /* Find Best */
-.hero-text h3 {
+.headings h3 {
 	font-size: 85px;
 	white-space: nowrap;
 }
 /* Matley */
-.hero-text h1 {
+.headings h1 {
 	font-size: 116px;
+	display: inline;
 }
 /* Sound */
-.hero-text h2 {
+.headings h2 {
 	font-size: 110px;
-	line-height: 1.8;
+	line-height: 1.6;
+	display: inline;
 }
 
-.swiper-slide img {
-	flex-shrink: 0;
-	min-width: 100%;
-	min-height: 100%;
+.hero-text p {
+	width: 640px;
+	line-height: 1.6;
+	font-size: 18px;
 }
 
 /*** Media queries ***/

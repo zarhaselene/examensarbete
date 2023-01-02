@@ -12,16 +12,21 @@ Template::header('Matley sound');
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="hero-text-container">
+                <div class="hero-container">
                     <div class="hero-text">
-                        <h3 class="color-white">Find Best</h3>
-                        <h1 class="color-light-pink">Matley</h1>
-                        <h2 class="color-white">Sound</h2>
+                        <div class="headings">
+                            <h3 class="color-white">Find Best</h3>
+                            <h1 class="color-light-pink">Matley </h1>
+                            <h2 class="color-white">Sound</h2>
+                        </div>
                         <p class="color-white">Stylish, folded design with active noise cancellation
                             for crystal clear audio 3.5mm Wired or Bluetooth wireless
                             conncectivity</p>
+                        <a class="btn slider-btn" href="/exa/index.php">Shop Now</a>
+
                     </div>
                 </div>
+
                 <img class="hide-tablet" src="/exa/assets/img/hero_slider_1.jpg" alt="">
                 <img class="show-tablet" src="/exa/assets/img/hero_slider_1_phone.jpg" alt="">
 
@@ -37,6 +42,8 @@ Template::header('Matley sound');
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
+
+    </div>
     </div>
 </section>
 <section class="USP" style="height: 50vh;">

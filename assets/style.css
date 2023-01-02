@@ -81,6 +81,17 @@ a {
 .p-standard {
 	padding: 80px 0;
 }
+
+.reset-btn-styling {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 /* Columns */
 .col-1 {
 	width: calc((100% / 24) * 1);
@@ -180,10 +191,10 @@ a {
 
 /* Margin and padding  */
 .m-z {
-	margin: 0;
+	margin: 0 !important;
 }
 .p-z {
-	padding: 0;
+	padding: 0 !important;
 }
 .p-v-1 {
 	padding: 10px 0;

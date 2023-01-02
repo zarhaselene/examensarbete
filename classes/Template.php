@@ -54,7 +54,9 @@ class Template
                             <p class="color-white p-h-1">Logged in as: </p>
                             <p class="color-pink text-uppercase"> <?= $logged_in_user->username ?> </p>
                             <form class="logout-btn p-h-2" action="/exa/scripts/post-logout.php" method="post">
-                                <input type="submit" value="Log out">
+                                <button class="reset-btn-styling icon p-z color-white" type="submit">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </button>
                             </form>
                             </p>
                         </div>

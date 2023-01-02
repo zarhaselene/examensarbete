@@ -35,7 +35,7 @@ class Template
         </head>
 
         <body>
-            <nav class="row display-flex p-v-2">
+            <nav class="navigation row display-flex p-v-2">
                 <div class="logo col-4 col-12-tablet col-24-lg-phone display-flex  align-items-center">
                     <a href="/exa/index.php"> <img src="/exa/assets/img/logo.png" alt="logo"></a>
                 </div>
@@ -82,11 +82,13 @@ class Template
 
             </footer>
 
-
             <!-- Swiper JS -->
             <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+            <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
             <!-- JS file -->
             <script src="/exa/assets/script.js"></script>
+
         </body>
 
         </html>

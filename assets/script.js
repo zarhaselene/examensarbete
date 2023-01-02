@@ -5,3 +5,12 @@ var swiper = new Swiper(".mySwiper", {
 		prevEl: ".swiper-button-prev",
 	},
 });
+
+// Scroll
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 10) {
+		$(".navigation").addClass("show");
+	} else {
+		$(".navigation").removeClass("show");
+	}
+});

@@ -36,11 +36,11 @@ class Template
 
         <body>
             <nav class="navigation row display-flex p-v-2">
-                <div class="logo col-4 col-12-tablet col-24-lg-phone display-flex  align-items-center">
+                <div class="logo col-4 col-12-tablet display-flex align-items-center">
                     <a href="/exa/index.php"> <img src="/exa/assets/img/logo.png" alt="logo"></a>
                 </div>
 
-                <div class="icons col-20 col-12-tablet col-24-lg-phone display-flex align-items-center justify-end">
+                <div class="icons col-20 col-12-tablet display-flex align-items-center justify-end">
 
                     <!-- If not logged in -->
                     <?php if (!$is_logged_in) : ?>

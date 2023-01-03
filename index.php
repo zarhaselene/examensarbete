@@ -73,8 +73,15 @@ Template::header('Matley sound');
 </section>
 <section class="p-standard USP">
     <div class="container display-flex direction-column align-items-center justify-center">
-        <div class="intro-section row">
-            <div class="text col-12 col-24-tablet">
+
+        <div class="intro-section row p-t-120 p-b-80">
+            <div class="floaties">
+                <div class="rectangle-shape small"></div>
+                <div class="circle-shape large"></div>
+            </div>
+
+
+            <div class="text col-12 col-24-tablet p-r-4">
                 <h4 class="heading p-t-5 m-b-4">Loud & Clear
                     <br>
                     Music
@@ -86,7 +93,7 @@ Template::header('Matley sound');
                 </p>
                 <a class="btn corner-btn text-uppercase color-black" href=""><span>Shop now</span></a>
             </div>
-            <div class="intro-slider col-12 hide-tablet">
+            <div class="intro-slider col-12 hide-tablet p-l-4">
                 <div class="slider">
                     <div class="swiper">
                         <div class="swiper-wrapper">
@@ -105,6 +112,38 @@ Template::header('Matley sound');
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="intro-section row p-t-120 p-b-80">
+            <div class="floaties">
+                <div class="rectangle-shape very-small"></div>
+                <div class="rectangle-shape medium"></div>
+                <div class="rectangle-shape large"></div>
+            </div>
+            <div class="intro-slider col-12 hide-tablet p-r-4">
+                <div class="slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="/exa/assets/img/blueheadphones.jpg" alt="Woman with blue overear headphones">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/exa/assets/img/redheadphones.jpg" alt="Woman with red overear headphones">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text col-12 col-24-tablet p-l-4">
+                <h4 class="heading p-t-5 m-b-4">Get in the Zone with your favorite music</h4>
+                <p class="m-b-2 color-grey">
+                    Mattis aliquam faucibus purus in massa tempor nec. Pulvinar etiam non quam lacus.
+                    Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.
+                    Non blandit massa enim nec dui nunc mattis enim. Donec enim diam vulputate ut pharetra sit amet aliquam id.
+                </p>
+                <a class="btn corner-btn text-uppercase color-black" href=""><span>Shop now</span></a>
             </div>
         </div>
 

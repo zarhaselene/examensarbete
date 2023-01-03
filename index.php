@@ -1,5 +1,5 @@
 <?php
-// http://localhost:8081/exa-test/
+// http://localhost:8081/exa/
 require_once __DIR__ . "/classes/Template.php";
 ?>
 
@@ -9,8 +9,6 @@ Template::header('Matley sound');
 <!-- Hero section -->
 <section class="hero">
     <div class="slider">
-
-
         <!-- Swiper -->
         <div class="swiper">
             <div class="swiper-wrapper">
@@ -25,7 +23,7 @@ Template::header('Matley sound');
                             <p class="color-white">Stylish, folded design with active noise cancellation
                                 for crystal clear audio 3.5mm Wired or Bluetooth wireless
                                 conncectivity</p>
-                            <a class="btn hero-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
+                            <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
 
                         </div>
                     </div>
@@ -43,7 +41,7 @@ Template::header('Matley sound');
                                 <h2 class="color-white">Smart</h2>
                             </div>
                             <p class="color-white">You bring the music, we bring the quality. Make music a pleasant experience. </p>
-                            <a class="btn hero-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
+                            <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
                         </div>
                     </div>
                     <img class="hide-tablet" src="/exa/assets/img/hero_slider_2.jpg" alt="">
@@ -58,7 +56,7 @@ Template::header('Matley sound');
                                 <h2 class="color-white">Sound</h2>
                             </div>
                             <p class="color-white">Headphones that make you forget everything around. Make music come to life. </p>
-                            <a class="btn hero-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
+                            <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
                         </div>
                     </div>
                     <img class="hide-tablet" src="/exa/assets/img/hero_slider_3.jpg" alt="">
@@ -147,6 +145,20 @@ Template::header('Matley sound');
             </div>
         </div>
 
+    </div>
+</section>
+<!-- Banner section -->
+<section class="p-standard banner display-flex direction-column justify-center align-items-start">
+    <div class="text">
+        <h4 class="heading p-t-5 m-b-4">Go to <span class="laptop-pink">Adventures</span> You've
+            <br> Only Dreamt of...
+        </h4>
+        <p class="m-b-2 color-grey">
+            Aliquet sagittis id consectetur purus ut.
+            Orci ac auctor augue mauris augue neque gravida in fermentum.
+            Elit eget gravida cum sociis natoque penatibus.
+        </p>
+        <a class="btn full-btn color-white" href="">Learn More</a>
     </div>
 </section>
 <?php

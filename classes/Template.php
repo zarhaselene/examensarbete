@@ -28,7 +28,7 @@ class Template
             <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Varela+Round&display=swap" rel="stylesheet">
 
             <!-- Font Awesome -->
-            <script src="https://kit.fontawesome.com/57a104828d.js" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/6310c3f0d1.js" crossorigin="anonymous"></script>
 
             <!-- Link Swiper's CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
@@ -37,7 +37,7 @@ class Template
         <body>
             <nav class="navigation row display-flex p-v-2">
                 <div class="logo col-4 col-12-tablet display-flex align-items-center">
-                    <a href="/exa/index.php"> <img src="/exa/assets/img/logo.png" alt="logo"></a>
+                    <a href="/exa/index.php"> <img src="/exa/assets/img/logos/logo.png" alt="logo"></a>
                 </div>
 
                 <div class="icons col-20 col-12-tablet display-flex align-items-center justify-end">

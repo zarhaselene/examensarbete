@@ -19,7 +19,24 @@ h6 {
 	font-family: "Varela Round", sans-serif;
 }
 h4 {
+	position: relative;
+	padding-top: 35px;
+	margin-bottom: 25px;
 	font-size: 44px;
+	line-height: 1.4;
+	letter-spacing: 1px;
+}
+
+h4:before {
+	content: "";
+	background: #ef6d9f;
+	border-radius: 5px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30px;
+	height: 5px;
 }
 p {
 	font-size: 20px;
@@ -159,6 +176,9 @@ a {
 }
 
 /* Reusable classes */
+.position-relative {
+	position: relative;
+}
 .show-tablet {
 	display: none;
 }
@@ -603,28 +623,13 @@ nav p {
 	line-height: 1.8;
 }
 
-.intro-section > .text > .heading {
-	position: relative;
-}
-.USP > div > div > div.text.col-12 > h4:before {
-	content: "";
-	background: #ef6d9f;
-	border-radius: 5px;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 30px;
-	height: 5px;
-}
-
 .intro-slider.col-12 > div > div {
 	height: 600px;
 }
 /*Cropping the slider images*/
 .intro-slider > .slider .swiper-slide > img {
 	border-top-left-radius: 400px;
-	border-bottom-right-radius: 400px;
+	border-top-right-radius: 400px;
 	/* border-radius: 50%; */
 }
 
@@ -642,6 +647,68 @@ nav p {
 	margin-left: 250px;
 	max-width: calc((100% / 24) * 8);
 }
+
+/*** Music ***/
+.text-block-md {
+	/*Fix later so its reusable*/
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 530px;
+	line-height: 1.8;
+}
+.content-standard {
+	/*Fix later so its reusable*/
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.music > div > .row > div > .illustration {
+	width: 100%;
+	padding-right: 50px;
+}
+.music > div > .row > div > .illustration img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 /*** Media queries ***/
 
@@ -691,6 +758,8 @@ nav p {
 }
 /* Tablet */
 @media only screen and (max-width: 768px) {
+	.content-standard {
+	}
 	.hide-tablet {
 		display: none;
 	}
@@ -702,6 +771,11 @@ nav p {
 	}
 	.col-24-tablet {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 	}
 	.logo {
 		padding-left: 20px;
@@ -749,21 +823,18 @@ nav p {
 		padding-bottom: 30px;
 	}
 
-	.USP > div > div > div.text.col-12 > h4:before {
-		content: "";
-		background: #ef6d9f;
-		border-radius: 5px;
-		display: block;
-		position: absolute;
+	h4:before {
 		left: 50%;
 		margin-left: -15px;
-		width: 30px;
-		height: 5px;
 	}
 	.banner > .text {
 		margin: 0 auto;
 		text-align: center;
 		max-width: calc((100% / 24) * 20);
+	}
+	.music > div > .row > div > .illustration {
+		width: auto;
+		padding: 0;
 	}
 }
 /* Small tablet */
@@ -799,8 +870,7 @@ nav p {
 	}
 }
 
-/* Keyframes  */
-
+/* Keyframes */
 @keyframes animationframesone {
 	0% {
 		transform: translate(0px, 0px) rotate(0deg);

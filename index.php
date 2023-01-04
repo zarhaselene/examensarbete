@@ -69,6 +69,7 @@ Template::header('Matley sound');
     </div>
     </div>
 </section>
+<!-- USP section -->
 <section class="p-standard USP">
     <div class="container display-flex direction-column align-items-center justify-center">
 
@@ -161,5 +162,41 @@ Template::header('Matley sound');
         <a class="btn full-btn color-white" href="">Learn More</a>
     </div>
 </section>
+<!-- Music section -->
+<section class="p-standard music position-relative">
+    <div class="content-standard">
+        <div class="floaties">
+            <div class="rectangle-shape medium"></div>
+            <div class="circle-shape large"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-24-tablet">
+                <h4 class="heading">Sterlined Headphone
+                    <br> Style 2022
+                </h4>
+                <div class="illustration">
+                    <img src="/exa/assets/img/headphone-illustration.png" alt="Orange headphone illustration with the text Music lives on">
+                </div>
+            </div>
+            <div class="col-12 col-24-tablet display-flex direction-column justify-end">
+                <div class="text-block-md">
+                    <p class="color-grey">
+                        Blandit aliquam etiam erat velit.
+                        Mi proin sed libero enim sed faucibus.
+                        Faucibus pulvinar elementum integer enim neque volutpat.
+                        Euismod in pellentesque massa placerat duis ultricies lacus sed turpis.
+                        Aliquet porttitor lacus luctus accumsan tortor posuere.
+                        Nisl purus in mollis nunc sed id semper risus.
+                        Ultrices neque ornare aenean.
+                    </p>
+                    <a class="btn corner-btn text-uppercase color-black" href=""><span>Shop now</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 <?php
 Template::footer();

@@ -46,7 +46,12 @@ a {
 .full-btn {
 	color: white;
 	background-color: #ef6d9f;
+	transition: 0.5s;
 }
+.full-btn:hover {
+	background-color: #ff9875;
+}
+
 .submit-btn {
 }
 

@@ -17,6 +17,7 @@ h4,
 h5,
 h6 {
 	font-family: "Varela Round", sans-serif;
+	cursor: default;
 }
 h4 {
 	position: relative;
@@ -38,8 +39,13 @@ h4:before {
 	width: 30px;
 	height: 5px;
 }
+h5 {
+	font-size: 20px;
+	font-weight: 600;
+}
 p {
 	font-size: 20px;
+	cursor: default;
 }
 
 p,
@@ -307,16 +313,23 @@ z = 0
 3 = 20
 4 = 25
 5 = 35
+6 = 40
 */
 /*removes all margins*/
 .m-z {
 	margin: 0 !important;
+}
+.m-b-1 {
+	margin-bottom: 10px;
 }
 .m-b-2 {
 	margin-bottom: 15px;
 }
 .m-b-4 {
 	margin-bottom: 25px;
+}
+.m-b-6 {
+	margin-bottom: 40px;
 }
 /*removes all paddings*/
 .p-z {
@@ -455,6 +468,7 @@ nav p {
 .swiper {
 	width: 100%;
 	height: 100%;
+	cursor: grab;
 }
 
 .swiper-slide {
@@ -637,7 +651,7 @@ nav p {
 .banner {
 	width: 100%;
 	height: 80vh;
-	background-image: url(../assets/img/banner.jpg);
+	background-image: url(../assets/img/banners/banner.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	display: flex;
@@ -674,10 +688,48 @@ nav p {
 	object-fit: contain;
 }
 
+/*** Features ***/
+.features {
+	display: flex;
+}
+.features-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 30px;
+}
+
+.feature-block:hover {
+	color: #ef6d9f;
+	transition: all 0.3s linear;
+	cursor: default;
+}
+
+.features-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.features p {
+	font-size: 16px;
+	font-weight: 300;
+	margin-bottom: 0;
+	line-height: 1.5em;
+}
+
+.feature-icon {
+	background-color: white;
+	width: 80px;
+	height: 80px;
+	box-shadow: 1px 4px 20px rgb(26 26 26 / 9%);
+	border-top-right-radius: 25px;
+	font-size: 1.5rem;
+}
+
 /*
 
 
-
+    
 
 
 
@@ -745,6 +797,18 @@ nav p {
 	}
 	.laptop-pink {
 		color: #ff9cb2;
+	}
+	.features-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.features {
+		justify-content: center;
+	}
+	.feature-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
 	}
 }
 /* Laptop S*/
@@ -835,6 +899,21 @@ nav p {
 	.music > div > .row > div > .illustration {
 		width: auto;
 		padding: 0;
+	}
+	.features-text {
+		padding-bottom: 20px;
+	}
+	.features-container {
+		grid-template-columns: repeat(2, 1fr);
+		padding-top: 50px;
+	}
+	.features {
+		justify-content: center;
+	}
+	.feature-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 /* Small tablet */

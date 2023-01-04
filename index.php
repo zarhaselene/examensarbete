@@ -28,8 +28,8 @@ Template::header('Matley sound');
                         </div>
                     </div>
 
-                    <img class="hide-tablet" src="/exa/assets/img/hero_slider_1.jpg" alt="">
-                    <img class="show-tablet" src="/exa/assets/img/hero_slider_1_phone.jpg" alt="">
+                    <img class="hide-tablet" src="/exa/assets/img/hero/hero_slider_1.jpg" alt="">
+                    <img class="show-tablet" src="/exa/assets/img/hero/hero_slider_1_phone.jpg" alt="">
 
                 </div>
                 <div class="swiper-slide">
@@ -44,8 +44,8 @@ Template::header('Matley sound');
                             <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
                         </div>
                     </div>
-                    <img class="hide-tablet" src="/exa/assets/img/hero_slider_2.jpg" alt="">
-                    <img class="show-tablet" src="/exa/assets/img/hero_slider_2_phone.jpg" alt="">
+                    <img class="hide-tablet" src="/exa/assets/img/hero/hero_slider_2.jpg" alt="">
+                    <img class="show-tablet" src="/exa/assets/img/hero/hero_slider_2_phone.jpg" alt="">
                 </div>
                 <div class="swiper-slide">
                     <div class="hero-container">
@@ -59,8 +59,8 @@ Template::header('Matley sound');
                             <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
                         </div>
                     </div>
-                    <img class="hide-tablet" src="/exa/assets/img/hero_slider_3.jpg" alt="">
-                    <img class="show-tablet" src="/exa/assets/img/hero_slider_3_phone.jpg" alt="">
+                    <img class="hide-tablet" src="/exa/assets/img/hero/hero_slider_3.jpg" alt="">
+                    <img class="show-tablet" src="/exa/assets/img/hero/hero_slider_3_phone.jpg" alt="">
                 </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -97,14 +97,14 @@ Template::header('Matley sound');
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="/exa/assets/img/blackheadphones.jpg" alt="Woman with black overear headphones">
+                                <img src="/exa/assets/img/sliders/blackheadphones.jpg" alt="Woman with black overear headphones">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/exa/assets/img/blueheadphones.jpg" alt="Woman with blue overear headphones">
+                                <img src="/exa/assets/img/sliders/blueheadphones.jpg" alt="Woman with blue overear headphones">
 
                             </div>
                             <div class="swiper-slide">
-                                <img src="/exa/assets/img/whiteheadphones.jpg" alt="Woman with white overear headphones">
+                                <img src="/exa/assets/img/sliders/whiteheadphones.jpg" alt="Woman with white overear headphones">
 
                             </div>
                         </div>
@@ -125,10 +125,10 @@ Template::header('Matley sound');
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="/exa/assets/img/blueheadphones.jpg" alt="Woman with blue overear headphones">
+                                <img src="/exa/assets/img/sliders/blueheadphones.jpg" alt="Woman with blue overear headphones">
                             </div>
                             <div class="swiper-slide">
-                                <img src="/exa/assets/img/redheadphones.jpg" alt="Woman with red overear headphones">
+                                <img src="/exa/assets/img/sliders/redheadphones.jpg" alt="Woman with red overear headphones">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -175,7 +175,7 @@ Template::header('Matley sound');
                     <br> Style 2022
                 </h4>
                 <div class="illustration">
-                    <img src="/exa/assets/img/headphone-illustration.png" alt="Orange headphone illustration with the text Music lives on">
+                    <img src="/exa/assets/img/illustrations/headphone-illustration.png" alt="Orange headphone illustration with the text Music lives on">
                 </div>
             </div>
             <div class="col-12 col-24-tablet display-flex direction-column justify-end">
@@ -195,7 +195,96 @@ Template::header('Matley sound');
         </div>
     </div>
 </section>
+<!-- Features section -->
+<section class="p-standard">
+    <div class="content-standard">
+        <div class="row">
+            <div class="col-12 col-24-tablet m-h-2">
+                <div class="text-block-md">
+                    <h4>
+                        Wear it with ease and
+                        <br>
+                        comfort ever.
+                    </h4>
+                    <p class="features-text color-grey">
+                        At risus viverra adipiscing at.
+                        Iaculis urna id volutpat lacus laoreet non curabitur.
+                        Enim lobortis scelerisque fermentum dui faucibus in.
+                        Nisl suscipit adipiscing.
+                    </p>
+                </div>
 
+                <div class="features-image">
+                    <img src="/exa/assets/img/feature_image.png" alt="">
+                </div>
+            </div>
+            <div class="col-12 col-24-tablet m-h-2 features display-flex justify-end align-items-center">
+                <div class="features-container">
+                    <div class="feature-block">
+                        <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
+                            <i class="icon fa-solid fa-wifi"></i>
+                        </div>
+                        <h5 class="m-b-1">Wireless</h5>
+                        <p class="color-grey">
+                            Nisl suscipit adipiscing bibendum est.
+                            <br> Tempus imperdiet nulla malesuada.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
+                            <i class="icon fa-solid fa-volume-xmark"></i>
+                        </div>
+                        <h5 class="m-b-1">Noise Cancelling</h5>
+                        <p class="color-grey">
+                            Posuere sollicitudin aliquam ultrices
+                            <br> sagittis orci a. Eleifend donec pretium.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
+                            <i class="icon fa-solid fa-headphones"></i>
+                        </div>
+                        <h5 class="m-b-1">Perfect Sound</h5>
+                        <p class="color-grey">
+                            Leo urna molestie at elementum eu
+                            <br> facilisis sed odio fringilla est.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
+                            <i class="icon fa-brands fa-bluetooth-b"></i>
+                        </div>
+                        <h5 class="m-b-1">Bluetooth</h5>
+                        <p class="color-grey">
+                            Adipiscing vitae proin sagittis nisl.
+                            <br> Posuere ac ut consequat semper.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
+                            <i class="icon fa-solid fa-microphone"></i>
+                        </div>
+                        <h5 class="m-b-1">Microphone</h5>
+                        <p class="color-grey">
+                            Varius duis at consectetur lorem
+                            <br> donec massa sapien faucibus et.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h5 class="m-b-1">Water-resistant</h5>
+                        <p class="color-grey">
+                            Posuere ac ut faucibus semper.
+                            <br> Facilisis sed odio fring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <?php

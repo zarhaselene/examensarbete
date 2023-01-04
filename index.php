@@ -1,6 +1,12 @@
 <?php
 // http://localhost:8081/exa/
 require_once __DIR__ . "/classes/Template.php";
+require_once __DIR__ . "/classes/Product.php";
+require_once __DIR__ . "/classes/ProductsDatabase.php";
+
+$products_db = new ProductsDatabase();
+$products = $products_db->get_all();
+
 ?>
 
 <?php
@@ -224,7 +230,7 @@ Template::header('Matley sound');
                         <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
                             <i class="icon fa-solid fa-wifi"></i>
                         </div>
-                        <h5 class="m-b-1">Wireless</h5>
+                        <h6 class="m-b-1">Wireless</h6>
                         <p class="color-grey">
                             Nisl suscipit adipiscing bibendum est.
                             <br> Tempus imperdiet nulla malesuada.
@@ -234,7 +240,7 @@ Template::header('Matley sound');
                         <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
                             <i class="icon fa-solid fa-volume-xmark"></i>
                         </div>
-                        <h5 class="m-b-1">Noise Cancelling</h5>
+                        <h6 class="m-b-1">Noise Cancelling</h6>
                         <p class="color-grey">
                             Posuere sollicitudin aliquam ultrices
                             <br> sagittis orci a. Eleifend donec pretium.
@@ -244,7 +250,7 @@ Template::header('Matley sound');
                         <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
                             <i class="icon fa-solid fa-headphones"></i>
                         </div>
-                        <h5 class="m-b-1">Perfect Sound</h5>
+                        <h6 class="m-b-1">Perfect Sound</h6>
                         <p class="color-grey">
                             Leo urna molestie at elementum eu
                             <br> facilisis sed odio fringilla est.
@@ -254,7 +260,7 @@ Template::header('Matley sound');
                         <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
                             <i class="icon fa-brands fa-bluetooth-b"></i>
                         </div>
-                        <h5 class="m-b-1">Bluetooth</h5>
+                        <h6 class="m-b-1">Bluetooth</h6>
                         <p class="color-grey">
                             Adipiscing vitae proin sagittis nisl.
                             <br> Posuere ac ut consequat semper.
@@ -264,7 +270,7 @@ Template::header('Matley sound');
                         <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
                             <i class="icon fa-solid fa-microphone"></i>
                         </div>
-                        <h5 class="m-b-1">Microphone</h5>
+                        <h6 class="m-b-1">Microphone</h6>
                         <p class="color-grey">
                             Varius duis at consectetur lorem
                             <br> donec massa sapien faucibus et.
@@ -274,7 +280,7 @@ Template::header('Matley sound');
                         <div class="feature-icon m-b-6 display-flex direction-column justify-center align-items-center">
                             <i class="fa-solid fa-droplet"></i>
                         </div>
-                        <h5 class="m-b-1">Water-resistant</h5>
+                        <h6 class="m-b-1">Water-resistant</h6>
                         <p class="color-grey">
                             Posuere ac ut faucibus semper.
                             <br> Facilisis sed odio fring.
@@ -285,7 +291,50 @@ Template::header('Matley sound');
         </div>
     </div>
 </section>
+<!-- Products section -->
+<section class="p-standard products">
+    <div class="content-standard">
+        <div class="floaties">
+            <div class="rectangle-shape large"></div>
+        </div>
+        <div class="text-block text-center">
+            <h4>Choose your wireless
+                <br> headphone
+            </h4>
+            <p class="color-grey">
+                Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum
+                <br> raucibus pulvinar elementum integer
+            </p>
+        </div>
+        <div class="products-container">
+            <?php
+            foreach ($products as $product) : ?>
 
+                <div class="product-card display-flex direction-column align-items-center">
+                    <div class="product-image">
+                        <img src="<?= $product->img_url ?>" alt="">
+                    </div>
+                    <div class="product-info text-center">
+                        <span class="star-rating">
+                            <i class="fa-solid fa-star color-light-pink"></i>
+                            <i class="fa-solid fa-star color-light-pink"></i>
+                            <i class="fa-solid fa-star color-light-pink"></i>
+                            <i class="fa-solid fa-star color-light-pink"></i>
+                            <i class="fa-regular fa-star color-grey"></i>
+                        </span>
+                        <h5 class="title p-t-1"><?= $product->title ?></h5>
+                        <p class="price p-t-2">$ <?= $product->price ?></p>
+                    </div>
+                    <form action="/exa/scripts/post-add-to-cart.php" method="post">
+                        <input type="hidden" name="product-id" value="<?= $product->id ?>">
+                        <button class="btn full-btn" type="submit" value="">Add to cart</button>
+                    </form>
+                </div>
+            <?php
+            endforeach; ?>
+        </div>
+    </div>
+</section>
 
 <?php
 Template::footer();

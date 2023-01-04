@@ -40,12 +40,16 @@ h4:before {
 	height: 5px;
 }
 h5 {
+	font-size: 24px;
+	font-weight: 500;
+}
+h6 {
 	font-size: 20px;
-	font-weight: 600;
 }
 p {
 	font-size: 20px;
 	cursor: default;
+	line-height: 1.8;
 }
 
 p,
@@ -70,6 +74,7 @@ a {
 	color: white;
 	background-color: #ef6d9f;
 	transition: 0.5s;
+	border: none;
 }
 .full-btn:hover {
 	background-color: #ff9875;
@@ -190,6 +195,9 @@ a {
 }
 .text-uppercase {
 	text-transform: uppercase;
+}
+.text-center {
+	text-align: center;
 }
 .m-standard {
 	margin: 80px 0;
@@ -319,18 +327,6 @@ z = 0
 .m-z {
 	margin: 0 !important;
 }
-.m-b-1 {
-	margin-bottom: 10px;
-}
-.m-b-2 {
-	margin-bottom: 15px;
-}
-.m-b-4 {
-	margin-bottom: 25px;
-}
-.m-b-6 {
-	margin-bottom: 40px;
-}
 /*removes all paddings*/
 .p-z {
 	padding: 0 !important;
@@ -369,20 +365,42 @@ z = 0
 }
 
 /*Top, left, right, bottom padding classes*/
+/* Margin */
+.m-b-1 {
+	margin-bottom: 10px;
+}
+.m-b-2 {
+	margin-bottom: 15px;
+}
+.m-b-4 {
+	margin-bottom: 25px;
+}
+.m-b-6 {
+	margin-bottom: 40px;
+}
+/* Padding */
 .p-l-4 {
 	padding-left: 25px;
 }
 .p-r-4 {
 	padding-right: 25px;
 }
+.p-t-1 {
+	padding-top: 10px;
+}
+.p-t-2 {
+	padding-top: 15px;
+}
 .p-t-5 {
 	padding-top: 35px;
 }
-.p-t-120 {
-	padding-top: 120px;
-}
+
+/* Extra */
 .p-b-80 {
 	padding-bottom: 80px;
+}
+.p-t-120 {
+	padding-top: 120px;
 }
 
 /* Colors */
@@ -536,7 +554,6 @@ nav p {
 
 .hero-text p {
 	width: 50vw;
-	line-height: 1.6;
 	font-size: 1em;
 }
 
@@ -634,7 +651,6 @@ nav p {
 }
 .intro-section > .text {
 	position: relative;
-	line-height: 1.8;
 }
 
 .intro-slider.col-12 > div > div {
@@ -669,7 +685,6 @@ nav p {
 	z-index: 1;
 	width: 100%;
 	max-width: 530px;
-	line-height: 1.8;
 }
 .content-standard {
 	/*Fix later so its reusable*/
@@ -724,6 +739,41 @@ nav p {
 	box-shadow: 1px 4px 20px rgb(26 26 26 / 9%);
 	border-top-right-radius: 25px;
 	font-size: 1.5rem;
+}
+
+/*** Products ***/
+
+.products h4:before {
+	/*Pink line over heading*/
+	left: 48%; /*Center ?*/
+}
+.products-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 30px;
+}
+.product-card .title:hover {
+	color: #ef6d9f;
+	cursor: pointer;
+}
+.product-info .price {
+	font-size: 18px;
+	font-weight: 600;
+	color: black;
+}
+.star-rating {
+	font-size: 10.5px;
+}
+.product-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.product-image img:hover {
+	transition: all 0.3s linear;
+}
+.products > div > div.products-container > div > form > .btn {
+	margin: 15px 0px 0px;
 }
 
 /*

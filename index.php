@@ -220,7 +220,7 @@ Template::header('Matley sound');
                     </p>
                 </div>
 
-                <div class="features-image">
+                <div class="features-image image">
                     <img src="/exa/assets/img/feature_image.png" alt="">
                 </div>
             </div>
@@ -311,7 +311,7 @@ Template::header('Matley sound');
             foreach ($products as $product) : ?>
 
                 <div class="product-card display-flex direction-column align-items-center">
-                    <div class="product-image">
+                    <div class="product-image image">
                         <img src="<?= $product->img_url ?>" alt="">
                     </div>
                     <div class="product-info text-center">
@@ -335,6 +335,105 @@ Template::header('Matley sound');
         </div>
     </div>
 </section>
-
+<!-- Review section -->
+<section class="p-standard reviews">
+    <div class="content-standard">
+        <div class="floaties">
+            <div class="circle-shape large"></div>
+            <div class="rectangle-shape large"></div>
+        </div>
+        <div class="text-block text-center">
+            <h4>Our Customers Review</h4>
+            <p class="color-grey m-b-4 ">
+                Metus aliquam eleifend mi in nulla posuere
+                <br> sollicitudin aliquam fames ac turpis egestas
+            </p>
+        </div>
+        <div class="review-slider">
+            <div class="slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="review display-flex align-items-center justify-evenly">
+                                <div class="review-image image">
+                                    <img src="/exa/assets/img/reviews/Freda-Casey.jpg" alt="Woman with pink overear headphones">
+                                </div>
+                                <div class="text-block-md">
+                                    <h5 class="m-b-1">Freda Casey</h5>
+                                    <small class="color-grey">Musician</small>
+                                    <br>
+                                    <p class="p-v-4 color-grey">
+                                        Fusce dictum lacinia erat in mattis.
+                                        Cras iaculis, magna in condimentum iaculis,
+                                        enim tortor facilisis lectus,
+                                        et molestie sem sapien id odio.
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-regular fa-star color-grey"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="review display-flex align-items-center justify-evenly">
+                                <div class="review-image image">
+                                    <img src="/exa/assets/img/reviews/Hannah-Stocking.jpg" alt="Woman with white overear headphones">
+                                </div>
+                                <div class="text-block-md">
+                                    <h5 class="m-b-1">Hannah Stocking</h5>
+                                    <small class="color-grey">Architect</small>
+                                    <br>
+                                    <p class="p-v-4 color-grey">
+                                        Fusce dictum lacinia erat in mattis.
+                                        Cras iaculis, magna in condimentum iaculis,
+                                        enim tortor facilisis lectus,
+                                        et molestie sem sapien id odio.
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-regular fa-star color-grey"></i>
+                                        <i class="fa-regular fa-star color-grey"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="review display-flex align-items-center justify-evenly">
+                                <div class="review-image image">
+                                    <img src="/exa/assets/img/reviews/James-Johnson.jpg" alt="Man with sliver overear headphones">
+                                </div>
+                                <div class="text-block-md">
+                                    <h5 class="m-b-1">James Johnson</h5>
+                                    <small class="color-grey">Journalist</small>
+                                    <br>
+                                    <p class="p-v-4 color-grey">
+                                        Fusce dictum lacinia erat in mattis.
+                                        Cras iaculis, magna in condimentum iaculis,
+                                        enim tortor facilisis lectus,
+                                        et molestie sem sapien id odio.
+                                    </p>
+                                    <span class="star-rating">
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-solid fa-star color-light-pink"></i>
+                                        <i class="fa-regular fa-star color-grey"></i>
+                                        <i class="fa-regular fa-star color-grey"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <?php
 Template::footer();

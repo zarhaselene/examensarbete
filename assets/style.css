@@ -874,7 +874,7 @@ footer {
 	width: 100%;
 	background-image: url(../assets/img/banners/footer_banner.jpg);
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: bottom;
 }
 
 .footer-logo {

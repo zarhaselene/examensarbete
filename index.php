@@ -435,5 +435,44 @@ Template::header('Matley sound');
         </div>
     </div>
 </section>
+<!-- Contact section -->
+<section class="p-standard contact">
+    <div class="content-standard">
+        <div class="text-block text-center">
+            <h4>Say hello to us</h4>
+            <p class="color-grey m-b-4 ">
+                Feel free to contact us if you need any assistance,
+                <br> any help or another question.
+            </p>
+        </div>
+        <div class="floaties">
+            <div class="circle-shape small"></div>
+            <div class="rectangle-shape medium"></div>
+        </div>
+
+        <div class="contact-container display-flex direction-column align-items-center">
+            <!-- TODO: create script for messages -->
+            <form action="/exa/scripts/post-message.php" method="post" class="contact-form display-flex direction-column align-items-center">
+                <div class="name">
+                    <input type="text" name="name" placeholder="Your name"><br>
+                </div>
+                <div class="email">
+                    <input type="email" name="email" placeholder="Your email address"> <br>
+                </div>
+                <div class="message">
+                    <textarea type="text" name="message" placeholder="Your message.."></textarea>
+                </div>
+                <div class="submit">
+                    <button type="submit" class=" btn full-btn  color-white">
+                        Submit
+                        <i class="fa-solid fa-paper-plane p-l-1"></i>
+
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 <?php
 Template::footer();

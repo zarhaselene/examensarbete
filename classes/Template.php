@@ -80,9 +80,27 @@ class Template
     public static function footer()
     { ?>
 
-            <footer>
+            <footer class="display-flex align-items-center">
+                <div class="content-large display-flex align-items-center justify-between">
+                    <div class="footer-logo">
+                        <img src="/exa/assets/img/logos/logo_black.png" alt="">
+                    </div>
+                    <div class="socials">
+                        <p>Follow us</p>
+                        <div class="sm-icons p-t-1">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-pinterest"></i>
+                        </div>
+                    </div>
+
+                </div>
+
 
             </footer>
+
+
+
             <!-- Swiper JS -->
             <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
             <!-- jQuery -->

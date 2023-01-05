@@ -8,7 +8,6 @@ for (const swiperContainer of swiperContainers) {
 		loop: true,
 		pagination: {
 			el: ".swiper-pagination",
-			dynamicBullets: true,
 		},
 		// Navigation arrows
 		navigation: {

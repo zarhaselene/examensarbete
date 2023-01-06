@@ -159,11 +159,13 @@ class Template
                 <a href="/exa/index.php"></a>
 
                 <div class="sidebar display-flex direction-column">
-                    <a href="/exa/pages/admin.php" class="dashboard-icon"><span>Dashboard</span></a>
-                    <a href="/exa/pages/admin.php" class="orders-icon"><span>Orders</span></a>
-                    <a href="/exa/pages/admin.php" class="users-icon"><span>Users</span></a>
-                    <a href="/exa/pages/admin.php" class="products-icon"><span>Products</span></a>
-                    <a href="/exa/pages/admin.php" class="messages-icon"><span>Messages</span></a>
+                    <a href="/exa/pages/admin.php" class="dashboard-icon sidebar-item"><span>Dashboard</span></a>
+                    <a href="/exa/pages/admin-orders.php" class="orders-icon sidebar-item"><span>Orders</span></a>
+                    <a href="/exa/pages/admin.php" class="users-icon sidebar-item"><span>Users</span></a>
+                    <a href="/exa/pages/admin.php" class="products-icon sidebar-item"><span>Products</span></a>
+                    <a href="/exa/pages/admin.php" class="messages-icon sidebar-item"><span>Messages</span></a>
+
+
                 </div>
 
             </div>

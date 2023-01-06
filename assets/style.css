@@ -962,42 +962,43 @@ textarea:focus {
 	font-size: 1.1rem;
 }
 .sidebar a:hover {
-	border-right: 3px solid #ef6d9f;
-	color: #1a1a1a;
-	font-weight: bold;
+	color: #ff9cb2;
+	border-right: 2px solid #ff9cb2;
+}
+.active {
+	color: #ff9cb2;
+	border-right: 2px solid #ff9cb2;
+}
+.visited{
+	color: red;
 }
 .dashboard-icon:before {
 	content: "\f0db";
 	font-family: FontAwesome;
-	color: rgb(167, 167, 167);
 	font-size: 1.1rem;
 	padding-right: 20px;
 }
 .orders-icon:before {
 	content: "\f466";
 	font-family: FontAwesome;
-	color: rgb(167, 167, 167);
 	font-size: 1.1rem;
 	padding-right: 20px;
 }
 .users-icon:before {
 	content: "\f007";
 	font-family: FontAwesome;
-	color: rgb(167, 167, 167);
 	font-size: 1.1rem;
 	padding-right: 20px;
 }
 .products-icon:before {
 	content: "\f025";
 	font-family: FontAwesome;
-	color: rgb(167, 167, 167);
 	font-size: 1.1rem;
 	padding-right: 20px;
 }
 .messages-icon:before {
-	content: "\f27a";
+	content: "\f2b6";
 	font-family: FontAwesome;
-	color: rgb(167, 167, 167);
 	font-size: 1.1rem;
 	padding-right: 20px;
 }

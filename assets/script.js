@@ -17,6 +17,16 @@ for (const swiperContainer of swiperContainers) {
 	});
 }
 
+$(".sidebar").hover(
+	function () {
+		//toggleClass() switches the active class
+		$(this).toggleClass("active");
+	},
+	function () {
+		$(this).addClass("visited");
+	}
+);
+
 // Scroll
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 10) {

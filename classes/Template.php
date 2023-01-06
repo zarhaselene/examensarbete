@@ -143,6 +143,34 @@ class Template
 
         <?php
     }
+
+
+    public static function sidebar()
+    { ?>
+
+            <div class="sidebar-container col-4 display-flex direction-column align-items-center">
+
+                <div class="back-btn"><a href="/exa/index.php" class="color-black">
+                        <i class="fa-solid fa-chevron-left icon"></i>
+                    </a></div>
+                <div class="logo-small p-t-6 p-h-1 hide-tablet">
+                    <a href="/exa/index.php"> <img src="/exa/assets/img/logos/logo_black.png" alt="logo"></a>
+                </div>
+                <a href="/exa/index.php"></a>
+
+                <div class="sidebar display-flex direction-column align-items-center">
+                    <a href="/exa/pages/admin.php"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+                    <a href="/exa/pages/admin.php"><i class="fa-solid fa-box"></i> Orders</a>
+                    <a href="/exa/pages/admin.php"><i class="fa fa-fw fa-user"></i> Users</a>
+                    <a href="/exa/pages/admin.php"><i class="fa-solid fa-headphones"></i> Products</a>
+                    <a href="/exa/pages/admin.php"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+                </div>
+
+            </div>
+        <?php
+    }
+
+
     public static function footer()
     { ?>
 

@@ -56,7 +56,8 @@ p,
 span,
 label,
 small,
-a {
+a,
+button {
 	font-family: "Lato", sans-serif;
 }
 a {
@@ -187,7 +188,7 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	/* min-height: 100%; */
+	min-height: 100%;
 	flex-direction: row;
 }
 
@@ -412,6 +413,9 @@ z = 0
 .p-t-5 {
 	padding-top: 35px;
 }
+.p-t-6 {
+	padding-top: 40px;
+}
 
 /* Extra */
 .p-b-80 {
@@ -465,7 +469,13 @@ nav p {
 	padding-left: 100px;
 	padding-bottom: 15px;
 }
-
+.logo-small {
+	width: 180px;
+}
+.logo-small img {
+	width: 100%;
+	object-fit: contain;
+}
 .icons {
 	padding-right: 100px;
 }
@@ -873,7 +883,7 @@ textarea:focus {
 	text-align: left;
 }
 
-/*** Login form ***/
+/*** Login/Register form ***/
 .form-container {
 	background-color: rgba(26, 26, 26, 0.9);
 	color: white;
@@ -928,7 +938,57 @@ textarea:focus {
 	text-align: center;
 }
 
-/* Footer */
+/*** Admin Dashboard ***/
+.admin-dashboard {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.sidebar-container {
+	background-color: white;
+	position: relative;
+}
+.back-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.dashboard-container {
+	background-color: #f5f5fc;
+}
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/*** Footer ***/
 footer {
 	height: 40vh;
 	width: 100%;
@@ -1045,8 +1105,6 @@ footer {
 }
 /* Tablet */
 @media only screen and (max-width: 768px) {
-	.content-standard {
-	}
 	.hide-tablet {
 		display: none;
 	}
@@ -1064,6 +1122,7 @@ footer {
 		justify-content: center;
 		text-align: center;
 	}
+
 	.logo {
 		padding-left: 20px;
 	}

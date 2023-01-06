@@ -62,8 +62,8 @@ a {
 a {
 	text-decoration: none;
 }
-/* Button styling */
 
+/* Button styling */
 .btn {
 	text-decoration: none;
 	font-size: 1.1rem;
@@ -79,9 +79,6 @@ a {
 }
 .full-btn:hover {
 	background-color: #ff9875;
-}
-
-.submit-btn {
 }
 
 .corner-btn {
@@ -211,6 +208,10 @@ a {
 .position-relative {
 	position: relative;
 }
+.position-absolute {
+	position: absolute;
+}
+
 .show-tablet {
 	display: none;
 }
@@ -440,81 +441,6 @@ body {
 	min-height: 100vh;
 	overflow-x: hidden !important;
 }
-/*Floating shapes*/
-.circle-shape {
-	border-radius: 50%;
-}
-.rectangle-shape {
-	border-radius: 3px;
-}
-.circle-shape,
-.rectangle-shape {
-	content: "";
-	border: 4px solid;
-	border-bottom-color: #ef6d9f;
-	border-right-color: #ef6d9f;
-	border-top-color: #ff9cb2;
-	border-left-color: #ff9cb2;
-	position: absolute;
-	left: 0;
-	top: 40%;
-	margin: auto;
-}
-.rectangle-shape.small {
-	left: 10%;
-	bottom: 50%;
-}
-.circle-shape.large {
-	left: 15%;
-	right: 0;
-	bottom: 0;
-	opacity: 0.5;
-}
-
-.circle-shape.large,
-.rectangle-shape.small {
-	width: 35px;
-	height: 35px;
-	animation: animationframesthree 35s alternate infinite linear;
-}
-
-.rectangle-shape.very-small,
-.rectangle-shape.medium,
-.rectangle-shape.large {
-	display: block;
-}
-.rectangle-shape.very-small {
-	left: 50%;
-}
-.rectangle-shape.very-small {
-	border-width: 3px;
-	width: 15px;
-	height: 15px;
-	animation: animationframestwo 30s alternate infinite linear;
-}
-.rectangle-shape.medium {
-	left: auto;
-	right: 10%;
-	top: 10%;
-	opacity: 0.5;
-}
-.rectangle-shape.medium {
-	width: 30px;
-	height: 30px;
-	animation: animationframestwo 35s alternate infinite linear;
-}
-
-.rectangle-shape.large {
-	top: auto;
-	left: 35%;
-	bottom: 10%;
-}
-.rectangle-shape.large {
-	width: 40px;
-	height: 40px;
-	animation: animationframesthree 35s alternate infinite linear;
-}
-/*Floating shapes END*/
 
 /*** Navigation ***/
 .navigation {
@@ -645,6 +571,81 @@ nav p {
 	width: 50vw;
 	font-size: 1em;
 }
+/*Floating shapes*/
+.circle-shape {
+	border-radius: 50%;
+}
+.rectangle-shape {
+	border-radius: 3px;
+}
+.circle-shape,
+.rectangle-shape {
+	content: "";
+	border: 4px solid;
+	border-bottom-color: #ef6d9f;
+	border-right-color: #ef6d9f;
+	border-top-color: #ff9cb2;
+	border-left-color: #ff9cb2;
+	position: absolute;
+	left: 0;
+	top: 40%;
+	margin: auto;
+}
+.rectangle-shape.small {
+	left: 10%;
+	bottom: 50%;
+}
+.circle-shape.large {
+	left: 15%;
+	right: 0;
+	bottom: 0;
+	opacity: 0.5;
+}
+
+.circle-shape.large,
+.rectangle-shape.small {
+	width: 35px;
+	height: 35px;
+	animation: animationframesthree 35s alternate infinite linear;
+}
+
+.rectangle-shape.very-small,
+.rectangle-shape.medium,
+.rectangle-shape.large {
+	display: block;
+}
+.rectangle-shape.very-small {
+	left: 50%;
+}
+.rectangle-shape.very-small {
+	border-width: 3px;
+	width: 15px;
+	height: 15px;
+	animation: animationframestwo 30s alternate infinite linear;
+}
+.rectangle-shape.medium {
+	left: auto;
+	right: 10%;
+	top: 10%;
+	opacity: 0.5;
+}
+.rectangle-shape.medium {
+	width: 30px;
+	height: 30px;
+	animation: animationframestwo 35s alternate infinite linear;
+}
+
+.rectangle-shape.large {
+	top: auto;
+	left: 35%;
+	bottom: 10%;
+}
+.rectangle-shape.large {
+	width: 40px;
+	height: 40px;
+	animation: animationframesthree 35s alternate infinite linear;
+}
+/*Floating shapes END*/
 
 /*** USP section ***/
 .USP {
@@ -827,7 +828,7 @@ nav p {
 	/*Pink line over heading*/
 	left: 48%;
 }
-
+/*** Forms ***/
 input,
 textarea {
 	text-transform: none;
@@ -836,14 +837,20 @@ textarea {
 	font-family: "Lato", sans-serif;
 	font-size: 1rem;
 }
+
+input:focus,
+textarea:focus {
+	outline-color: #ff9cb2;
+}
+/* Contact form */
 .contact-form {
 	width: 80%;
 	transition: all 0.3s linear;
 }
 
-.name,
-.email,
-.message {
+.contact-form .name,
+.contact-form .email,
+.contact-form .message {
 	display: flex;
 	box-shadow: 1px 6px 10px 3px rgb(26 26 26 / 7%);
 	border-top-right-radius: 25px;
@@ -853,8 +860,8 @@ textarea {
 	position: relative;
 	margin-top: 20px;
 }
-input,
-textarea {
+.contact-form input,
+.contact-form textarea {
 	display: inline-block;
 	border: none;
 	padding: 20px;
@@ -863,12 +870,48 @@ textarea {
 	text-align: left;
 }
 
-input:focus,
-textarea:focus {
-	outline-color: #ff9cb2;
+/*** Login form ***/
+.login-container {
+	background-color: rgba(26, 26, 26, 0.9);
+	color: white;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	padding: 20px 10px;
 }
-/* Footer */
 
+.login-form {
+	padding: 20px;
+	position: relative;
+}
+.login-popup-close {
+	position: absolute;
+	right: 10px;
+	top: -5px;
+}
+
+.login-form input,
+.login-form textarea {
+	display: inline-block;
+	border: none;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.username i {
+	left: 4%;
+	top: 35%;
+	font-size: 1rem;
+}
+
+.password i {
+	left: 4%;
+	top: 12%;
+	font-size: 1rem;
+}
+
+/* Footer */
 footer {
 	height: 40vh;
 	width: 100%;
@@ -892,6 +935,7 @@ footer {
 .sm-icons > i:hover {
 	color: #ef6d9f;
 }
+
 /*
 
 

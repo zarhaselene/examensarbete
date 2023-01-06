@@ -44,7 +44,32 @@ class Template
 
                     <!-- If not logged in -->
                     <?php if (!$is_logged_in) : ?>
-                        <div class="login"><a href="/exa/pages/login.php" class="color-white"><i class="icon fa-solid fa-user color-white"></i></a></div>
+                        <div class="login" onclick="openLoginForm()">
+                            <i class="icon fa-solid fa-user color-white"></i>
+                        </div>
+                        <div class="login-container" id="loginForm">
+                            <form action="/exa/scripts/post-login.php" method="post" class="login-form">
+                                <button type="button" class="login-popup-close reset-btn-styling" onclick="closeLoginForm()">
+                                    <i class="p-z icon fa-solid fa-xmark color-white"></i>
+                                </button>
+
+                                <div class="username position-relative display-flex direction-column">
+                                    <input type="text" name="username" placeholder="Username..">
+                                    <i class="fa fa-user fa-lg color-pink position-absolute"></i>
+                                    <br>
+                                </div>
+                                <div class="password position-relative display-flex direction-column ">
+                                    <input type="password" name="password" placeholder="Password..">
+                                    <i class="fa-solid fa-lock color-pink position-absolute"></i>
+                                    <br>
+                                    <button type="submit" class="btn full-btn m-z">Login</button>
+                                </div>
+                                <div class="reg-link p-t-2">
+                                    <p> Don't have an account? Register <a href="/exa/pages/register.php" class="color-pink"> here</a></p>
+                                </div>
+                            </form>
+                        </div>
+
                     <?php endif; ?>
 
                     <!-- If logged in -->

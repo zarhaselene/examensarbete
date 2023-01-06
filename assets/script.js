@@ -26,10 +26,20 @@ $(window).scroll(function () {
 	}
 });
 
+/* Login form */
 function openLoginForm() {
 	document.getElementById("loginForm").style.display = "block";
 }
-
 function closeLoginForm() {
 	document.getElementById("loginForm").style.display = "none";
+}
+
+/* Register form */
+function openRegisterForm() {
+	document.getElementById("registerForm").style.display = "block";
+	document.getElementById("loginForm").style.display = "none";
+}
+function closeRegisterForm() {
+	document.getElementById("registerForm").style.display = "none";
+	document.getElementById("loginForm").style.display = "block";
 }

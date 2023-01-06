@@ -215,6 +215,9 @@ a {
 .show-tablet {
 	display: none;
 }
+.text-underline {
+	text-decoration: underline;
+}
 .text-uppercase {
 	text-transform: uppercase;
 }
@@ -871,27 +874,28 @@ textarea:focus {
 }
 
 /*** Login form ***/
-.login-container {
+.form-container {
 	background-color: rgba(26, 26, 26, 0.9);
 	color: white;
 	position: absolute;
 	top: 100%;
 	right: 0;
 	padding: 20px 10px;
+	width: 320px;
 }
 
-.login-form {
+.form {
 	padding: 20px;
 	position: relative;
 }
-.login-popup-close {
+.popup-close {
 	position: absolute;
 	right: 10px;
 	top: -5px;
 }
 
-.login-form input,
-.login-form textarea {
+.form input,
+.form textarea {
 	display: inline-block;
 	border: none;
 	padding: 10px;
@@ -909,6 +913,19 @@ textarea:focus {
 	left: 4%;
 	top: 12%;
 	font-size: 1rem;
+}
+
+.reg-link span {
+	cursor: pointer;
+}
+#success-msg {
+	color: #ff9875;
+	text-align: center;
+	padding-top: 10px;
+}
+#invalid-credentials {
+	color: #ff9875;
+	text-align: center;
 }
 
 /* Footer */

@@ -25,12 +25,14 @@ if (
         $success = $users_db->create($user);
     }
 } else {
-    die('Invalid input');
+    header('Location: /exa/index.php?error=invalid_register');
+    die();
 }
 
 // felmeddelande 
 if ($success) {
-    header("Location: /exa/pages/login.php?register=success");
+    header("Location: /exa/index.php?register=success");
 } else {
-    die('Error saving user');
+    header('Location: /exa/index.php?error=invalid_register');
+    die();
 }

@@ -6,14 +6,18 @@ if (isset($_GET['register']) && $_GET['register'] == 'success') {
     echo '<h2 id="success-msg">User created, please log in!</h2>';
 }
 ?>
+
 <?php
 if (isset($_GET['error']) && $_GET['error'] == 'invalid_credentials') : ?>
     <br>
     <p class="invalid-credentials">Invalid username or password!</p>
 <?php endif; ?>
 
-<div class="login-container" style="padding-top:500px">
-    <form action="/exa/scripts/post-login.php" method="post">
+
+
+
+<div class="login-container display-flex align-items-center justify-center">
+    <form action="/exa/scripts/post-login.php" method="post" class="login-form">
         <div class="username">
             <label for="username">Username</label>
             <input type="text" name="username" placeholder="Username.."><br>

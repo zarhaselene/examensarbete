@@ -9,11 +9,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         session_start();
         $_SESSION['user'] = $user;
 
-        header('Location: /exa');
+        header('Location: /exa/index.php');
     } else {
-        header('Location: /exa/pages/login.php?error=invalid_credentials');
+        header('Location: /exa/index.php?error=invalid_credentials');
         die();
     }
 } else {
-    die('Invalid input');
+    header('Location: /exa/index.php?error=invalid_credentials');
+    die();
 }

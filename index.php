@@ -11,6 +11,8 @@ $products = $products_db->get_all();
 
 <?php
 Template::header('Matley sound');
+Template::navbar();
+
 ?>
 <!-- Hero section -->
 <section class="hero">
@@ -456,6 +458,7 @@ Template::header('Matley sound');
                 <div class="name">
                     <input type="text" name="name" placeholder="Your name"><br>
                 </div>
+
                 <div class="email">
                     <input type="email" name="email" placeholder="Your email address"> <br>
                 </div>

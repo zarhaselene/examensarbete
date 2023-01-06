@@ -6,12 +6,6 @@ class Template
 {
     public static function header($title)
     {
-        $is_logged_in = isset($_SESSION['user']);
-        $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
-        $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
-
-        $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-
 ?>
 
         <!DOCTYPE html>
@@ -37,6 +31,16 @@ class Template
         </head>
 
         <body>
+        <?php
+    }
+    public static function navbar()
+    {
+        $is_logged_in = isset($_SESSION['user']);
+        $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+        $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
+
+        $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+        ?>
             <nav class="navigation row display-flex p-v-2">
                 <div class="logo col-4 col-12-tablet display-flex align-items-center">
                     <a href="/exa/index.php"> <img src="/exa/assets/img/logos/logo.png" alt="logo"></a>
@@ -136,9 +140,9 @@ class Template
                 </div>
 
             </nav>
+
         <?php
     }
-
     public static function footer()
     { ?>
 

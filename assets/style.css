@@ -186,7 +186,7 @@ a {
 
 .row {
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	width: 100%;
 	min-height: 100%;
 	flex-direction: row;
@@ -947,7 +947,70 @@ textarea:focus {
 .sidebar-container {
 	background-color: white;
 	position: relative;
+	width: 20%;
 }
+.sidebar {
+	position: relative;
+	width: 100%;
+	margin-top: 100px;
+}
+.sidebar a {
+	width: 100%;
+	padding: 15px;
+	margin-top: 10px;
+	color: rgb(167, 167, 167);
+	font-size: 1.1rem;
+}
+.sidebar a:hover {
+	border-right: 3px solid #ef6d9f;
+	color: #1a1a1a;
+	font-weight: bold;
+}
+.dashboard-icon:before {
+	content: "\f0db";
+	font-family: FontAwesome;
+	color: rgb(167, 167, 167);
+	font-size: 1.1rem;
+	padding-right: 20px;
+}
+.orders-icon:before {
+	content: "\f466";
+	font-family: FontAwesome;
+	color: rgb(167, 167, 167);
+	font-size: 1.1rem;
+	padding-right: 20px;
+}
+.users-icon:before {
+	content: "\f007";
+	font-family: FontAwesome;
+	color: rgb(167, 167, 167);
+	font-size: 1.1rem;
+	padding-right: 20px;
+}
+.products-icon:before {
+	content: "\f025";
+	font-family: FontAwesome;
+	color: rgb(167, 167, 167);
+	font-size: 1.1rem;
+	padding-right: 20px;
+}
+.messages-icon:before {
+	content: "\f27a";
+	font-family: FontAwesome;
+	color: rgb(167, 167, 167);
+	font-size: 1.1rem;
+	padding-right: 20px;
+}
+/* .sidebar span {
+	visibility: hidden;
+} */
+
+.sidebar i {
+	font-size: 1.3rem;
+	color: #ff9cb2;
+	margin-right: 30px;
+}
+
 .back-btn {
 	position: absolute;
 	top: 0;
@@ -956,6 +1019,7 @@ textarea:focus {
 
 .dashboard-container {
 	background-color: #f5f5fc;
+	width: 80%;
 }
 /*
 
@@ -1212,6 +1276,9 @@ footer {
 	.contact-form {
 		width: 90%;
 	}
+	.sidebar-container {
+		width: 30%;
+	}
 }
 /* Small tablet */
 @media only screen and (max-width: 555px) {
@@ -1221,6 +1288,9 @@ footer {
 	}
 	.hero-text {
 		padding: 30px;
+	}
+	.sidebar-container {
+		width: 40%;
 	}
 	footer {
 		background: none;
@@ -1252,6 +1322,12 @@ footer {
 	}
 	.contact-form {
 		width: 100%;
+	}
+	.sidebar-container {
+		width: 10%;
+	}
+	.dashboard-container {
+		width: 90%;
 	}
 	footer .content-large {
 		flex-direction: column;

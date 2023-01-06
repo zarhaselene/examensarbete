@@ -148,7 +148,7 @@ class Template
     public static function sidebar()
     { ?>
 
-            <div class="sidebar-container col-4 display-flex direction-column align-items-center">
+            <div class="sidebar-container display-flex direction-column align-items-center">
 
                 <div class="back-btn"><a href="/exa/index.php" class="color-black">
                         <i class="fa-solid fa-chevron-left icon"></i>
@@ -158,12 +158,12 @@ class Template
                 </div>
                 <a href="/exa/index.php"></a>
 
-                <div class="sidebar display-flex direction-column align-items-center">
-                    <a href="/exa/pages/admin.php"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
-                    <a href="/exa/pages/admin.php"><i class="fa-solid fa-box"></i> Orders</a>
-                    <a href="/exa/pages/admin.php"><i class="fa fa-fw fa-user"></i> Users</a>
-                    <a href="/exa/pages/admin.php"><i class="fa-solid fa-headphones"></i> Products</a>
-                    <a href="/exa/pages/admin.php"><i class="fa fa-fw fa-envelope"></i> Messages</a>
+                <div class="sidebar display-flex direction-column">
+                    <a href="/exa/pages/admin.php" class="dashboard-icon"><span>Dashboard</span></a>
+                    <a href="/exa/pages/admin.php" class="orders-icon"><span>Orders</span></a>
+                    <a href="/exa/pages/admin.php" class="users-icon"><span>Users</span></a>
+                    <a href="/exa/pages/admin.php" class="products-icon"><span>Products</span></a>
+                    <a href="/exa/pages/admin.php" class="messages-icon"><span>Messages</span></a>
                 </div>
 
             </div>

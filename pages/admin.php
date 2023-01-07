@@ -33,12 +33,15 @@ Template::header("Admin Dashboard");
 ?>
 
 <section class="admin-dashboard">
-    <div class="admin row">
-        <?php
-        Template::sidebar();
+    <?php
+    Template::sidebar();
 
-        ?>
-        <div class="dashboard-container col-20"></div>
+    ?>
+    <div class="admin-dashboard">
+        <div class="admin-dashboard-container">
+            <h2 class="heading">Dashboard</h2>
+
+        </div>
     </div>
 
 </section>

@@ -25,8 +25,10 @@ class Template
 
             <!-- Font Awesome -->
             <script src="https://kit.fontawesome.com/6310c3f0d1.js" crossorigin="anonymous"></script>
+            <!-- Boxicons CSS -->
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-            <!-- Link Swiper's CSS -->
+            <!-- Swiper's CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
         </head>
 
@@ -144,31 +146,56 @@ class Template
         <?php
     }
 
-
     public static function sidebar()
-    { ?>
 
-            <div class="sidebar-container display-flex direction-column align-items-center">
+    {
+        $is_logged_in = isset($_SESSION['user']);
+        $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+        ?>
+            <div class="sidebar open">
 
-                <div class="back-btn"><a href="/exa/index.php" class="color-black">
-                        <i class="fa-solid fa-chevron-left icon"></i>
-                    </a></div>
-                <div class="logo-small p-t-6 p-h-1 hide-tablet">
-                    <a href="/exa/index.php"> <img src="/exa/assets/img/logos/logo_black.png" alt="logo"></a>
-                </div>
-                <a href="/exa/index.php"></a>
+                <i class='bx bx-menu' id="open-btn"></i>
 
-                <div class="sidebar display-flex direction-column">
-                    <a href="/exa/pages/admin.php" class="dashboard-icon sidebar-item"><span>Dashboard</span></a>
-                    <a href="/exa/pages/admin-orders.php" class="orders-icon sidebar-item"><span>Orders</span></a>
-                    <a href="/exa/pages/admin.php" class="users-icon sidebar-item"><span>Users</span></a>
-                    <a href="/exa/pages/admin.php" class="products-icon sidebar-item"><span>Products</span></a>
-                    <a href="/exa/pages/admin.php" class="messages-icon sidebar-item"><span>Messages</span></a>
+                <ul class="sidebar-list">
+                    <li>
+                        <a href="/exa/pages/admin.php" class="sidebar-list-item">
+                            <i class='bx bx-grid-alt'></i>
+                            <span class="sb-links-name">Dashboard</span>
+                        </a>
+                        <span class="tooltip">Dashboard</span>
+                    </li>
+                    <li>
+                        <a href="/exa/pages/admin-orders.php" class="sidebar-list-item">
+                            <i class='bx bx-cart-alt'></i>
+                            <span class="sb-links-name">Orders</span>
+                        </a>
+                        <span class="tooltip">Orders</span>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-list-item">
+                            <i class='bx bx-user'></i>
+                            <span class="sb-links-name">Users</span>
+                        </a>
+                        <span class="tooltip">Users</span>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-list-item">
+                            <i class='bx bx-chat'></i>
+                            <span class="sb-links-name">Messages</span>
+                        </a>
+                        <span class="tooltip">Messages</span>
+                    </li>
 
-
-                </div>
-
+                    <li class="profile">
+                        <div class="profile-image">Z</div> <!-- Fix so the first letter of username changes -->
+                        <div class="profile-details">
+                            <div class="name"><?= $logged_in_user->username ?></div>
+                        </div>
+                        <a href="/exa/index.php"><i class='bx bx-log-out' id="log_out"></i></a>
+                    </li>
+                </ul>
             </div>
+
         <?php
     }
 

@@ -1,3 +1,12 @@
+// Scroll
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 10) {
+		$(".navigation").addClass("show-nav");
+	} else {
+		$(".navigation").removeClass("show-nav");
+	}
+});
+
 // Sliders
 const swiperContainers = document.querySelectorAll(".slider");
 
@@ -33,15 +42,6 @@ function menuBtnChange() {
 		closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the icon class
 	}
 }
-
-// Scroll
-$(window).scroll(function () {
-	if ($(this).scrollTop() > 10) {
-		$(".navigation").addClass("show");
-	} else {
-		$(".navigation").removeClass("show");
-	}
-});
 
 /* Login form */
 function openLoginForm() {

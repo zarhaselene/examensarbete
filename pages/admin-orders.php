@@ -40,7 +40,7 @@ Template::header("Admin Dashboard");
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
             <h2 class="heading">Orders</h2>
-            <div class="order-tracking-container">
+            <div class="admin-top-container">
                 <div class="tracking">
                     <h1 class="color-pink"><?= $order_count ?></h1>
                     <p>Total Orders</p>

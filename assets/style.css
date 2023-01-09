@@ -959,9 +959,7 @@ textarea:focus {
 	color: #ff9875;
 	text-align: center;
 }
-
-/*** Admin Dashboard ***/
-
+/*** Sidebar ***/
 .sidebar {
 	position: fixed;
 	left: 0;
@@ -1154,6 +1152,20 @@ textarea:focus {
 	background: none;
 }
 
+/*** Admin Dashboard ***/
+.admin-top-container {
+	height: 120px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px 100px;
+	box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
+	-webkit-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
+	-moz-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
 .admin-dashboard {
 	position: relative;
 	background: #f5f5fc;
@@ -1212,20 +1224,38 @@ textarea:focus {
 	object-fit: cover;
 }
 /*** Products ***/
-
-/*** Orders ***/
-.order-tracking-container {
-	height: 120px;
-	background-color: white;
-	border-radius: 10px;
-	padding: 30px 100px;
-	box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
-	-webkit-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
-	-moz-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
-
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+.create-form {
+	display: flex;
 }
+.create-form input,
+.create-form textarea {
+	padding: 10px;
+	border-radius: 12px;
+	border: none;
+	height: 60px;
+	margin: 0 10px;
+	box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+	-webkit-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+	-moz-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+}
+.create-form input[type="submit"] {
+	color: white;
+	background-color: #ef6d9f;
+	transition: 0.5s;
+	border: none;
+	text-decoration: none;
+	font-size: 1.1rem;
+	padding: 15px 30px;
+	display: inline-block;
+	cursor: pointer;
+}
+.create-form input[type="submit"]:hover {
+	background-color: #ff9875;
+}
+.create-form input[type="file"] {
+	padding-top: 19px;
+}
+/*** Orders ***/
 .tracking {
 	border: 2px solid pink;
 	display: flex;

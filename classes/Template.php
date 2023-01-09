@@ -179,7 +179,7 @@ class Template
                         <span class="tooltip">Orders</span>
                     </li>
                     <li>
-                        <a href="#" class="sidebar-list-item">
+                        <a href="/exa/pages/admin-users.php" class="sidebar-list-item">
                             <i class='bx bx-user'></i>
                             <span class="sb-links-name">Users</span>
                         </a>

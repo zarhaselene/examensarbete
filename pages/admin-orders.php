@@ -25,20 +25,48 @@ $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
 
-
+$order_count = isset($_SESSION['order']) ? count($_SESSION['order']) : 0;
 
 Template::header("Admin Dashboard");
 
 
 ?>
 
-<section class="admin-dashboard">
-    <div class="admin row">
-        <?php
-        Template::sidebar();
+<section class="dashboard">
+    <?php
+    Template::sidebar();
 
-        ?>
-        <div class="dashboard-container col-20"></div>
+    ?>
+    <div class="admin-dashboard display-flex align-items-center justify-center">
+        <div class="admin-container">
+            <h2 class="heading">Orders</h2>
+            <div class="order-tracking-container">
+                <div class="tracking">
+                    <h1 class="color-pink"><?= $order_count ?></h1>
+                    <p>Total Orders</p>
+                </div>
+                <div class="tracking">
+                    <h1 class="color-green">hej</h1>
+                    <p>Total Delivered</p>
+                </div>
+                <div class="tracking">
+                    <h1 class="color-blue">hej</h1>
+                    <p>Pending Orders</p>
+                </div>
+                <div class="tracking">
+                    <h1 class="color-red">hej</h1>
+                    <p>Orders Hold</p>
+                </div>
+            </div>
+            <div class="orders">
+                <?php foreach ($orders as $order) : ?>
+                    <div>
+
+                    </div>
+
+                <?php endforeach; ?>
+            </div>
+        </div>
     </div>
 
 </section>

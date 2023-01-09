@@ -163,6 +163,13 @@ class Template
                             <span class="sb-links-name">Dashboard</span>
                         </a>
                         <span class="tooltip">Dashboard</span>
+                    <li>
+                        <a href="/exa/pages/admin-products.php" class="sidebar-list-item">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <span class="sb-links-name">Products</span>
+                        </a>
+                        <span class="tooltip">Products</span>
+                    </li>
                     </li>
                     <li>
                         <a href="/exa/pages/admin-orders.php" class="sidebar-list-item">

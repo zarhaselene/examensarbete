@@ -25,6 +25,7 @@ $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
 
+$order_count = isset($_SESSION['order']) ? count($_SESSION['order']) : 0;
 
 
 Template::header("Admin Dashboard");
@@ -32,15 +33,41 @@ Template::header("Admin Dashboard");
 
 ?>
 
-<section class="admin-dashboard">
+<section class="dashboard">
     <?php
     Template::sidebar();
 
     ?>
-    <div class="admin-dashboard">
-        <div class="admin-dashboard-container">
+    <div class="admin-dashboard display-flex align-items-center justify-center">
+        <div class="admin-container">
             <h2 class="heading">Dashboard</h2>
+            <div class="row">
+                <div class="col-14">
+                    <div class="welcome">
+                        <div class="welcome-text color-white">
+                            <h2 class="m-b-1">Hello <?= $logged_in_user->username ?>!</h2>
 
+                            <?php if ($order_count === 0) : ?>
+                                <p>There is no new orders yet. &#128532; </p>
+
+                            <?php endif; ?>
+                            <?php if ($order_count >= 1) : ?>
+                                <p>
+                                    You have <?= $order_count ?> new orders. It is a lot of work for today!
+                                    So let's start. &#129395;
+                                </p>
+                                <a href="/exa/pages/admin-orders.php" class="text-underline color-white">Manage orders</a>
+
+                            <?php endif; ?>
+                        </div>
+                        <div class="welcome-image">
+                            <img src="/exa/assets/img/illustrations/pink_girl.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-10"></div>
+            </div>
         </div>
     </div>
 

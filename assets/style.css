@@ -1207,6 +1207,7 @@ textarea:focus {
 }
 .welcome-text p {
 	font-size: 1.1rem;
+	margin-bottom: 15px;
 }
 .welcome {
 	position: relative;
@@ -1300,34 +1301,6 @@ footer {
 }
 
 /*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 */
 

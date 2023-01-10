@@ -18,7 +18,7 @@ if (isset($_POST['product-id'])) {
     if ($product) {
         $_SESSION['cart'][] = $product;
         // Redirect to product page
-        header('Location: /exa/pages/products.php');
+        header('Location: /exa/index.php');
         die();
     }
 } else {

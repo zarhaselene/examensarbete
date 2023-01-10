@@ -25,7 +25,7 @@ $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
 
-$order_count = isset($_SESSION['order']) ? count($_SESSION['order']) : 0;
+
 
 Template::header("Admin Dashboard");
 
@@ -42,7 +42,7 @@ Template::header("Admin Dashboard");
             <h2 class="heading">Orders</h2>
             <div class="admin-top-container">
                 <div class="tracking">
-                    <h1 class="color-pink"><?= $order_count ?></h1>
+                    <h1 class="color-pink"><?= count($orders) ?></h1>
                     <p>Total Orders</p>
                 </div>
                 <div class="tracking">
@@ -61,7 +61,7 @@ Template::header("Admin Dashboard");
             <div class="orders">
                 <?php foreach ($orders as $order) : ?>
                     <div>
-
+          
                     </div>
 
                 <?php endforeach; ?>

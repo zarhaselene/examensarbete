@@ -30,9 +30,6 @@ $order_id = $orders_db->get_order_by_user_id($orders);
 /*
 TODO
 if user-id(order) is the same as id(user) get username
-
-
-
 */
 
 $hold_orders = [];
@@ -85,7 +82,7 @@ Template::header("Admin Dashboard");
                 </div>
             </div>
             <div class="orders">
-                <table>
+                <table class="m-t-50" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Order ID</th>
@@ -93,6 +90,7 @@ Template::header("Admin Dashboard");
                             <th>Order Date</th>
                             <th>Amount</th>
                             <th>Status</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -101,9 +99,14 @@ Template::header("Admin Dashboard");
                                 <td>#<?= $order->id ?></td>
                                 <td>#<?= $order->user_id ?></td>
                                 <td><?= $order->order_date ?></td>
-                                <td>AMOUNT</td>
+                                <td>$</td>
 
-                                <td><?= $order->status ?></td>
+                                <td class="td-status">
+                                    <span><?= $order->status ?></span>
+
+                                </td>
+                                <td><a href=""></a></td>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

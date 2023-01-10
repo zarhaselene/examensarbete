@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
 }
 
 /* Overwrite SwiperJS styles */
@@ -53,15 +54,16 @@ p {
 	line-height: 1.8;
 }
 
-p,
+/* p,
 span,
 label,
 small,
 a,
 button,
-li {
+li,
+table {
 	font-family: "Lato", sans-serif;
-}
+} */
 a {
 	text-decoration: none;
 }
@@ -396,6 +398,7 @@ z = 0
 .m-b-6 {
 	margin-bottom: 40px;
 }
+
 /* Padding */
 .p-l-1 {
 	padding-left: 10px;
@@ -420,6 +423,9 @@ z = 0
 }
 
 /* Extra */
+.m-t-50 {
+	margin-top: 50px;
+}
 .p-b-80 {
 	padding-bottom: 80px;
 }
@@ -1271,6 +1277,51 @@ textarea:focus {
 .tracking h1 {
 	margin-bottom: 10px;
 }
+
+/*Tables*/
+table {
+	width: 100%;
+	border: 3px solid #f9f9fb;
+	border-radius: 10px !important;
+	background: #f9f9fb;
+	box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+	-webkit-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+	-moz-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+}
+
+thead {
+	text-align: left;
+	border-collapse: collapse;
+}
+
+th {
+	padding: 20px 10px;
+	color: #1a1a1a;
+}
+
+td {
+	padding: 15px;
+}
+
+tbody tr:nth-child(even) {
+	background: #f9f9fb;
+}
+tbody tr:nth-child(odd) {
+	background: white;
+}
+
+.td-status {
+	width: 30px;
+}
+
+.td-status span {
+	color: #fe9aae;
+	font-weight: bold;
+	background-color: #ffdde4;
+	border-radius: 50px;
+	padding: 10px 15px;
+}
+
 /*** Users ***/
 
 /*** Messages ***/

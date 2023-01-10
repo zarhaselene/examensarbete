@@ -17,7 +17,6 @@ if (!$is_admin) {
     die('Access denied');
 }
 
-
 $products_db = new ProductsDatabase();
 $users_db = new UsersDatabase();
 $orders_db = new OrdersDatabase();
@@ -26,27 +25,34 @@ $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
 
+$order_id = $orders_db->get_order_by_user_id($orders);
+
+/*
+TODO
+if user-id(order) is the same as id(user) get username
+
+
+
+*/
 
 $hold_orders = [];
+$delivered_orders = [];
+$pending_orders = [];
+
 foreach ($orders as $order) {
     if ($order->status == 'Hold') {
         array_push($hold_orders, $order);
-    }
-}
-
-$delivered_orders = [];
-foreach ($orders as $order) {
-    if ($order->status == 'Delivered') {
+    } elseif ($order->status == 'Delivered') {
         array_push($delivered_orders, $order);
-    }
-}
-
-$pending_orders = [];
-foreach ($orders as $order) {
-    if ($order->status == 'Pending') {
+    } elseif ($order->status == 'Pending') {
         array_push($pending_orders, $order);
     }
 }
+
+
+
+
+
 
 Template::header("Admin Dashboard");
 
@@ -79,15 +85,30 @@ Template::header("Admin Dashboard");
                 </div>
             </div>
             <div class="orders">
-                <?php foreach ($orders as $order) : ?>
-                    <ul>
-                        <li>
-                            <a href="#">Order #<?= $order->id ?> [<?= $order->status ?>]</a>
-                        </li>
-                    </ul>
-                <?php endforeach; ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer ID</th>
+                            <th>Order Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($orders as $order) : ?>
+                            <tr>
+                                <td>#<?= $order->id ?></td>
+                                <td>#<?= $order->user_id ?></td>
+                                <td><?= $order->order_date ?></td>
+                                <td>AMOUNT</td>
+
+                                <td><?= $order->status ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
 </section>

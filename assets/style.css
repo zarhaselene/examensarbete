@@ -54,7 +54,7 @@ p {
 	line-height: 1.8;
 }
 
-/* p,
+p,
 span,
 label,
 small,
@@ -63,7 +63,7 @@ button,
 li,
 table {
 	font-family: "Lato", sans-serif;
-} */
+}
 a {
 	text-decoration: none;
 }
@@ -1194,7 +1194,7 @@ textarea:focus {
 	margin-bottom: 50px;
 }
 .admin-container {
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 	width: 80vw;
 	height: 90vh;
 }
@@ -1264,7 +1264,6 @@ textarea:focus {
 }
 /*** Orders ***/
 .tracking {
-	border: 2px solid pink;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -1284,13 +1283,13 @@ table {
 	border: 3px solid #f9f9fb;
 	border-radius: 10px !important;
 	background: #f9f9fb;
-	box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
-	-webkit-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
-	-moz-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.03);
+	box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.02);
+	-webkit-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.02);
+	-moz-box-shadow: 1px 1px 20px 6px rgba(0, 0, 0, 0.02);
+	text-align: left;
 }
 
 thead {
-	text-align: left;
 	border-collapse: collapse;
 }
 
@@ -1309,12 +1308,18 @@ tbody tr:nth-child(even) {
 tbody tr:nth-child(odd) {
 	background: white;
 }
+.th-edit,
+.td-edit,
+.th-status,
+.td-status {
+	text-align: center;
+}
 
 .td-status {
 	width: 30px;
 }
 
-.td-status span {
+.td-status .red {
 	color: #fe9aae;
 	font-weight: bold;
 	background-color: #ffdde4;
@@ -1322,6 +1327,12 @@ tbody tr:nth-child(odd) {
 	padding: 10px 15px;
 }
 
+.td-edit {
+	font-size: 1.3rem;
+}
+.td-edit i:hover {
+	color: #fe9aae;
+}
 /*** Users ***/
 
 /*** Messages ***/

@@ -89,8 +89,8 @@ Template::header("Admin Dashboard");
                             <th>Customer ID</th>
                             <th>Order Date</th>
                             <th>Amount</th>
-                            <th>Status</th>
-                            <th>Edit</th>
+                            <th class="th-status">Status</th>
+                            <th class="th-edit">Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -100,13 +100,8 @@ Template::header("Admin Dashboard");
                                 <td>#<?= $order->user_id ?></td>
                                 <td><?= $order->order_date ?></td>
                                 <td>$</td>
-
-                                <td class="td-status">
-                                    <span><?= $order->status ?></span>
-
-                                </td>
-                                <td><a href=""></a></td>
-
+                                <td class="td-status"><span class="red"><?= $order->status ?></span></td>
+                                <td class="td-edit"><a href=""><i class='bx bxs-edit color-grey'></i></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

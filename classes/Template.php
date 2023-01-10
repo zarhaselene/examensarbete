@@ -151,6 +151,11 @@ class Template
     {
         $is_logged_in = isset($_SESSION['user']);
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+
+        //Get first letter of username
+        $username = $logged_in_user->username;
+        $first_letter = substr($username, 0, 1);
+
         ?>
             <div class="sidebar open">
 
@@ -194,7 +199,9 @@ class Template
                     </li>
 
                     <li class="profile">
-                        <div class="profile-image">Z</div> <!-- Fix so the first letter of username changes -->
+                        <div class="profile-image text-uppercase">
+                            <?= $first_letter  ?>
+                        </div>
                         <div class="profile-details">
                             <div class="name"><?= $logged_in_user->username ?></div>
                         </div>

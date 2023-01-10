@@ -17,6 +17,7 @@ if (!$is_admin) {
     die('Access denied');
 }
 
+
 $products_db = new ProductsDatabase();
 $users_db = new UsersDatabase();
 $orders_db = new OrdersDatabase();
@@ -24,8 +25,6 @@ $orders_db = new OrdersDatabase();
 $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
-
-
 
 Template::header("Admin Dashboard");
 
@@ -60,9 +59,11 @@ Template::header("Admin Dashboard");
             </div>
             <div class="orders">
                 <?php foreach ($orders as $order) : ?>
-                    <div>
-          
-                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">Order #<?= $order->id ?> [<?= $order->status ?>]</a>
+                        </li>
+                    </ul>
 
                 <?php endforeach; ?>
             </div>

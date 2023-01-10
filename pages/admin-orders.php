@@ -26,8 +26,29 @@ $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
 
-Template::header("Admin Dashboard");
 
+$hold_orders = [];
+foreach ($orders as $order) {
+    if ($order->status == 'Hold') {
+        array_push($hold_orders, $order);
+    }
+}
+
+$delivered_orders = [];
+foreach ($orders as $order) {
+    if ($order->status == 'Delivered') {
+        array_push($delivered_orders, $order);
+    }
+}
+
+$pending_orders = [];
+foreach ($orders as $order) {
+    if ($order->status == 'Pending') {
+        array_push($pending_orders, $order);
+    }
+}
+
+Template::header("Admin Dashboard");
 
 ?>
 
@@ -45,15 +66,15 @@ Template::header("Admin Dashboard");
                     <p>Total Orders</p>
                 </div>
                 <div class="tracking">
-                    <h1 class="color-green">hej</h1>
+                    <h1 class="color-green"><?= count($delivered_orders) ?></h1>
                     <p>Total Delivered</p>
                 </div>
                 <div class="tracking">
-                    <h1 class="color-blue">hej</h1>
+                    <h1 class="color-blue"><?= count($pending_orders) ?></h1>
                     <p>Pending Orders</p>
                 </div>
                 <div class="tracking">
-                    <h1 class="color-red">hej</h1>
+                    <h1 class="color-red"><?= count($hold_orders) ?></h1>
                     <p>Orders Hold</p>
                 </div>
             </div>
@@ -64,7 +85,6 @@ Template::header("Admin Dashboard");
                             <a href="#">Order #<?= $order->id ?> [<?= $order->status ?>]</a>
                         </li>
                     </ul>
-
                 <?php endforeach; ?>
             </div>
         </div>

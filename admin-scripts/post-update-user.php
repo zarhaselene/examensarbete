@@ -18,7 +18,7 @@ if (isset($_POST["role"]) && isset($_POST["id"])) {
     echo "Invalid input";
 }
 if ($success) {
-    header("Location: /exa/pages/admin.php");
+    header("Location: /exa/pages/admin-users.php");
 } else {
     echo "Error updating user to database";
 }

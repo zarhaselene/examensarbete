@@ -31,7 +31,7 @@ if (
 }
 
 if ($success) {
-    header("Location: /exa/pages/admin.php");
+    header("Location: /exa/pages/admin-users.php");
 } else {
     die('Error saving user');
 }

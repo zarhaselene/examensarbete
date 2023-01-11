@@ -19,8 +19,7 @@ if (isset($_POST["id"])) {
 }
 
 if ($success) {
-    header("Location: /exa/pages/admin.php");
+    header("Location: /exa/pages/admin-users.php");
 } else {
-
     echo "Error deleting user";
 }

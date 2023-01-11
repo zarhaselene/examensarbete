@@ -11,7 +11,7 @@ if (isset($_POST['id'])) {
 }
 
 if ($success) {
-    header('Location: /exa/pages/admin.php');
+    header('Location: /exa/pages/admin-products.php');
     die();
 } else {
     die('Error deleting product');

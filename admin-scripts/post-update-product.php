@@ -31,7 +31,7 @@ if (isset($_POST['title']) && isset($_POST['description']) && isset($_POST['pric
 }
 
 if ($success) {
-    header('Location: /exa/pages/admin.php');
+    header('Location: /exa/pages/admin-products.php');
     die();
 } else {
     die('Error updating product');

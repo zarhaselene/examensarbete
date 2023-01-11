@@ -47,6 +47,8 @@ Template::header("Admin Dashboard");
                             <th>Price</th>
                             <!-- <th class="th-status">Status</th> -->
                             <th class="th-edit">Edit</th>
+                            <th class="th-delete">Delete</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -54,10 +56,19 @@ Template::header("Admin Dashboard");
                             <tr>
                                 <td>#<?= $product->id ?></td>
                                 <td><?= $product->title ?></td>
-                                <td><?= $product->description ?></td>
+                                <td>
+                                    <div class="td-desc"> <?= $product->description ?>
+                                    </div>
+                                </td>
                                 <td>$<?= $product->price ?></td>
                                 <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->
-                                <td class="td-edit"><a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>"><i class='bx bxs-edit color-grey'></i></a></td>
+                                <td class="td-edit"><a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>"><i class='bx bxs-edit color-black'></i></a></td>
+                                <td class="td-delete">
+                                    <form action="/exa/admin-scripts/post-delete-product.php" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?= $product->id ?>">
+                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-trash color-black'></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

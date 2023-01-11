@@ -165,7 +165,7 @@ class Template
         ?>
             <div class="sidebar">
 
-                <i class='bx bx-menu' id="open-btn" onclick="toggleSidebar()"></i>
+                <i class='sb-icon bx bx-menu' id="open-btn" onclick="toggleSidebar()"></i>
 
                 <ul class="sidebar-list">
                     <li>

@@ -26,12 +26,21 @@ for (const swiperContainer of swiperContainers) {
 	});
 }
 
-/* Sidebar */
+// Sidebar
 function toggleSidebar() {
 	$(".sidebar").toggleClass("open");
+	menuBtnChange(); //calling the function
+}
+// Function to change sidebar button
+function menuBtnChange() {
+	if ($(".sidebar").hasClass("open")) {
+		$(".sb-icon").addClass("bx-x").removeClass("bx-menu"); //replacing the icon class
+	} else if (!$(".sidebar").hasClass("open")) {
+		$(".sb-icon").removeClass("bx-x").addClass("bx-menu"); //replacing the icon class
+	}
 }
 
-/* Login form */
+// Login form
 function openLoginForm() {
 	$("#loginForm").addClass("active");
 }
@@ -39,7 +48,7 @@ function closeLoginForm() {
 	$("#loginForm").removeClass("active");
 }
 
-/* Register form */
+// Register form
 function openRegisterForm() {
 	$("#registerForm").addClass("active");
 	$("#loginForm").removeClass("active");
@@ -48,20 +57,3 @@ function closeRegisterForm() {
 	$("#registerForm").removeClass("active");
 	$("#loginForm").addClass("active");
 }
-
-// let sidebar = document.querySelector(".sidebar");
-// let closeBtn = document.querySelector("#open-btn");
-
-// closeBtn.addEventListener("click", () => {
-// 	sidebar.classList.add("open");
-// 	menuBtnChange(); //calling the function
-// });
-
-// following are the code to change sidebar button
-// function menuBtnChange() {
-// 	if (sidebar.classList.contains("open")) {
-// 		closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the icon class
-// 	} else {
-// 		closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the icon class
-// 	}
-// }

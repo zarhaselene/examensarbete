@@ -923,6 +923,20 @@ textarea:focus {
 	width: 320px;
 }
 
+#registerForm,
+#loginForm {
+	opacity: 0;
+	pointer-events: none;
+	transform: translateX(20px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#registerForm.active,
+#loginForm.active {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateX(0);
+}
+
 .form {
 	padding: 20px;
 	position: relative;
@@ -1326,7 +1340,9 @@ tbody tr:nth-child(odd) {
 .th-edit,
 .td-edit,
 .th-status,
-.td-status {
+.td-status,
+.td-delete,
+.th-delete {
 	text-align: center;
 }
 
@@ -1344,6 +1360,12 @@ tbody tr:nth-child(odd) {
 
 .td-edit {
 	font-size: 1.3rem;
+}
+.td-delete {
+	font-size: 1.3rem;
+}
+.td-delete i:hover {
+	color: #e7222f;
 }
 .td-edit i:hover {
 	color: #fe9aae;

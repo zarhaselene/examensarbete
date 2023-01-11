@@ -30,6 +30,12 @@ class Template
 
             <!-- Swiper's CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+            <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+            <!-- JS -->
+            <script src="/exa/assets/script.js" defer></script>
+
         </head>
 
         <body>
@@ -157,9 +163,9 @@ class Template
         $first_letter = substr($username, 0, 1);
 
         ?>
-            <div class="sidebar open">
+            <div class="sidebar">
 
-                <i class='bx bx-menu' id="open-btn"></i>
+                <i class='bx bx-menu' id="open-btn" onclick="toggleSidebar()"></i>
 
                 <ul class="sidebar-list">
                     <li>
@@ -233,18 +239,10 @@ class Template
 
                 </div>
 
+                <!-- Swiper JS -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
             </footer>
-
-
-
-            <!-- Swiper JS -->
-            <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-            <!-- jQuery -->
-            <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
-            <!-- JS file -->
-            <script src="/exa/assets/script.js"></script>
-
         </body>
 
         </html>

@@ -1308,9 +1308,10 @@ select {
 	margin-bottom: 10px;
 }
 
-.orders {
+.admin-dashboard .orders,
+.admin-dashboard .products {
 	overflow: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 	height: 650px;
 }
 
@@ -1334,6 +1335,7 @@ thead th {
 	position: sticky;
 	top: 0;
 	background: #f9f9fb;
+	white-space: nowrap;
 }
 
 th {
@@ -1385,9 +1387,17 @@ tbody tr:nth-child(odd) {
 .td-delete i:hover {
 	color: #e7222f;
 }
-.td-edit i,
+.td-edit i:hover,
 .td-save i:hover {
 	color: #fe9aae;
+}
+
+.td-desc {
+	overflow: hidden;
+	overflow-y: auto;
+	height: 60px;
+	padding: 10px 0;
+	width: 100%;
 }
 
 /*** Footer ***/

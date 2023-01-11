@@ -52,15 +52,38 @@ Template::header("Admin Dashboard");
                             <th>Username</th>
                             <th>Role</th>
                             <th class="th-edit">Edit</th>
+                            <th class="th-save">Save changes</th>
+                            <th class="th-delete">Delete</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($users as $user) : ?>
                             <tr>
-                                <td>#<?= $user->id ?></td>
-                                <td><?= $user->username ?></td>
-                                <td><?= $user->role ?></td>
-                                <td class="td-edit"><a href=""><i class='bx bxs-edit color-grey'></i></a></td>
+                                <form action="/exa/admin-scripts/post-update-user.php" method="post">
+                                    <td>#<input type="hidden" name="id" value="<?= $user->id ?>"><?= $user->id ?></td>
+
+                                    <td><?= $user->username ?></td>
+                                    <td><?= $user->role ?></td>
+
+                                    <td class="td-edit th-edit-role">
+                                        <select name="role" id="role">
+                                            <option value="role" selected disabled>Change role</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="customer">Customer</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-save">
+                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>
+                                    </td>
+                                </form>
+                                <td class="td-delete">
+                                    <form action="/exa/admin-scripts/post-delete-user.php" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?= $user->id ?>">
+                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-trash'></i></button>
+                                    </form>
+                                </td>
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

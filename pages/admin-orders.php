@@ -33,23 +33,18 @@ if user-id(order) is the same as id(user) get username
 */
 
 $hold_orders = [];
-$delivered_orders = [];
+$sent_orders = [];
 $pending_orders = [];
 
 foreach ($orders as $order) {
     if ($order->status == 'Hold') {
         array_push($hold_orders, $order);
-    } elseif ($order->status == 'Delivered') {
-        array_push($delivered_orders, $order);
+    } elseif ($order->status == 'Sent') {
+        array_push($sent_orders, $order);
     } elseif ($order->status == 'Pending') {
         array_push($pending_orders, $order);
     }
 }
-
-
-
-
-
 
 Template::header("Admin Dashboard");
 
@@ -69,8 +64,8 @@ Template::header("Admin Dashboard");
                     <p>Total Orders</p>
                 </div>
                 <div class="tracking">
-                    <h1 class="color-green"><?= count($delivered_orders) ?></h1>
-                    <p>Total Delivered</p>
+                    <h1 class="color-green"><?= count($sent_orders) ?></h1>
+                    <p>Total Sent</p>
                 </div>
                 <div class="tracking">
                     <h1 class="color-blue"><?= count($pending_orders) ?></h1>
@@ -90,18 +85,37 @@ Template::header("Admin Dashboard");
                             <th>Order Date</th>
                             <th>Amount</th>
                             <th class="th-status">Status</th>
-                            <th class="th-edit">Edit</th>
+                            <th class="th-edit">Edit Status</th>
+                            <th class="th-save">Save Status</th>
+
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($orders as $order) : ?>
                             <tr>
-                                <td>#<?= $order->id ?></td>
-                                <td>#<?= $order->user_id ?></td>
-                                <td><?= $order->order_date ?></td>
-                                <td>$</td>
-                                <td class="td-status"><span class="red"><?= $order->status ?></span></td>
-                                <td class="td-edit"><a href=""><i class='bx bxs-edit color-grey'></i></a></td>
+                                <form action="/exa/admin-scripts/post-update-order.php" method="post">
+
+                                    <td>#<input type="hidden" name="id" value="<?= $order->id ?>"><?= $order->id ?></td>
+                                    <td>#<input type="hidden" name="id" value="<?= $order->user_id ?>"><?= $order->user_id ?></td>
+                                    <!-- <td><?= $order->order_date ?></td> -->
+                                    <td><input type="hidden" name="id" value="<?= $order->order_date ?>"><?= $order->order_date ?></td>
+
+                                    <td>$</td>
+
+                                    <td class="td-status"><span class="red"><?= $order->status ?></span></td>
+                                    <td class="td-edit th-edit-role">
+                                        <select name="role" id="role">
+                                            <option value="role" selected disabled>Change status</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="Sent">Sent</option>
+                                            <option value="hold">Hold</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-save">
+                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>
+                                    </td>
+                                </form>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

@@ -57,7 +57,7 @@ Template::header("Admin Dashboard");
                                 <td><?= $product->description ?></td>
                                 <td>$<?= $product->price ?></td>
                                 <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->
-                                <td class="td-edit"><a href=""><i class='bx bxs-edit color-grey'></i></a></td>
+                                <td class="td-edit"><a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>"><i class='bx bxs-edit color-grey'></i></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

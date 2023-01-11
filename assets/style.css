@@ -871,7 +871,8 @@ nav p {
 }
 /*** Forms ***/
 input,
-textarea {
+textarea,
+optgroup {
 	text-transform: none;
 	font-weight: 400;
 	letter-spacing: 0;
@@ -1171,6 +1172,18 @@ textarea:focus {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 }
+.admin-top-container-create {
+	height: 120px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px 100px;
+	box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
+	-webkit-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
+	-moz-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
+
+	display: flex;
+	justify-content: center;
+}
 
 .admin-dashboard {
 	position: relative;
@@ -1235,7 +1248,8 @@ textarea:focus {
 	display: flex;
 }
 .create-form input,
-.create-form textarea {
+.create-form textarea,
+select {
 	padding: 10px;
 	border-radius: 12px;
 	border: none;
@@ -1262,6 +1276,7 @@ textarea:focus {
 .create-form input[type="file"] {
 	padding-top: 19px;
 }
+
 /*** Orders ***/
 .tracking {
 	display: flex;

@@ -468,6 +468,8 @@ body {
 	position: relative;
 	background-color: white;
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 	overflow-x: hidden !important;
 }
 *::-webkit-scrollbar {
@@ -1426,6 +1428,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 
 /*** Footer ***/
 footer {
+	margin-top: auto;
 	height: 40vh;
 	width: 100%;
 	background-image: url(../assets/img/banners/footer_banner.jpg);

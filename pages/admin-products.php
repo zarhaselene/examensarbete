@@ -14,6 +14,7 @@ if (!$is_admin) {
 $products_db = new ProductsDatabase();
 $products = $products_db->get_all();
 
+
 Template::header("Admin Dashboard");
 ?>
 
@@ -42,11 +43,12 @@ Template::header("Admin Dashboard");
                     <thead>
                         <tr>
                             <th>Product ID</th>
-                            <th> Title</th>
+                            <th>Title</th>
+                            <th>Image</th>
                             <th>Description</th>
                             <th>Price</th>
                             <!-- <th class="th-status">Status</th> -->
-                            <th class="th-edit">Edit</th>
+                            <th class="th-save">Save</th>
                             <th class="th-delete">Delete</th>
 
                         </tr>
@@ -54,15 +56,29 @@ Template::header("Admin Dashboard");
                     <tbody>
                         <?php foreach ($products as $product) : ?>
                             <tr>
-                                <td>#<?= $product->id ?></td>
-                                <td><?= $product->title ?></td>
-                                <td>
-                                    <div class="td-desc"> <?= $product->description ?>
-                                    </div>
-                                </td>
-                                <td>$<?= $product->price ?></td>
-                                <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->
-                                <td class="td-edit"><a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>"><i class='bx bxs-edit color-black'></i></a></td>
+                                <form action="/exa/admin-scripts/post-update-product.php" method="post" class="edit-form">
+
+                                    <td>#<?= $product->id ?></td>
+                                    <td> <input type="text" id="title" name="title" value="<?= $product->title ?>">
+                                    </td>
+                                    <td>
+                                        <img src="<?= $product->img_url ?>" alt="">
+                                        <input type="file" name="image" accept="image/*">
+                                    </td>
+
+                                    <td>
+                                        <div class="td-desc"> <?= $product->description ?>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="td-currency display-flex align-items-center"><span>$</span><input type="number" name="price" value="<?= $product->price ?>"></div>
+                                    </td>
+                                    <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->
+                                    <td class="td-edit"><a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>"><i class=' bx bxs-edit color-black'></i></a></td>
+                                    <td class="td-save">
+                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>
+                                    </td>
+                                </form>
                                 <td class="td-delete">
                                     <form action="/exa/admin-scripts/post-delete-product.php" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?= $product->id ?>">

@@ -12,7 +12,7 @@ if (isset($_POST['title']) && isset($_POST['description']) && isset($_POST['pric
     $timestamp = time();
     $file_name = "{$timestamp}.{$file_extension}";
     $full_upload_path = $upload_directory . $file_name;
-    $full_relative_url = "exaassets/uploads/{$file_name}";
+    $full_relative_url = "/exa/assets/uploads/{$file_name}";
     $success = move_uploaded_file($_FILES['image']['tmp_name'], $full_upload_path);
 
     if ($success) {
@@ -31,7 +31,7 @@ if (isset($_POST['title']) && isset($_POST['description']) && isset($_POST['pric
 }
 
 if ($success) {
-    header('Location: /exa/pages/admin-products.php');
+    header('Location: /exa/pages/admin.php');
     die();
 } else {
     die('Error updating product');

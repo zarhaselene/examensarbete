@@ -23,7 +23,7 @@ if (isset($_POST["id"]) && isset($_SESSION["user"])) {
 
     $success = $orders_db->create($order);
 } else {
-    die("You need to be logged in to place an order");
+    echo "Error, not saved to Database";
 }
 
 if ($success) {

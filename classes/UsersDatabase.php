@@ -77,4 +77,33 @@ class UsersDatabase extends Database
 
         return $success;
     }
+    // Get google user id
+    public function get_google_user_id(User $user)
+    {
+        $db_user = $this->get_one_by_username($user->username); //email as username
+
+        //2. If not, create
+        if ($db_user == null) {
+
+            $query = "INSERT INTO users (username, `role`) VALUES (?, ?)";
+
+            $stmt = mysqli_prepare($this->conn, $query);
+
+            $stmt->bind_param("ss", $user->username, $user->role);
+
+            $success = $stmt->execute();
+
+            if ($success) {
+                $user->id = $stmt->insert_id;
+            } else {
+                var_dump($stmt->error);
+                die("Error saving google user");
+            }
+        } else {
+            //if user exists, save to user
+            $user = $db_user;
+        }
+
+        return $user->id;
+    }
 }

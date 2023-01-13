@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/User.php";
-session_start();
+// session_start();
 
 class Template
 {
@@ -43,11 +43,18 @@ class Template
     }
     public static function navbar()
     {
+
+
+        require_once __DIR__ . "/../google-config.php";
+        $google_login_btn = '<a href="' . $google_client->createAuthUrl() . '">Login with Google</a>';
+
         $is_logged_in = isset($_SESSION['user']);
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
         $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
 
         $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+
+
         ?>
             <nav class="navigation row display-flex p-v-2">
                 <div class="logo col-4 col-12-tablet display-flex align-items-center">
@@ -78,6 +85,7 @@ class Template
                                     <br>
                                     <button type="submit" class="btn full-btn m-z">Login</button>
                                 </div>
+                                <div><?= $google_login_btn ?></div>
                                 <div class="reg-link text-center p-t-2">
                                     <p> Don't have an account? Register <span class="color-pink text-underline" onclick="openRegisterForm()"> here</span></p>
                                 </div>

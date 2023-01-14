@@ -2,11 +2,13 @@
 require_once __DIR__ . '/../classes/Template.php';
 
 require_once __DIR__ . "/../classes/User.php";
-require_once __DIR__ . "/../classes/Order.php";
-
-require_once __DIR__ . '/../classes/ProductsDatabase.php';
 require_once __DIR__ . '/../classes/UsersDatabase.php';
+
+require_once __DIR__ . "/../classes/Order.php";
 require_once __DIR__ . '/../classes/OrdersDatabase.php';
+
+require_once __DIR__ . "/../classes/Product.php";
+require_once __DIR__ . '/../classes/ProductsDatabase.php';
 
 $is_logged_in = isset($_SESSION['user']);
 $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
@@ -18,14 +20,19 @@ if (!$is_admin) {
 }
 
 $products_db = new ProductsDatabase();
-$users_db = new UsersDatabase();
-$orders_db = new OrdersDatabase();
-
-$users = $users_db->get_all();
 $products = $products_db->get_all();
+
+$users_db = new UsersDatabase();
+$users = $users_db->get_all();
+
+$orders_db = new OrdersDatabase();
 $orders = $orders_db->get_all_orders();
 
-$order_id = $orders_db->get_order_by_user_id($orders);
+
+// $order_id = $orders_db->get_order_by_user_id($orders);
+$customer_orders = $orders_db->get_order_by_user_id($logged_in_user->id);
+
+
 
 /*
 TODO
@@ -95,22 +102,22 @@ Template::header("Admin Dashboard");
                         <?php foreach ($orders as $order) : ?>
                             <tr>
                                 <form action="/exa/admin-scripts/post-update-order.php" method="post">
-
                                     <td>#<input type="hidden" name="id" value="<?= $order->id ?>"><?= $order->id ?></td>
-                                    <td>#<input type="hidden" name="id" value="<?= $order->user_id ?>"><?= $order->user_id ?></td>
-                                    <!-- <td><?= $order->order_date ?></td> -->
-                                    <td><input type="hidden" name="id" value="<?= $order->order_date ?>"><?= $order->order_date ?></td>
-
+                                    <td>#<?= $order->user_id ?></td>
+                                    <td><?= $order->order_date ?></td>
+                                    <!-- Total sum of order -->
                                     <td>$</td>
 
                                     <td class="td-status"><span class="red"><?= $order->status ?></span></td>
                                     <td class="td-edit th-edit-role">
-                                        <select name="role" id="role">
-                                            <option value="role" selected disabled>Change status</option>
-                                            <option value="pending">Pending</option>
+
+                                        <select name="status" id="status">
+                                            <option value="status" selected disabled>Change status</option>
+                                            <option value="Pending">Pending</option>
                                             <option value="Sent">Sent</option>
-                                            <option value="hold">Hold</option>
+                                            <option value="Hold">Hold</option>
                                         </select>
+
                                     </td>
                                     <td class="td-save">
                                         <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>

@@ -134,6 +134,20 @@ class OrdersDatabase extends Database
         return $stmt->execute();
     }
 
+    // Delete
+    public function delete_order($id)
+    {
+        $query = "DELETE FROM orders WHERE id = ?";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+
+        $stmt->bind_param("i", $id);
+
+        $success = $stmt->execute();
+
+        return $success;
+    }
+
     public function get_products_by_order($orderID)
     {
         $query = "SELECT products.id, products.title, products.description, products.price, products.`img-url` 

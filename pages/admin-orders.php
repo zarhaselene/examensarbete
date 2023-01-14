@@ -94,6 +94,7 @@ Template::header("Admin Dashboard");
                             <th class="th-status">Status</th>
                             <th class="th-edit">Edit Status</th>
                             <th class="th-save">Save Status</th>
+                            <th class="th-delete">Delete</th>
 
 
                         </tr>
@@ -122,7 +123,14 @@ Template::header("Admin Dashboard");
                                     <td class="td-save">
                                         <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>
                                     </td>
+
                                 </form>
+                                <td class="td-delete">
+                                    <form action="/exa/admin-scripts/post-delete-order.php" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?= $order->id ?>">
+                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-trash'></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

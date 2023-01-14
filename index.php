@@ -31,7 +31,7 @@ Template::navbar();
                             <p class="color-white">Stylish, folded design with active noise cancellation
                                 for crystal clear audio 3.5mm Wired or Bluetooth wireless
                                 conncectivity</p>
-                            <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
+                            <a class="btn full-btn hide-lg-phone" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});">Shop Now</a>
 
                         </div>
                     </div>
@@ -49,7 +49,7 @@ Template::navbar();
                                 <h2 class="color-white">Smart</h2>
                             </div>
                             <p class="color-white">You bring the music, we bring the quality. Make music a pleasant experience. </p>
-                            <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
+                            <a class="btn full-btn hide-lg-phone" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});">Shop Now</a>
                         </div>
                     </div>
                     <img class="hide-tablet" src="/exa/assets/img/hero/hero_slider_2.jpg" alt="">
@@ -64,7 +64,7 @@ Template::navbar();
                                 <h2 class="color-white">Sound</h2>
                             </div>
                             <p class="color-white">Headphones that make you forget everything around. Make music come to life. </p>
-                            <a class="btn full-btn hide-lg-phone" href="/exa/index.php">Shop Now</a>
+                            <a class="btn full-btn hide-lg-phone" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});">Shop Now</a>
                         </div>
                     </div>
                     <img class="hide-tablet" src="/exa/assets/img/hero/hero_slider_3.jpg" alt="">
@@ -98,7 +98,7 @@ Template::navbar();
                     Et netus et malesuada fames ac turpis egestas sed tempus. Sit amet risus nullam eget felis eget nunc.
                     Viverra justo nec ultrices dui sapien eget mi proin.
                 </p>
-                <a class="btn corner-btn text-uppercase color-black" href=""><span>Shop now</span></a>
+                <a class="btn corner-btn text-uppercase color-black" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});"><span>Shop now</span></a>
             </div>
             <div class="intro-slider col-12 hide-tablet p-l-4">
                 <div class="slider">
@@ -150,7 +150,7 @@ Template::navbar();
                     Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.
                     Non blandit massa enim nec dui nunc mattis enim. Donec enim diam vulputate ut pharetra sit amet aliquam id.
                 </p>
-                <a class="btn corner-btn text-uppercase color-black" href=""><span>Shop now</span></a>
+                <a class="btn corner-btn text-uppercase color-black" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});"><span>Shop now</span></a>
             </div>
         </div>
 
@@ -167,7 +167,7 @@ Template::navbar();
             Orci ac auctor augue mauris augue neque gravida in fermentum.
             Elit eget gravida cum sociis natoque penatibus.
         </p>
-        <a class="btn full-btn color-white" href="">Learn More</a>
+        <a class="btn full-btn color-white" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});">Learn More</a>
     </div>
 </section>
 <!-- Music section -->
@@ -197,7 +197,7 @@ Template::navbar();
                         Nisl purus in mollis nunc sed id semper risus.
                         Ultrices neque ornare aenean.
                     </p>
-                    <a class="btn corner-btn text-uppercase color-black" href=""><span>Shop now</span></a>
+                    <a class="btn corner-btn text-uppercase color-black" onClick="document.getElementById('products').scrollIntoView({behavior: 'smooth'});"><span>Shop now</span></a>
                 </div>
             </div>
         </div>
@@ -294,7 +294,7 @@ Template::navbar();
     </div>
 </section>
 <!-- Products section -->
-<section class="p-standard products">
+<section class="p-standard products" id="products">
     <div class="content-standard">
         <div class="floaties">
             <div class="rectangle-shape large"></div>

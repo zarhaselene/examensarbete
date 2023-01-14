@@ -77,4 +77,36 @@ class UsersDatabase extends Database
 
         return $success;
     }
+    
+    public function get_google_user_id(User $user)
+    {
+        //1. Kolla om användaren finns
+        $db_user = $this->get_one_by_username($user->username); //email blir användarnamnet
+
+        //2. Om inte, skapa användaren
+        if ($db_user == null) {
+
+            $query = "INSERT INTO users (username, `role`) VALUES (?, ?)";
+
+            $stmt = mysqli_prepare($this->conn, $query);
+
+            $stmt->bind_param("ss", $user->username, $user->role);
+
+            $success = $stmt->execute();
+
+            if ($success) {
+                //insert_id = IDt som skapas när vi skapar en ny användare
+                $user->id = $stmt->insert_id;
+            } else {
+                var_dump($stmt->error);
+                die("Error saving google user");
+            }
+        } else {
+            //om användaren redan finns, spara den i user. För vi skickar IDt vidare sen
+            $user = $db_user;
+        }
+
+        //3. Skicka tillbaka IDt
+        return $user->id;
+    }
 }

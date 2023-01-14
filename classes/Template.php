@@ -1,11 +1,18 @@
 <?php
+require_once __DIR__ . "/UsersDatabase.php";
 require_once __DIR__ . "/User.php";
-session_start();
+// session_start();
+
+/* Lägger in denna för att få med session variabeln korrekt */
+require_once __DIR__ . "/../google-config.php";
+
 
 class Template
 {
     public static function header($title)
     {
+
+
 ?>
 
         <!DOCTYPE html>
@@ -43,6 +50,7 @@ class Template
     }
     public static function navbar()
     {
+
         $is_logged_in = isset($_SESSION['user']);
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
         $is_admin = $is_logged_in && $logged_in_user->role == 'admin';

@@ -42,13 +42,12 @@ Template::header("Admin Dashboard");
                 <table class="m-t-50" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Product ID</th>
-                            <th>Title</th>
+                            <th>ID</th>
+                            <th>Product</th>
                             <th>Image</th>
                             <th>Description</th>
                             <th>Price</th>
-                            <!-- <th class="th-status">Status</th> -->
-                            <th class="th-save">Save</th>
+                            <th class="th-status">Edit</th>
                             <th class="th-delete">Delete</th>
 
                         </tr>
@@ -59,25 +58,29 @@ Template::header("Admin Dashboard");
                                 <form action="/exa/admin-scripts/post-update-product.php" method="post" class="edit-form">
 
                                     <td>#<?= $product->id ?></td>
-                                    <td> <input type="text" id="title" name="title" value="<?= $product->title ?>">
-                                    </td>
+                                    <td><?= $product->title ?></td>
                                     <td>
                                         <img src="<?= $product->img_url ?>" alt="">
-                                        <input type="file" name="image" accept="image/*">
                                     </td>
 
                                     <td>
-                                        <div class="td-desc"> <?= $product->description ?>
+                                        <div class="td-desc">
+                                            <?= $product->description ?>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="td-currency display-flex align-items-center"><span>$</span><input type="number" name="price" value="<?= $product->price ?>"></div>
+                                        <div class="td-currency display-flex align-items-center">
+                                            <span>$</span>
+                                            <?= $product->price ?>
+                                        </div>
                                     </td>
                                     <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->
-                                    <td class="td-edit"><a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>"><i class=' bx bxs-edit color-black'></i></a></td>
-                                    <td class="td-save">
-                                        <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>
+                                    <td class="td-edit">
+                                        <a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>">
+                                            <i class=' bx bxs-edit color-black'></i>
+                                        </a>
                                     </td>
+
                                 </form>
                                 <td class="td-delete">
                                     <form action="/exa/admin-scripts/post-delete-product.php" method="post" enctype="multipart/form-data">

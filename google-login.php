@@ -6,9 +6,6 @@ require_once __DIR__ . "/classes/User.php";
 //Include Google Configuration File
 require_once __DIR__ . "/google-config.php";
 
-// if ($_SESSION['access_token'] == '') {
-//     header("Location: index.php");
-// }
 
 //This $_GET["code"] variable value received after user has login into their Google Account redirct to PHP script then this variable value has been received
 if (isset($_GET["code"])) {
@@ -25,26 +22,19 @@ if (isset($_GET["code"])) {
         //Get user profile data from google
         $data = $google_service->userinfo->get();
         //Below you can find Get profile data and store into $_SESSION variable
-
         if (!empty($data['email'])) {
             $_SESSION['user_email_address'] = $data['email'];
         }
 
-        if (!empty($data['picture'])) {
-            $_SESSION['user_image'] = $data['picture'];
-        }
 
-        //skapa nytt användarobjekt (vet inte om det finns i DB eller ej)
-        $user = new User($data["email"], "customer"); //första arg i constructorn är username så email blir användarnamnet
-        //second arg for role
+        $db = new UsersDatabase();
+        $user = new User($data["email"], 'customer');
 
-        $db_user = new UsersDatabase();
+        $user = $db->get_google_user($user);
 
-
-        $_SESSION["logged_in"] = true;
+        $_SESSION["loggedIn"] = true;
         $_SESSION["user"] = $user;
 
         header("Location: /exa");
     }
 }
-?>

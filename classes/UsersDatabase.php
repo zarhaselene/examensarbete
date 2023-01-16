@@ -5,7 +5,7 @@ require_once __DIR__ . "/User.php";
 class UsersDatabase extends Database
 {
 
-    // Get one by id
+    // Get one by username
     public function get_one_by_username($username)
     {
         $query = "SELECT * FROM users WHERE username = ?";
@@ -28,6 +28,20 @@ class UsersDatabase extends Database
         }
         return $user;
     }
+    public function get_one_by_id($id)
+    {
+        $query = "SELECT * FROM users WHERE `users`.`id` = ? ";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $db_user = mysqli_fetch_assoc($result);
+
+        $user = new User($db_user["username"], $db_user["role"], $db_user['id']);
+        return $user;
+    }
 
     // Get all
     public function get_all()
@@ -47,9 +61,25 @@ class UsersDatabase extends Database
     {
         $query = "INSERT INTO users (username, `password-hash`, `role`) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
-        $stmt->bind_param("sss", $user->username, $user->get_password_hash(), $user->role);
+
+        $username = $user->username;
+        $password_hash = $user->get_password_hash();
+        $role = $user->role;
+
+
+        $stmt->bind_param("sss", $username, $password_hash, $role);
+
         $success = $stmt->execute();
-        return $success;
+        $user_id = $this->conn->insert_id;
+
+        if ($success) {
+            return $user_id;
+        } else {
+            return false;
+        }
+        // $stmt->bind_param("sss", $user->username, $user->get_password_hash(), $user->role);
+        // $success = $stmt->execute();
+        // return $success;
     }
     // Update    
     public function update($role, $id)
@@ -77,36 +107,32 @@ class UsersDatabase extends Database
 
         return $success;
     }
-    
-    public function get_google_user_id(User $user)
+
+    public function get_google_user(User $user)
     {
-        //1. Kolla om användaren finns
-        $db_user = $this->get_one_by_username($user->username); //email blir användarnamnet
+        $db_user = $this->get_one_by_username($user->username);
 
-        //2. Om inte, skapa användaren
-        if ($db_user == null) {
-
+        if ($db_user === null) {
             $query = "INSERT INTO users (username, `role`) VALUES (?, ?)";
 
             $stmt = mysqli_prepare($this->conn, $query);
+            $username = $user->username;
+            $role = $user->role;
 
-            $stmt->bind_param("ss", $user->username, $user->role);
-
+            $stmt->bind_param("ss", $username, $role);
             $success = $stmt->execute();
 
             if ($success) {
-                //insert_id = IDt som skapas när vi skapar en ny användare
-                $user->id = $stmt->insert_id;
+                $user = $this->get_one_by_id($stmt->insert_id);
             } else {
+
                 var_dump($stmt->error);
-                die("Error saving google user");
+                die("Error");
             }
         } else {
-            //om användaren redan finns, spara den i user. För vi skickar IDt vidare sen
             $user = $db_user;
         }
 
-        //3. Skicka tillbaka IDt
-        return $user->id;
+        return $user;
     }
 }

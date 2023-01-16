@@ -13,14 +13,19 @@ if (
     strlen($_POST['password']) > 0 &&
     $_POST['password'] === $_POST['confirm-password']
 ) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
     $users_db = new UsersDatabase();
 
     $user = new User($_POST['username'], 'customer');
-    $user->hash_password($_POST['password']);
+    $user->hash_password($password);
 
-    $existing_user = $users_db->get_one_by_username($_POST['username']);
+    $existing_user = $users_db->get_one_by_username($username);
+
     if ($existing_user) {
-        die('Username is taken');
+        header('Location: /exa/index.php?error=invalid_register_username');
+        die();
     } else {
         $success = $users_db->create($user);
     }
@@ -29,10 +34,12 @@ if (
     die();
 }
 
-// felmeddelande 
 if ($success) {
     header("Location: /exa/index.php?register=success");
 } else {
     header('Location: /exa/index.php?error=invalid_register');
     die();
 }
+//error=invalid_register = Error saving user, try again.
+//error=invalid_register_username = Username taken, try again.
+//register=success register=success = User created, please log in!

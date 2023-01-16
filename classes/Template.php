@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . "/User.php";
-session_start();
+
+/* Adding this to include the session variable correctly */
+require_once __DIR__ . "/../google-config.php";
 
 class Template
 {

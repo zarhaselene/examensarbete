@@ -5,7 +5,7 @@ require_once __DIR__ . "/User.php";
 class UsersDatabase extends Database
 {
 
-    // Get one by id
+    // Get one by username
     public function get_one_by_username($username)
     {
         $query = "SELECT * FROM users WHERE username = ?";
@@ -29,29 +29,44 @@ class UsersDatabase extends Database
         return $user;
     }
 
-        // Get one by id
-        public function get_user_by_id($id)
-        {
-            $query = "SELECT * FROM users WHERE id = ?";
-    
-            $stmt = mysqli_prepare($this->conn, $query);
-    
-            $stmt->bind_param('i', $id);
-    
-            $stmt->execute();
-    
-            $result = $stmt->get_result();
-    
-            $db_user = mysqli_fetch_assoc($result);
-    
-            $user = null;
-    
-            if ($db_user) {
-                $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
-                $user->set_password_hash($db_user['password-hash']);
-            }
-            return $user;
+    // Get one by id
+    public function get_user_by_id($id)
+    {
+        $query = "SELECT * FROM users WHERE id = ?";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+
+        $stmt->bind_param('i', $id);
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $db_user = mysqli_fetch_assoc($result);
+
+        $user = null;
+
+        if ($db_user) {
+            $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+            $user->set_password_hash($db_user['password-hash']);
         }
+        return $user;
+    }
+
+    public function get_one_by_id($id)
+    {
+        $query = "SELECT * FROM users WHERE `users`.`id` = ? ";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $db_user = mysqli_fetch_assoc($result);
+
+        $user = new User($db_user["username"], $db_user["role"], $db_user['id']);
+        return $user;
+    }
 
     // Get all
     public function get_all()
@@ -71,9 +86,22 @@ class UsersDatabase extends Database
     {
         $query = "INSERT INTO users (username, `password-hash`, `role`) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
-        $stmt->bind_param("sss", $user->username, $user->get_password_hash(), $user->role);
+
+        $username = $user->username;
+        $password_hash = $user->get_password_hash();
+        $role = $user->role;
+
+
+        $stmt->bind_param("sss", $username, $password_hash, $role);
+
         $success = $stmt->execute();
-        return $success;
+        $user_id = $this->conn->insert_id;
+
+        if ($success) {
+            return $user_id;
+        } else {
+            return false;
+        }
     }
     // Update    
     public function update($role, $id)
@@ -102,5 +130,31 @@ class UsersDatabase extends Database
         return $success;
     }
 
-    
+    public function get_google_user(User $user)
+    {
+        $db_user = $this->get_one_by_username($user->username);
+
+        if ($db_user === null) {
+            $query = "INSERT INTO users (username, `role`) VALUES (?, ?)";
+
+            $stmt = mysqli_prepare($this->conn, $query);
+            $username = $user->username;
+            $role = $user->role;
+
+            $stmt->bind_param("ss", $username, $role);
+            $success = $stmt->execute();
+
+            if ($success) {
+                $user = $this->get_one_by_id($stmt->insert_id);
+            } else {
+
+                var_dump($stmt->error);
+                die("Error");
+            }
+        } else {
+            $user = $db_user;
+        }
+
+        return $user;
+    }
 }

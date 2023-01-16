@@ -1195,8 +1195,6 @@ textarea:focus {
 	box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
 	-webkit-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
 	-moz-box-shadow: 1px 1px 30px 6px rgba(0, 0, 0, 0.02);
-	margin-bottom: 20px;
-
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 }
@@ -1287,7 +1285,7 @@ textarea:focus {
 }
 .create-form input,
 .create-form textarea,
-.create-form select {
+select {
 	padding: 10px;
 	border-radius: 12px;
 	border: none;
@@ -1331,7 +1329,8 @@ textarea:focus {
 }
 
 .admin-dashboard .orders,
-.admin-dashboard .products {
+.admin-dashboard .products,
+.admin-dashboard .users {
 	overflow: hidden;
 	overflow-y: auto;
 	height: 650px;
@@ -1518,8 +1517,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	padding: 10px 0;
 }
 .edit-product-form input,
-.edit-product-form textarea,
-.edit-product-form select {
+.edit-product-form textarea {
 	padding: 10px;
 	border-radius: 12px;
 	border: none;
@@ -1535,7 +1533,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 .form-item {
 	margin-bottom: 10px;
 }
-.edit-product-form input[type="submit"] {
+.edit-product-form button[type="submit"] {
 	color: white;
 	background-color: #ef6d9f;
 	transition: 0.5s;
@@ -1545,6 +1543,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	padding: 15px 30px;
 	display: inline-block;
 	cursor: pointer;
+	border-radius: 12px;
 }
 .admin-dashboard > div > div > form > div > div.col-12 > .file {
 	width: 100%;
@@ -1555,15 +1554,11 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 }
 label.upload-photo.btn.full-btn {
 	padding: 15px;
+	cursor: pointer;
+	border-radius: 12px;
 }
 label.upload-photo.btn.full-btn > i {
 	font-size: 1.5rem;
-}
-.custom-file-upload {
-	border: 1px solid #ccc;
-	display: inline-block;
-	padding: 6px 12px;
-	cursor: pointer;
 }
 
 .holder {
@@ -1574,7 +1569,6 @@ label.upload-photo.btn.full-btn > i {
 	-moz-box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	background-color: white;
-	display: flex;
 }
 .holder img {
 	height: 100%;

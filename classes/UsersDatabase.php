@@ -29,6 +29,30 @@ class UsersDatabase extends Database
         return $user;
     }
 
+        // Get one by id
+        public function get_user_by_id($id)
+        {
+            $query = "SELECT * FROM users WHERE id = ?";
+    
+            $stmt = mysqli_prepare($this->conn, $query);
+    
+            $stmt->bind_param('i', $id);
+    
+            $stmt->execute();
+    
+            $result = $stmt->get_result();
+    
+            $db_user = mysqli_fetch_assoc($result);
+    
+            $user = null;
+    
+            if ($db_user) {
+                $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+                $user->set_password_hash($db_user['password-hash']);
+            }
+            return $user;
+        }
+
     // Get all
     public function get_all()
     {
@@ -77,4 +101,6 @@ class UsersDatabase extends Database
 
         return $success;
     }
+
+    
 }

@@ -139,7 +139,7 @@ class Template
                             <div class="dashboard"><a href="/exa/pages/admin.php"><i class="icon fa-solid fa-gear color-white"></i></a></div>
 
                         <?php endif; ?>
-                        <div class="account"><a href="/exa/pages/account.php" class="color-white"><i class="icon fa-solid fa-user color-white"></i></a></div>
+                        <div class="account"><a href="/exa/pages/orders.php" class="color-white"><i class="icon fa-solid fa-user color-white"></i></a></div>
 
                     <?php endif; ?>
 

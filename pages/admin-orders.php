@@ -28,15 +28,21 @@ $users = $users_db->get_all();
 $orders_db = new OrdersDatabase();
 $orders = $orders_db->get_all_orders();
 
+// $user_id = $users_db->get_user_by_id($id);
+// $order_id = $orders_db->get_order_by_id($id);
+
+// $username_by_id = $orders_db->get_username_by_order_id($order_id);
 
 // $order_id = $orders_db->get_order_by_user_id($orders);
-$customer_orders = $orders_db->get_order_by_user_id($logged_in_user->id);
+// $customer_orders = $orders_db->get_order_by_user_id($logged_in_user->id);
 
 
 
 /*
 TODO
 if user-id(order) is the same as id(user) get username
+if orders(order-id) == productsorders(order-id)
+
 */
 
 $hold_orders = [];
@@ -105,6 +111,10 @@ Template::header("Admin Dashboard");
                                 <form action="/exa/admin-scripts/post-update-order.php" method="post">
                                     <td>#<input type="hidden" name="id" value="<?= $order->id ?>"><?= $order->id ?></td>
                                     <td>#<?= $order->user_id ?></td>
+                                    <!-- <td><?= $username_by_id->username ?></td> -->
+
+
+
                                     <td><?= $order->order_date ?></td>
                                     <!-- Total sum of order -->
                                     <td>$</td>

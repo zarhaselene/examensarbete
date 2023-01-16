@@ -174,4 +174,16 @@ class OrdersDatabase extends Database
         }
         return $products;
     }
+
+    public function get_username_by_order_id($order_id)
+    {
+        $query = "SELECT username FROM users INNER JOIN orders ON users.id = orders.`user-id` WHERE orders.id = ?";
+        $stmt = mysqli_prepare($this->conn, $query);
+        $stmt->bind_param("i", $order_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $db_user = mysqli_fetch_assoc($result);
+        $username = $db_user['username'];
+        return $username;
+    }
 }

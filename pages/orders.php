@@ -6,6 +6,9 @@ require_once __DIR__ . "/../classes/UsersDatabase.php";
 $logged_in_user = $_SESSION["user"];
 
 $orders_db = new OrdersDatabase();
+// $users_db = new UsersDatabase();
+
+// $users = $users_db->get_all();
 
 $orders = $orders_db->get_order_by_user_id($logged_in_user->id);
 

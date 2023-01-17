@@ -204,7 +204,9 @@ Template::header("Admin Dashboard");
                     <div class="users-overview m-t-4">
                         <div class="overview-heading p-b-2 display-flex align-items-center justify-between">
                             <h2>Newest Users</h2>
-                            <a href="/exa/pages/admin-users.php" class="text-underline color-pink">see all</a>
+                            <button class="btn full-btn m-z">
+                                <a href="/exa/pages/admin-users.php" class=" color-white">See all</a>
+                            </button>
                         </div>
 
                         <?php foreach ($newest_users as $user) :

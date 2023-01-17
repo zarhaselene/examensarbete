@@ -1389,8 +1389,9 @@ textarea:focus {
 	justify-items: center;
 }
 
-.orders-overview > div > button {
-	padding: 15px 50px;
+.orders-overview > div > button,
+.users-overview > div > button {
+	padding: 10px 30px;
 	cursor: pointer;
 	border-radius: 12px;
 }

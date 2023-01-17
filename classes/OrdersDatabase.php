@@ -48,22 +48,33 @@ class OrdersDatabase extends Database
     public function get_all_orders()
     {
         $query = "SELECT * FROM orders";
-
         $result = mysqli_query($this->conn, $query);
         $db_orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
         $orders = [];
-
         foreach ($db_orders as $db_order) {
-
             $db_id = $db_order["id"];
             $db_customerID = $db_order["user-id"];
             $db_status = $db_order["status"];
             $db_date = $db_order["order-date"];
-
             $orders[] = new Order($db_customerID, $db_status, $db_date, $db_id);
         }
+        return $orders;
+    }
 
+    // Get all
+    public function get_five()
+    {
+        $query = "SELECT * FROM orders ORDER BY ID DESC LIMIT 5";
+        $result = mysqli_query($this->conn, $query);
+        $db_orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $orders = [];
+        foreach ($db_orders as $db_order) {
+            $db_id = $db_order["id"];
+            $db_customerID = $db_order["user-id"];
+            $db_status = $db_order["status"];
+            $db_date = $db_order["order-date"];
+            $orders[] = new Order($db_customerID, $db_status, $db_date, $db_id);
+        }
         return $orders;
     }
 

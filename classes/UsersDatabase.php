@@ -68,6 +68,19 @@ class UsersDatabase extends Database
         return $user;
     }
 
+    // Get five
+    public function get_five()
+    {
+        $query = "SELECT * FROM users ORDER BY ID DESC LIMIT 5";
+        $result = mysqli_query($this->conn, $query);
+        $db_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        foreach ($db_users as $db_user) {
+            $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+            $users[] = $user;
+        }
+        return $users;
+    }
+
     // Get all
     public function get_all()
     {

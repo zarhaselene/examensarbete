@@ -26,7 +26,7 @@ Template::header("Admin Dashboard");
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
             <h2 class="heading">Users</h2>
-            <div class="admin-top-container-create ">
+            <div class="admin-top-container-create display-flex justify-center">
                 <div class="create">
                     <form class="create-form display-flex align-items-center" action="/exa/admin-scripts/post-create-user.php" method="post" enctype="multipart/form-data">
                         <input type="text" id="username" name="username" placeholder="Username.." required>
@@ -83,7 +83,6 @@ Template::header("Admin Dashboard");
                                         <button type="submit" class="reset-btn-styling"><i class='bx bx-trash'></i></button>
                                     </form>
                                 </td>
-
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

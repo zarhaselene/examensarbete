@@ -96,10 +96,9 @@ Template::header("Admin Dashboard");
                             <th>Order ID</th>
                             <th>Customer ID</th>
                             <th>Order Date</th>
-                            <th>Amount</th>
                             <th class="th-status">Status</th>
-                            <th class="th-edit">Edit Status</th>
-                            <th class="th-save">Save Status</th>
+                            <th class="th-edit">Edit</th>
+                            <th class="th-save">Status</th>
                             <th class="th-delete">Delete</th>
 
 
@@ -116,8 +115,6 @@ Template::header("Admin Dashboard");
 
 
                                     <td><?= $order->order_date ?></td>
-                                    <!-- Total sum of order -->
-                                    <td>$</td>
 
                                     <td class="td-status"><span class="red"><?= $order->status ?></span></td>
                                     <td class="td-edit th-edit-role">

@@ -26,7 +26,7 @@ Template::header("Admin Dashboard");
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
             <h2 class="heading">Products</h2>
-            <div class="admin-top-container-create ">
+            <div class="admin-top-container-create display-flex justify-center">
                 <div class="create">
                     <form class="create-form display-flex align-items-center" action="/exa/admin-scripts/post-create-product.php" method="post" enctype="multipart/form-data">
                         <input type="text" id="title" name="title" placeholder="Product title.." required>

@@ -30,8 +30,8 @@ Template::header("Admin Dashboard");
                 <div class="create">
                     <form class="create-form display-flex align-items-center" action="/exa/admin-scripts/post-create-user.php" method="post" enctype="multipart/form-data">
                         <input type="text" id="username" name="username" placeholder="Username.." required>
-                        <input type="password" name="password" placeholder="Password.." required><br>
-                        <input type="password" name="confirm-password" placeholder="Confirm password.." required><br>
+                        <input type="password" name="password" placeholder="Password.." required>
+                        <input type="password" name="confirm-password" placeholder="Confirm password.." required>
                         <select id="role" name="role">
                             <optgroup>
                                 <option disabled selected>Set role</option>

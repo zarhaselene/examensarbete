@@ -79,7 +79,7 @@ Template::navbar();
 </section>
 <!-- USP section -->
 <section class="p-standard USP">
-    <div class="container display-flex direction-column align-items-center justify-center">
+    <div class="content-standard display-flex direction-column align-items-center justify-center">
 
         <div class="intro-section row p-t-120 p-b-80">
             <div class="floaties">

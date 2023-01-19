@@ -72,3 +72,27 @@ $(document).ready(() => {
 		}
 	});
 });
+
+//Stripe
+const stripe = Stripe(
+	"pk_test_51Lhw5LFTqC3gmBoBORalC2bvcmn7BuJOTK02v3KHhpbeMmEDlsxdwj3Z8l89RDLenlgAMySP8LcY48x3hbu48yTW004JYNb8Xg"
+);
+
+var elements = stripe.elements({
+	locale: "auto",
+});
+
+var card = elements.create("card", {
+	iconStyle: "solid",
+	style: {
+		base: {
+			iconColor: "#fe9aae",
+			color: "#1a1a1a",
+			fontWeight: 500,
+			fontFamily: "Lato, sans-serif",
+			fontSize: "16px",
+			fontSmoothing: "antialiased",
+		},
+	},
+});
+card.mount("#card");

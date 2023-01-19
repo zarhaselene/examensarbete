@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Lato", sans-serif;
+	font-family: " Lato", sans-serif;
 }
 
 /* Overwrite SwiperJS styles */
@@ -606,7 +606,8 @@ nav p {
 
 .hero-container {
 	position: absolute;
-	min-width: 650px;
+	max-width: 650px;
+	width: 100%;
 	height: 100%;
 	padding: 20px;
 	top: 0;
@@ -753,9 +754,9 @@ nav p {
 .banner {
 	width: 100%;
 	height: 80vh;
-	background-image: url(../assets/img/banners/banner.jpg);
+	background-image: url(../assets/img/banners/banner.png);
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: right;
 	display: flex;
 }
 
@@ -1431,16 +1432,6 @@ textarea:focus {
 	width: 100%;
 }
 
-/* .admin-dashboard
-	> div
-	> div.users
-	> table
-	> tbody
-	> tr
-	> td.td-edit.th-edit-role {
-	width: auto;
-} */
-
 /*** Products ***/
 .create-form {
 	display: flex;
@@ -1613,7 +1604,113 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 }
 .shopping-cart > form > div > div.col-8 {
 	background-color: #f8f8f8;
+	color: #3b3b3b;
 }
+.payment {
+	overflow: auto;
+	padding: 80px;
+}
+
+.payment-form {
+}
+.payment-form input {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0;
+}
+.discount-code {
+	width: 100%;
+}
+.dcode {
+	width: 75%;
+	padding: 8px 18px;
+	border-radius: 5px;
+	border: 1px solid rgb(161, 161, 161);
+	background: none;
+	color: rgb(161, 161, 161);
+}
+.discount-btn {
+	width: 23%;
+	padding: 9px;
+	border-radius: 5px;
+	border: none;
+	background: #505050;
+	color: #fff;
+	font-size: 1rem;
+	margin-left: 2px;
+	transition: 0.5s;
+}
+.discount-btn:hover {
+	background: #ef6d9f;
+	color: #fff;
+}
+.shipping > p > b,
+.discount > p > b {
+	font-size: 1rem;
+}
+#pay {
+	border-radius: 5px;
+}
+.bx-question-mark {
+	border-radius: 10px;
+	background: pink;
+	padding: 1px 1.5px;
+}
+
+/* Stripe payment styling */
+.example.example1 fieldset {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	border: 1px solid #505050;
+	border-radius: 5px;
+}
+
+.example.example1 .row {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid #505050;
+	border-radius: 5px;
+}
+.noborder-row {
+	border: none !important;
+}
+
+.example.example1 label {
+	width: 15%;
+	min-width: 70px;
+	padding: 11px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.example.example1 input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border-style: none;
+}
+
+.example.example1 input:-webkit-autofill {
+	-webkit-text-fill-color: #1a1a1a;
+}
+
+/* Card input */
+.example.example1 .StripeElement {
+	width: 100%;
+	padding: 11px 15px 11px 0;
+}
+
+.example.example1 input {
+	width: 100%;
+	color: #1a1a1a;
+	background-color: transparent;
+}
+
+/* Cart overview */
 .shopping-cart > form > div > div.col-16 {
 	background-color: white;
 	height: 100vh;
@@ -1768,6 +1865,7 @@ i.bx.bx-image {
 	overflow-y: auto;
 	height: 650px;
 }
+
 /*** Footer ***/
 footer {
 	margin-top: auto;
@@ -1795,6 +1893,13 @@ footer {
 }
 
 /*** Media queries ***/
+/* 4K */
+@media only screen and (min-width: 2560px) {
+	.hero-container {
+		top: -140px;
+		left: 135px;
+	}
+}
 /* Laptop L */
 @media only screen and (max-width: 1440px) {
 	.welcome-image {
@@ -1802,6 +1907,9 @@ footer {
 	}
 	.calendar th {
 		padding: 0;
+	}
+	.banner {
+		background-position: center center;
 	}
 }
 /* Laptop M */
@@ -1890,6 +1998,17 @@ footer {
 	td {
 		padding: 15px 0;
 	}
+	.cart-wrapper {
+		flex-direction: column;
+	}
+	.shopping-cart > form > div > div.col-16 {
+		height: auto;
+		padding-top: 200px;
+		width: auto;
+	}
+	.shopping-cart > form > div > div.col-8 {
+		width: auto;
+	}
 }
 /* Laptop S*/
 @media only screen and (max-width: 810px) {
@@ -1898,6 +2017,9 @@ footer {
 	}
 	.icons {
 		padding-right: 40px;
+	}
+	.products-container {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 /* Tablet */
@@ -2041,6 +2163,12 @@ footer {
 	.admin-dashboard {
 		overflow-y: auto;
 	}
+	.dcode {
+		width: 70%;
+	}
+	.discount-btn {
+		width: 27%;
+	}
 }
 
 /* Large phone */
@@ -2059,6 +2187,9 @@ footer {
 	.logo img {
 		width: 80%;
 	}
+	.icons {
+		padding-right: 60px;
+	}
 	.hero-container {
 		transform: translate(-50%, -50%);
 		margin-top: 0px;
@@ -2066,8 +2197,17 @@ footer {
 	.review-image {
 		width: 200px;
 	}
+	.products-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
 	.contact-form {
 		width: 100%;
+	}
+	.col-16 > div.wrapper > div.heading {
+		flex-direction: column;
+	}
+	.col-16 > div.wrapper > div.heading h2 {
+		padding-bottom: 8px;
 	}
 	.sidebar .bx-menu {
 		display: none;

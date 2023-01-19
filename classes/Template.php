@@ -20,6 +20,9 @@ class Template
             <title> <?= $title ?> </title>
             <link rel="stylesheet" href="/exa/assets/style.css">
 
+            <!-- Stripe -->
+            <script src="https://js.stripe.com/v3/" defer></script>
+
             <!-- Fonts -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

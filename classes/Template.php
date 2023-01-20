@@ -63,67 +63,9 @@ class Template
 
                     <!-- If not logged in -->
                     <?php if (!$is_logged_in) : ?>
-                        <div class="login" onclick="openLoginForm()">
-                            <i class="icon fa-solid fa-user color-white"></i>
+                        <div class="login" id="login-button">
+                            <a href="/exa/pages/login.php"><i class="icon fa-solid fa-user color-white"></i></a>
                         </div>
-                        <div class="form-container" id="loginForm">
-                            <form action="/exa/scripts/post-login.php" method="post" class="form">
-                                <button type="button" class="popup-close reset-btn-styling" onclick="closeLoginForm()">
-                                    <i class="p-z icon fa-solid fa-xmark color-white"></i>
-                                </button>
-
-                                <div class="username position-relative display-flex direction-column">
-                                    <input type="text" name="username" placeholder="Username..">
-                                    <i class="fa fa-user fa-lg color-pink position-absolute"></i>
-                                    <br>
-                                </div>
-                                <div class="password position-relative display-flex direction-column ">
-                                    <input type="password" name="password" placeholder="Password..">
-                                    <i class="fa-solid fa-lock color-pink position-absolute"></i>
-                                    <br>
-                                    <button type="submit" class="btn full-btn m-z">Login</button>
-                                </div>
-                                <div class="reg-link text-center p-t-2">
-                                    <p> Don't have an account? Register <span class="color-pink text-underline" onclick="openRegisterForm()"> here</span></p>
-                                </div>
-                                <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid_credentials') {
-                                    echo '<p id="invalid-credentials">Invalid username or password!</p>';
-                                }
-                                ?>
-                            </form>
-                        </div>
-
-                        <div class="form-container" id="registerForm">
-                            <form action="/exa/scripts/post-register-user.php" method="post" class="form">
-                                <button type="button" class="popup-close reset-btn-styling" onclick="closeRegisterForm()">
-                                    <i class="p-z icon fa-solid fa-xmark color-white"></i>
-                                </button>
-                                <div class="username position-relative display-flex direction-column">
-                                    <input type="text" id="username" name="username" placeholder="Username..">
-                                    <i class="fa fa-user fa-lg color-pink position-absolute"></i>
-                                    <br>
-                                </div>
-                                <div class="password position-relative display-flex direction-column">
-                                    <input type="password" name="password" placeholder="Password..">
-                                    <i class="fa-solid fa-lock color-pink position-absolute" style="padding-top: 5px;"></i>
-                                    <br>
-                                </div>
-                                <div class="confirm-password position-relative display-flex direction-column">
-                                    <input type="password" name="confirm-password" placeholder="Confirm password.."><br>
-                                    <button type="submit" class="btn full-btn m-z">Register</button>
-                                </div>
-                                <?php
-                                if (isset($_GET['register']) && $_GET['register'] == 'success') {
-                                    echo '<p id="success-msg">User created, please log in!</p>';
-                                }
-                                ?>
-                                <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid_register') {
-                                    echo '<p id="invalid-credentials" class="p-t-2">Error saving user, try again.</p>';
-                                }
-                                ?>
-                            </form>
-                        </div>
-
                     <?php endif; ?>
 
                     <!-- If logged in -->

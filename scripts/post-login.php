@@ -3,6 +3,7 @@ require_once __DIR__ . "/../classes/UsersDatabase.php";
 
 session_start();
 $success = false;
+$error_message = "";
 
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username = $_POST["username"];
@@ -17,18 +18,17 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         if ($success) {
             $_SESSION["loggedIn"] = true;
             $_SESSION["user"] = $user;
+            header("Location: /exa");
+            die();
+        } else {
+            $error_message = "Invalid credentials. Please try again.";
+            header("Location: /exa/pages/login.php?error=invalid_credentials");
         }
+    } else {
+        $error_message = "Invalid credentials. Please try again.";
+        header("Location: /exa/pages/login.php?error=invalid_credentials");
     }
 } else {
-    echo "ERROR: Invalid input.";
-    var_dump($_POST);
-    die();
+    $error_message = "Invalid input.";
+    header("Location: /exa/pages/login.php?error=invalid_credentials");
 }
-
-if ($success) {
-    header("Location: /exa");
-} else {
-    header('Location: /exa/index.php?error=invalid_credentials');
-    die();
-}
-//error=invalid_credentials = Invalid username or password!

@@ -40,24 +40,6 @@ function menuBtnChange() {
 	}
 }
 
-// Login form
-function openLoginForm() {
-	$("#loginForm").addClass("active");
-}
-function closeLoginForm() {
-	$("#loginForm").removeClass("active");
-}
-
-// Register form
-function openRegisterForm() {
-	$("#registerForm").addClass("active");
-	$("#loginForm").removeClass("active");
-}
-function closeRegisterForm() {
-	$("#registerForm").removeClass("active");
-	$("#loginForm").addClass("active");
-}
-
 //Preview image before upload on edit single product page
 $(document).ready(() => {
 	$("#photo").change(function () {

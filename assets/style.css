@@ -748,8 +748,8 @@ nav p {
 	animation: animationframesthree 35s alternate infinite linear;
 }
 /*Floating shapes on register page*/
-.regi-wrapper .circle-shape,
-.regi-wrapper .rectangle-shape {
+.lr-small-wrapper .circle-shape,
+.lr-small-wrapper .rectangle-shape {
 	content: "";
 	border: none;
 	background-color: #ffffff36;
@@ -758,8 +758,8 @@ nav p {
 	top: 10%;
 	margin: auto;
 }
-.regi-wrapper .circle-shape.large,
-.regi-wrapper .rectangle-shape.small {
+.lr-small-wrapper .circle-shape.large,
+.lr-small-wrapper .rectangle-shape.small {
 	width: 105px;
 	height: 105px;
 	animation: animationframesthree 65s alternate infinite linear;
@@ -990,8 +990,8 @@ textarea:focus {
 	text-align: left;
 }
 
-/*** Login/Register form ***/
-.login-wrapper {
+/*** Login/Register page ***/
+.lr-wrapper {
 	height: 100vh;
 	padding: 18px 80px 50px;
 	background-image: url(../assets/img/illustrations/pink_cart.png);
@@ -999,23 +999,23 @@ textarea:focus {
 	background-position: top left;
 	background-size: 900px;
 }
-.login-container > div.heading > h2 {
+.lr-container > div.heading > h2 {
 	font-size: 2.3rem;
 }
-.login-container > .google > p {
+.lr-container > .google > p {
 	font-size: 1.1rem;
 }
 
-.login-container {
+.lr-container {
 	margin-top: 150px;
 	text-align: center;
 }
 
-.login-form {
+.lr-form {
 	width: 100%;
 	max-width: 550px;
 }
-.login-form .line {
+.lr-form .line {
 	width: 100%;
 	text-align: center;
 	border-bottom: 1px solid #9e999958;
@@ -1023,8 +1023,8 @@ textarea:focus {
 	margin: 10px 0 20px;
 }
 
-.login-form .line,
-.login-form .or {
+.lr-form .line,
+.lr-form .or {
 	/* Hides the line behind the OR text with a bg-color */
 	background: #fff;
 	padding: 0 10px;
@@ -1041,7 +1041,7 @@ textarea:focus {
 	background-color: #e3cdd958;
 	border-radius: 10px;
 }
-.login-container > .login-form > form > div > button {
+.lr-container > .lr-form > form > div > button {
 	border-radius: 10px;
 }
 
@@ -1057,6 +1057,12 @@ textarea:focus {
 	font-size: 1rem;
 }
 
+.confirm-password i {
+	left: 3.5%;
+	top: 12%;
+	font-size: 1rem;
+}
+
 #invalid-credentials {
 	color: #ff4646;
 	text-align: center;
@@ -1064,7 +1070,7 @@ textarea:focus {
 	padding-top: 8px;
 }
 
-.regi-wrapper {
+.lr-small-wrapper {
 	padding: 50px 80px;
 	background: rgb(239, 109, 159);
 	background: -moz-linear-gradient(
@@ -1086,20 +1092,24 @@ textarea:focus {
 	box-shadow: inset 0 0 30px #5656562b;
 	overflow: hidden;
 }
-.regi-container {
+.lr-small-container {
 	height: 100%;
 	position: relative;
 	z-index: 3;
 }
-.regi-container > .heading > h2 {
+.lr-small-container > .heading > h2 {
 	font-size: 2.3rem;
 }
 
-/* #success-msg {
+#success-msg {
 	color: #ff9875;
 	text-align: center;
-	padding-top: 10px;
-} */
+	font-size: 1rem;
+	padding-top: 8px;
+}
+#success-msg a {
+	color: #ff9875;
+}
 /*** Sidebar ***/
 .sidebar {
 	position: fixed;
@@ -2221,18 +2231,18 @@ footer {
 	.admin-dashboard > div > div.users > table > tbody > tr > td > select {
 		margin: 0;
 	}
-	.login-container > div.heading > h2 {
+	.lr-container > div.heading > h2 {
 		font-size: 1.6rem;
 	}
 
 	.login > .container {
 		flex-direction: column;
 	}
-	.login-wrapper {
+	.lr-wrapper {
 		height: auto;
 		width: auto;
 	}
-	.regi-wrapper {
+	.lr-small-wrapper {
 		width: auto;
 	}
 }

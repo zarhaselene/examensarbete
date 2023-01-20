@@ -24,20 +24,20 @@ if (
     $existing_user = $users_db->get_one_by_username($username);
 
     if ($existing_user) {
-        header('Location: /exa/index.php?error=invalid_register_username');
+        header('Location: /exa/pages/register.php?error=invalid_register_username');
         die();
     } else {
         $success = $users_db->create($user);
     }
 } else {
-    header('Location: /exa/index.php?error=invalid_register');
+    header('Location: /exa/pages/register.php?error=invalid_register');
     die();
 }
 
 if ($success) {
-    header("Location: /exa/index.php?register=success");
+    header("Location: /exa/pages/register.php?register=success");
 } else {
-    header('Location: /exa/index.php?error=invalid_register');
+    header('Location: /exa/pages/register.php?error=invalid_register');
     die();
 }
 //error=invalid_register = Error saving user, try again.

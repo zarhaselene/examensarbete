@@ -7,6 +7,7 @@ $(window).scroll(function () {
 	}
 });
 
+//Add to cart
 function addToCart(event) {
 	event.preventDefault();
 	// get the form data
@@ -36,26 +37,26 @@ function addToCart(event) {
 		});
 }
 
-
-
 // Sliders
-const swiperContainers = document.querySelectorAll(".slider");
+$(document).ready(function () {
+	const swiperContainers = $(".slider");
 
-for (const swiperContainer of swiperContainers) {
-	const swiper = swiperContainer.querySelector(".swiper");
+	swiperContainers.each(function () {
+		const swiper = $(this).find(".swiper");
 
-	new Swiper(swiper, {
-		loop: true,
-		pagination: {
-			el: ".swiper-pagination",
-		},
-		// Navigation arrows
-		navigation: {
-			nextEl: swiperContainer.querySelector(".swiper-button-next"),
-			prevEl: swiperContainer.querySelector(".swiper-button-prev"),
-		},
+		new Swiper(swiper, {
+			loop: true,
+			pagination: {
+				el: ".swiper-pagination",
+			},
+			// Navigation arrows
+			navigation: {
+				nextEl: $(this).find(".swiper-button-next"),
+				prevEl: $(this).find(".swiper-button-prev"),
+			},
+		});
 	});
-}
+});
 
 // Sidebar
 function toggleSidebar() {

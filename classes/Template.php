@@ -52,7 +52,7 @@ class Template
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
         $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
 
-        $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+        // $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         ?>
             <nav class="navigation row display-flex p-v-2">
                 <div class="logo col-4 col-12-tablet display-flex align-items-center">

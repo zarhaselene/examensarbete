@@ -1965,6 +1965,7 @@ label.upload-photo.btn.full-btn > i {
 	object-fit: contain;
 	object-position: center;
 	border-radius: 10px;
+	position: relative;
 	z-index: 2;
 }
 i.bx.bx-image {
@@ -1974,6 +1975,7 @@ i.bx.bx-image {
 	transform: translate(50%, -50%);
 	font-size: 6rem;
 	color: #666;
+	z-index: 1;
 }
 
 .add-product-info {

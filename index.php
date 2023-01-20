@@ -327,10 +327,11 @@ Template::navbar();
                         <h5 class="title p-t-1"><?= $product->title ?></h5>
                         <p class="price p-t-2">$ <?= $product->price ?></p>
                     </div>
-                    <form action="/exa/scripts/post-add-to-cart.php" method="post">
+                    <form id="form-add-to-cart">
                         <input type="hidden" name="product-id" value="<?= $product->id ?>">
-                        <button class="btn full-btn" type="submit" value="">Add to cart</button>
+                        <button class="btn full-btn" onclick="addToCart(event)">Add to cart</button>
                     </form>
+
                 </div>
             <?php
             endforeach; ?>

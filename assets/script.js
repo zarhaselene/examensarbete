@@ -7,6 +7,37 @@ $(window).scroll(function () {
 	}
 });
 
+function addToCart(event) {
+	event.preventDefault();
+	// get the form data
+	const form = document.getElementById("form-add-to-cart");
+	const formData = new FormData(form);
+
+	// send the form data to the server
+	fetch("/exa/scripts/post-add-to-cart.php", {
+		method: "POST",
+		body: formData,
+	})
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			if (data.success) {
+				document.getElementById("circle").classList.add("active");
+				document.getElementById("cart-count").innerHTML = data.cartCount;
+				document.getElementById("message").innerHTML = data.message;
+				document.getElementById("message").classList.add("active");
+				setTimeout(() => {
+					document.getElementById("message").classList.remove("active");
+				}, 1000);
+			} else {
+				document.getElementById("message").innerHTML = data.message;
+			}
+		});
+}
+
+
+
 // Sliders
 const swiperContainers = document.querySelectorAll(".slider");
 

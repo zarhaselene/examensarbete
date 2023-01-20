@@ -91,7 +91,16 @@ class Template
                     <?php endif; ?>
 
                     <!-- Always show -->
-                    <div class="cart"><a href="/exa/pages/cart.php" class="color-white"><i class="icon fa-solid fa-basket-shopping color-white"></i> <span class="basket-circle"><?= $cart_count ?></span></a></div>
+                    <span id="message"></span>
+                    <div class="cart">
+                        <a href="/exa/pages/cart.php" class="color-white">
+                            <i class="icon fa-solid fa-basket-shopping color-white"></i>
+                            <div id="circle" class="basket-circle justify-center align-items-center">
+                                <span id="cart-count"></span>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
 
             </nav>

@@ -5,11 +5,9 @@ require_once __DIR__ . "/../classes/ProductsDatabase.php";
 session_start();
 
 if (isset($_POST['product-id'])) {
-
     //Get picked products
     $products_db = new ProductsDatabase();
     $product = $products_db->get_one($_POST["product-id"]);
-
     //Create cart if non existent
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];
@@ -17,12 +15,28 @@ if (isset($_POST['product-id'])) {
     // Add products to cart
     if ($product) {
         $_SESSION['cart'][] = $product;
-        // Redirect to product page
-        header('Location: /exa/index.php');
+        // Return success response
+        $response = [
+            'success' => true,
+            'message' => 'Product added to cart successfully',
+            'cartCount' => count($_SESSION['cart']),
+
+        ];
+        echo json_encode($response);
+        die();
+    } else {
+        $response = [
+            'success' => false,
+            'message' => 'Error adding product(s) to cart'
+        ];
+        echo json_encode($response);
         die();
     }
 } else {
-    die('Invalid input');
+    $response = [
+        'success' => false,
+        'message' => 'Invalid input'
+    ];
+    echo json_encode($response);
+    die();
 }
-
-die('Error adding product(s) to cart');

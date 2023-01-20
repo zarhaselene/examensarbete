@@ -183,6 +183,13 @@ a {
 	color: #ef6d9f;
 }
 
+.empty-cart-btn {
+	width: 100%;
+	max-width: 150px;
+	position: absolute;
+	top: 0;
+}
+
 /* Flex */
 .display-flex {
 	display: flex;
@@ -1725,15 +1732,15 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	background-color: #f8f8f8;
 	color: #3b3b3b;
 }
-.payment {
+.payment-wrapper {
 	overflow: auto;
 	padding: 80px;
 }
-.payment-form input {
+/* .payment-form input {
 	width: 100%;
 	padding: 10px;
 	margin: 5px 0;
-}
+} */
 .discount-code {
 	width: 100%;
 }
@@ -1774,7 +1781,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 }
 
 /* Stripe payment styling */
-.example.example1 fieldset {
+.payment fieldset {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0;
@@ -1782,7 +1789,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	border-radius: 5px;
 }
 
-.example.example1 .row {
+.payment .row {
 	display: flex;
 	align-items: center;
 	padding: 10px;
@@ -1793,7 +1800,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	border: none !important;
 }
 
-.example.example1 label {
+.payment label {
 	width: 15%;
 	min-width: 70px;
 	padding: 11px 0;
@@ -1802,7 +1809,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	white-space: nowrap;
 }
 
-.example.example1 input {
+.payment input {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1810,17 +1817,17 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	border-style: none;
 }
 
-.example.example1 input:-webkit-autofill {
+.payment input:-webkit-autofill {
 	-webkit-text-fill-color: #1a1a1a;
 }
 
 /* Card input */
-.example.example1 .StripeElement {
+.payment .StripeElement {
 	width: 100%;
 	padding: 11px 15px 11px 0;
 }
 
-.example.example1 input {
+.payment input {
 	width: 100%;
 	color: #1a1a1a;
 	background-color: transparent;

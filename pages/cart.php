@@ -28,7 +28,6 @@ Template::header('Cart'); ?>
     <?php elseif ($_SESSION["cart"]) : ?>
 
         <form action="/exa/scripts/post-place-order.php" method="post">
-
             <div class="cart-wrapper row">
                 <div class="col-16 display-flex direction-column justify-center">
                     <div class="go-back-btn display-flex align-items-center">
@@ -41,6 +40,7 @@ Template::header('Cart'); ?>
                             <h2>Shopping cart</h2>
                             <span class="p-h-5 color-pink"><b><?= $cart_count ?> items</b> </span>
                         </div>
+
                         <div class="cart-items-container">
 
                             <?php foreach ($products as $product) : ?>
@@ -58,26 +58,27 @@ Template::header('Cart'); ?>
 
                             <?php endforeach ?>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-8 display-flex direction-column justify-center">
                     <?php if ($is_logged_in) : ?>
 
-                        <div class="payment">
-                            <div class="cell example example1" id="example-1">
+                        <div class="payment-wrapper">
+                            <div class="cell payment">
                                 <form>
                                     <fieldset>
                                         <div class="row">
-                                            <label for="example1-name" data-tid="elements_examples.form.name_label">Name</label>
-                                            <input id="example1-name" data-tid="elements_examples.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
+                                            <label for="payment-name" data-tid="elements_payments.form.name_label">Name</label>
+                                            <input id="payment-name" data-tid="elements_payments.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
                                         </div>
                                         <div class="row">
-                                            <label for="example1-email" data-tid="elements_examples.form.email_label">Email</label>
-                                            <input id="example1-email" data-tid="elements_examples.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
+                                            <label for="payment-email" data-tid="elements_payments.form.email_label">Email</label>
+                                            <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
                                         </div>
                                         <div class="row noborder-row">
-                                            <label for="example1-phone" data-tid="elements_examples.form.phone_label">Phone</label>
-                                            <input id="example1-phone" data-tid="elements_examples.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
+                                            <label for="payment-phone" data-tid="elements_payments.form.phone_label">Phone</label>
+                                            <input id="payment-phone" data-tid="elements_payments.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
                                         </div>
                                     </fieldset>
                                     <div class="display-flex justify-between m-t-4">
@@ -138,5 +139,8 @@ Template::header('Cart'); ?>
             </div>
             </div>
         </form>
+        <!-- <form action="/exa/scripts/post-empty-cart.php" method="post">
+            <button class="empty-cart-btn btn full-btn" type="submit" name="empty_cart">Empty Cart</button>
+        </form> -->
     <?php endif ?>
 </section>

@@ -17,10 +17,11 @@ if (
     $password = $_POST["password"];
 
     $users_db = new UsersDatabase();
-
+    // creating new user object with username and role as customer
     $user = new User($_POST['username'], 'customer');
+    // hashing the password
     $user->hash_password($password);
-
+    // checking if user with the same username already exists
     $existing_user = $users_db->get_one_by_username($username);
 
     if ($existing_user) {
@@ -40,6 +41,3 @@ if ($success) {
     header('Location: /exa/pages/register.php?error=invalid_register');
     die();
 }
-//error=invalid_register = Error saving user, try again.
-//error=invalid_register_username = Username taken, try again.
-//register=success register=success = User created, please log in!

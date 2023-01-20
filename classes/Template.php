@@ -48,8 +48,11 @@ class Template
     }
     public static function navbar()
     {
+        // check if user is logged in and set the value of $is_logged_in variable
         $is_logged_in = isset($_SESSION['user']);
+        // if user is logged in, set $logged_in_user to the user's session data, otherwise set it to null
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+        // check if logged in user's role is 'admin' and set the value of $is_admin variable accordingly
         $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
 
         // $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
@@ -114,8 +117,9 @@ class Template
         $is_logged_in = isset($_SESSION['user']);
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
 
-        //Get first letter of username
+        // get the username of the logged in user
         $username = $logged_in_user->username;
+        // get the first letter of the username by using the substr function
         $first_letter = substr($username, 0, 1);
 
         ?>

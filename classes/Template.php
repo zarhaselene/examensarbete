@@ -30,6 +30,7 @@ class Template
 
             <!-- Font Awesome -->
             <script src="https://kit.fontawesome.com/6310c3f0d1.js" crossorigin="anonymous"></script>
+
             <!-- Boxicons CSS -->
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 

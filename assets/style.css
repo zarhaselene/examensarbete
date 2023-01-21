@@ -490,6 +490,9 @@ z = 0
 .p-l-4 {
 	padding-left: 25px;
 }
+.p-l-5 {
+	padding-left: 30px;
+}
 .p-r-4 {
 	padding-right: 25px;
 }
@@ -1711,23 +1714,23 @@ tbody tr:nth-child(odd) {
 }
 
 .td-status .order.pending {
-	color: #1b4d9c;
+	color: #205bb9;
 	font-weight: bold;
-	background-color: #367ff4;
+	background-color: #94bdff;
 	border-radius: 50px;
 	padding: 10px 15px;
 }
 .td-status .order.sent {
-	color: #14891f;
+	color: #108a1b;
 	font-weight: bold;
-	background-color: #26d87f;
+	background-color: #97edc2;
 	border-radius: 50px;
 	padding: 10px 15px;
 }
-.td-status .order.hold {
-	color: #741010;
+.td-status .order.canceled {
+	color: #b50f0f;
 	font-weight: bold;
-	background-color: #cc2424;
+	background-color: #f06464;
 	border-radius: 50px;
 	padding: 10px 15px;
 }
@@ -1895,7 +1898,6 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 	background-position: top left;
 	background-size: 900px;
 }
-
 .go-back-btn {
 	position: absolute;
 	top: 0;
@@ -2051,7 +2053,7 @@ i.bx.bx-image {
 	overflow: hidden;
 }
 .account-nav {
-	height: 10vh;
+	height: 13vh;
 	background-color: white;
 	padding: 0 80px;
 	border-bottom: 1px solid #97979755;
@@ -2063,25 +2065,69 @@ i.bx.bx-image {
 .orders-container .order-list {
 	background-color: white;
 	border-radius: 10px;
-	padding: 30px;
+	padding: 30px 0;
 	margin-right: 8px;
 	overflow: hidden;
 	overflow-y: auto;
-	height: 750px;
+	height: 710px;
 }
 .order-item {
 	border-bottom: 1px solid #97979755;
-	padding: 13px 0;
+	padding: 5px 30px 13px;
 	list-style: none;
+	position: relative;
 }
+.order-item:hover {
+	background-color: rgba(247, 245, 245, 0.454);
+}
+.order-item.active:after {
+	content: "";
+	height: 100%;
+	width: 2.3px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	background-color: #ef6d9f;
+}
+
 .orders-container > div > .col-7 > ul > li > div > .order.sent {
 	color: #1ed762;
+}
+.orders-container > div > .col-7 > ul > li > div > .order.sent::before {
+	content: "\f058";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 5px;
+	color: #5fd840;
 }
 .orders-container > div > .col-7 > ul > li > div > .order.pending {
 	color: #367ff4;
 }
-.orders-container > div > .col-7 > ul > li > div > .order.hold {
+.orders-container > div > .col-7 > ul > li > div > .order.pending::before {
+	content: "\f466";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 5px;
+	color: #98c0ff;
+}
+.orders-container > div > .col-7 > ul > li > div > .order.canceled {
 	color: #ff0000;
+}
+.orders-container > div > .col-7 > ul > li > div > .order.canceled::before {
+	content: "\f06a";
+	font-family: "FontAwesome";
+	display: inline-block;
+	margin-right: 5px;
+	color: #f8736c;
+}
+.orders-container > div > div.col-7 > ul > li > div > div > span:nth-child(2) {
+	color: #8e8e8e;
+	font-size: 0.9rem;
+	padding-top: 8px;
+}
+.order-id {
+	font-size: 1.1rem;
 }
 .order-overview {
 	background-color: white;
@@ -2090,6 +2136,28 @@ i.bx.bx-image {
 	height: 100%;
 	margin-left: 8px;
 }
+.go-back-container {
+	background-color: white;
+	padding: 8px 80px;
+	border-bottom: 1px solid #97979755;
+}
+.account-navbar ul {
+	height: 40px;
+	margin-top: 18px;
+}
+.account-navbar li {
+	list-style: none;
+	margin-right: 50px;
+}
+.account-nav > .account-navbar > ul > li > a {
+	color: #1a1a1a;
+}
+.account-navbar .current a {
+	color: #ef6d9f !important;
+	border-bottom: 3px solid #ef6d9f;
+	padding: 8.5px 0;
+}
+
 /*** Footer ***/
 footer {
 	margin-top: auto;

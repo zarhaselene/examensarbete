@@ -45,13 +45,13 @@ if orders(order-id) == productsorders(order-id)
 
 */
 
-$hold_orders = [];
+$canceled_orders = [];
 $sent_orders = [];
 $pending_orders = [];
 
 foreach ($orders as $order) {
-    if ($order->status == 'Hold') {
-        array_push($hold_orders, $order);
+    if ($order->status == 'Canceled') {
+        array_push($canceled_orders, $order);
     } elseif ($order->status == 'Sent') {
         array_push($sent_orders, $order);
     } elseif ($order->status == 'Pending') {
@@ -85,8 +85,8 @@ Template::header("Admin Dashboard");
                     <p>Pending Orders</p>
                 </div>
                 <div class="tracking">
-                    <h1 class="color-red"><?= count($hold_orders) ?></h1>
-                    <p>Orders Hold</p>
+                    <h1 class="color-red"><?= count($canceled_orders) ?></h1>
+                    <p>Orders Canceled</p>
                 </div>
             </div>
             <div class="orders">
@@ -123,8 +123,8 @@ Template::header("Admin Dashboard");
                                             echo "pending";
                                         } elseif ($order->status === "Sent") {
                                             echo "sent";
-                                        } elseif ($order->status === "Hold") {
-                                            echo "hold";
+                                        } elseif ($order->status === "Canceled") {
+                                            echo "canceled";
                                         } ?>
                                         ">
                                             <?= $order->status ?>
@@ -136,7 +136,7 @@ Template::header("Admin Dashboard");
                                             <option value="status" selected disabled>Change status</option>
                                             <option value="Pending">Pending</option>
                                             <option value="Sent">Sent</option>
-                                            <option value="Hold">Hold</option>
+                                            <option value="Canceled">Canceled</option>
                                         </select>
 
                                     </td>

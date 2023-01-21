@@ -11,7 +11,6 @@ $orders = $orders_db->get_order_by_user_id($logged_in_user->id);
 
 Template::header("My account - Orders");
 ?>
-
 <section class="my-account">
     <div class="go-back-container">
         <a class="go-back" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
@@ -25,11 +24,11 @@ Template::header("My account - Orders");
         </div>
         <div class="account-navbar">
             <ul class="display-flex align-items-center">
-                <li class="current">
-                    <a href="#">Orders</a>
-                </li>
                 <li>
-                    <a href="/exa/pages/account.php">My account</a>
+                    <a href="/exa/pages/orders.php">Orders</a>
+                </li>
+                <li class="current">
+                    <a href="#">My account</a>
                 </li>
             </ul>
         </div>

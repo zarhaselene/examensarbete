@@ -10,6 +10,13 @@ $(window).scroll(function () {
 	}
 });
 
+$(document).ready(function () {
+	/* select the first child element of the ul element with the
+	   class "order-list" and add the class "active"
+	*/
+	$("ul.order-list li:first").addClass("active");
+});
+
 //Place order btn tooltip (shows when user ain't logged in)
 $(document).ready(function () {
 	// select the tooltip element

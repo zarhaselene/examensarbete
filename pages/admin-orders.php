@@ -118,16 +118,15 @@ Template::header("Admin Dashboard");
 
                                     <td class="td-status">
                                         <span class="order 
-    <?php
-                            if ($order->status === "Pending") {
-                                echo "pending";
-                            } elseif ($order->status === "Sent") {
-                                echo "sent";
-                            } elseif ($order->status === "Hold") {
-                                echo "hold";
-                            }
-    ?>
-    ">
+                                        <?php
+                                        if ($order->status === "Pending") {
+                                            echo "pending";
+                                        } elseif ($order->status === "Sent") {
+                                            echo "sent";
+                                        } elseif ($order->status === "Hold") {
+                                            echo "hold";
+                                        } ?>
+                                        ">
                                             <?= $order->status ?>
                                         </span>
                                     </td>

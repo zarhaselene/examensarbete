@@ -10,6 +10,28 @@ $(window).scroll(function () {
 	}
 });
 
+//Place order btn tooltip (shows when user ain't logged in)
+$(document).ready(function () {
+	// select the tooltip element
+	let tooltip = $(".tooltip");
+	// set the initial opacity to 0
+	tooltip.css("opacity", "0");
+	// bind the hover event to the element with the class "grey-cart-button"
+	$(".grey-cart-button").hover(
+		function () {
+			// on hover, set the tooltip's opacity to 1 and translate it to the Y-axis by 0
+			tooltip.css({
+				opacity: "1",
+				transform: "translateY(0)",
+			});
+		},
+		function () {
+			// on hover out, set the tooltip's opacity to 0
+			tooltip.css("opacity", "0");
+		}
+	);
+});
+
 //Add to cart
 function addToCart(event) {
 	// Prevent default form submission behavior
@@ -149,3 +171,34 @@ var card = elements.create("card", {
 
 // Mount the card element to the element with ID "card"
 card.mount("#card");
+
+// $(document).ready(function () {
+// 	// Default behavior: show details of newest order
+// 	$(".order-item:first").addClass("active");
+// 	var orderId = $(".order-item:first").data("order-id");
+// 	getOrderDetails(orderId);
+
+// 	// Handle click events on order ID elements
+// 	$(".order-id").click(function () {
+// 		$(".order-id").removeClass("active");
+// 		$(this).addClass("active");
+// 		var orderId = $(this).data("order-id");
+// 		$("#order-id-input").val(orderId);
+// 		getOrderDetails();
+// 	});
+
+// 	function getOrderDetails() {
+// 		var orderId = $("#order-id-input").val();
+// 		$.ajax({
+// 			url: "/exa/scripts/order_details.php",
+// 			type: "POST",
+// 			data: { order_id: orderId },
+// 			success: function (response) {
+// 				$(".order-overview").html(response);
+// 			},
+// 			error: function () {
+// 				console.log("Error retrieving order details");
+// 			},
+// 		});
+// 	}
+// });

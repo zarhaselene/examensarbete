@@ -38,9 +38,14 @@ Template::header('Cart'); ?>
                         </a>
                     </div>
                     <div class="wrapper display-flex direction-column">
-                        <div class="heading display-flex align-items-center">
-                            <h2>Shopping cart</h2>
-                            <span class="p-h-5 color-pink"><b><?= $cart_count ?> items</b> </span>
+                        <div class="heading display-flex align-items-center justify-between">
+                            <div class="display-flex align-items-center">
+                                <h2>Shopping cart</h2>
+                                <span class="p-h-5 color-pink"><b><?= $cart_count ?> items</b> </span>
+                            </div>
+                            <div id="myDiv">
+
+                            </div>
                         </div>
                         <div class="cart-items-container">
                             <?php foreach ($products as $product) : ?>
@@ -51,7 +56,7 @@ Template::header('Cart'); ?>
                                     </div>
                                     <div class="item-info">
                                         <h3><?= $product->title ?></h3>
-                                        <p>$<?= $product->price ?></p>
+                                        <p>$<?= $product->price ?>.00</p>
                                     </div>
                                 </div>
                                 <div class="hr"></div>
@@ -60,74 +65,83 @@ Template::header('Cart'); ?>
                     </div>
                 </div>
                 <div class="col-8 display-flex direction-column justify-center">
-                    <?php if ($is_logged_in) : ?>
 
-                        <div class="payment-wrapper">
-                            <div class="cell payment">
-                                <form>
-                                    <fieldset>
-                                        <div class="row">
-                                            <label for="payment-name" data-tid="elements_payments.form.name_label">Name</label>
-                                            <input id="payment-name" data-tid="elements_payments.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
-                                        </div>
-                                        <div class="row">
-                                            <label for="payment-email" data-tid="elements_payments.form.email_label">Email</label>
-                                            <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
-                                        </div>
-                                        <div class="row noborder-row">
-                                            <label for="payment-phone" data-tid="elements_payments.form.phone_label">Phone</label>
-                                            <input id="payment-phone" data-tid="elements_payments.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
-                                        </div>
-                                    </fieldset>
-                                    <div class="display-flex justify-between m-t-4">
-                                        <div class="payment-method">
-                                            <h3 class="">Payment method</h3>
-                                            <small class="">Credit Card</small>
-
-                                        </div>
-                                        <a href="#" class="color-pink text-underline">Edit</a>
+                    <div class="payment-wrapper">
+                        <div class="cell payment">
+                            <form>
+                                <fieldset>
+                                    <div class="row">
+                                        <label for="payment-name" data-tid="elements_payments.form.name_label">Name</label>
+                                        <input id="payment-name" data-tid="elements_payments.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
                                     </div>
-                                    <fieldset>
-                                        <div class="row noborder-row">
-                                            <div id="card"></div>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                            <div class="discount-code m-t-50">
-                                <h3>Do you have any discount code?</h3>
-                                <p><small>Only one discount code per order can be applied.</small></p>
-                                <input class="dcode" type="text" placeholder="Your code here">
-                                <input class="discount-btn" type="button" value="APPLY">
-                            </div>
-                            <div class="total m-t-50">
-                                <div class="subtotal display-flex justify-between">
-                                    <p>Subtotal (<?= $cart_count ?> items)</p>
-                                    <p>$<?= $total ?></p>
-                                </div>
-                                <div class="shipping display-flex justify-between">
-                                    <p>Shipping costs</p>
-                                    <p><b>FREE!</b></p>
-                                </div>
-                                <div class="discount display-flex justify-between">
-                                    <p>Discount</p>
-                                    <p><b>-</b></p>
-                                </div>
-                                <div class="cart-total display-flex justify-between m-t-4">
-                                    <div class="total-sum">
-                                        <p><small>Total (incl. VAT)</small></p>
-                                        <h3>$<?= $total ?></h3>
+                                    <div class="row">
+                                        <label for="payment-email" data-tid="elements_payments.form.email_label">Email</label>
+                                        <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
                                     </div>
-                                    <button class="cart-button btn full-btn m-z" id="pay" type="submit">Place order</button>
-                                </div>
-                            </div>
+                                    <div class="row noborder-row">
+                                        <label for="payment-phone" data-tid="elements_payments.form.phone_label">Phone</label>
+                                        <input id="payment-phone" data-tid="elements_payments.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
+                                    </div>
+                                </fieldset>
+                                <div class="display-flex justify-between m-t-4">
+                                    <div class="payment-method">
+                                        <h3 class="">Payment method</h3>
+                                        <small class="">Credit Card</small>
 
+                                    </div>
+                                    <a href="#" class="color-pink text-underline">Edit</a>
+                                </div>
+                                <fieldset>
+                                    <div class="row noborder-row">
+                                        <div id="card"></div>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
+                        <div class="discount-code m-t-50">
+                            <h3>Do you have any discount code?</h3>
+                            <p><small>Only one discount code per order can be applied.</small></p>
+                            <input class="dcode" type="text" placeholder="Your code here">
+                            <input class="discount-btn" type="button" value="APPLY">
+                        </div>
+                        <div class="total m-t-50">
+                            <div class="subtotal display-flex justify-between">
+                                <p>Subtotal (<?= $cart_count ?> items)</p>
+                                <p>$<?= $total ?>.00</p>
+                            </div>
+                            <div class="shipping display-flex justify-between">
+                                <p>Shipping costs</p>
+                                <p><b>FREE!</b></p>
+                            </div>
+                            <div class="discount display-flex justify-between">
+                                <p>Discount</p>
+                                <p><b>-</b></p>
+                            </div>
+                            <div class="cart-total display-flex justify-between m-t-4">
+                                <div class="total-sum">
+                                    <p><small>Total (incl. VAT)</small></p>
+                                    <h3>$<?= $total ?>.00</h3>
+                                </div>
+                                <?php if ($is_logged_in) : ?>
+                                    <button class="btn full-btn m-z" id="pay" type="submit">Place order</button>
+                                <?php endif; ?>
+                                <?php if (!$is_logged_in) : ?>
+                                    <div class="not-logged-in position-relative display-flex direction-column align-items-center">
+
+                                        <div class="tooltip">
+                                            You need to login to place an order.
+                                        </div>
+                                        <div class="grey-cart-button btn m-z">
+                                            Place order
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            <?php endif; ?>
-            <?php if (!$is_logged_in) : ?>
-                <p>You need to be logged in to place an order</p>
-            <?php endif; ?>
+
             </div>
             </div>
         </form>

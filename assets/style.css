@@ -189,6 +189,32 @@ a {
 	position: absolute;
 	top: 0;
 }
+.grey-cart-button {
+	display: flex;
+	align-items: center;
+	background-color: #505050;
+	color: white;
+	cursor: not-allowed;
+}
+.grey-cart-button:hover {
+	display: flex;
+	align-items: center;
+	background-color: #303030;
+	color: white;
+}
+.tooltip {
+	position: absolute;
+	bottom: -50px;
+	background: white;
+	white-space: nowrap;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+	transform: translateY(-50px);
+	pointer-events: none;
+	transition: all 0.3s ease-in;
+	font-size: 0.8rem;
+}
 
 /* Flex */
 .display-flex {
@@ -1347,13 +1373,13 @@ textarea:focus {
 .admin-dashboard {
 	position: relative;
 	background: #f5f5fc;
-	min-height: 100vh;
 	top: 0;
 	left: 78px;
 	width: calc(100% - 78px);
 	transition: all 0.5s ease;
 	z-index: 2;
-	overflow-y: hidden;
+	overflow-x: auto;
+	height: 100vh;
 }
 .sidebar.open ~ .admin-dashboard {
 	left: 250px;
@@ -1883,6 +1909,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 
 .wrapper {
 	padding: 0 50px;
+	margin-top: 180px;
 }
 .heading {
 	margin-bottom: 40px;
@@ -2045,14 +2072,15 @@ i.bx.bx-image {
 .order-item {
 	border-bottom: 1px solid #97979755;
 	padding: 13px 0;
+	list-style: none;
 }
-.orders-container > div > div > div > div > div > div > .order.sent {
+.orders-container > div > .col-7 > ul > li > div > .order.sent {
 	color: #1ed762;
 }
-.orders-container > div > div > div > div > div > div > .order.pending {
+.orders-container > div > .col-7 > ul > li > div > .order.pending {
 	color: #367ff4;
 }
-.orders-container > div > div > div > div > div > div > .order.hold {
+.orders-container > div > .col-7 > ul > li > div > .order.hold {
 	color: #ff0000;
 }
 .order-overview {
@@ -2204,6 +2232,9 @@ footer {
 	}
 	.shopping-cart > form > div > div.col-8 {
 		width: auto;
+	}
+	.wrapper {
+		margin-top: 0;
 	}
 }
 /* Laptop S*/

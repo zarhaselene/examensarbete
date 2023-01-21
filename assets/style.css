@@ -1687,21 +1687,21 @@ tbody tr:nth-child(odd) {
 .td-status .order.pending {
 	color: #1b4d9c;
 	font-weight: bold;
-	background-color: #367FF4;
+	background-color: #367ff4;
 	border-radius: 50px;
 	padding: 10px 15px;
 }
 .td-status .order.sent {
 	color: #14891f;
 	font-weight: bold;
-	background-color: #26D87F;
+	background-color: #26d87f;
 	border-radius: 50px;
 	padding: 10px 15px;
 }
 .td-status .order.hold {
 	color: #741010;
 	font-weight: bold;
-	background-color: #CC2424;
+	background-color: #cc2424;
 	border-radius: 50px;
 	padding: 10px 15px;
 }
@@ -2017,7 +2017,51 @@ i.bx.bx-image {
 	overflow-y: auto;
 	height: 650px;
 }
-
+/*** My account Orders page ***/
+.my-account {
+	height: 100vh;
+	background-color: #f6f6f6;
+	overflow: hidden;
+}
+.account-nav {
+	height: 10vh;
+	background-color: white;
+	padding: 0 80px;
+	border-bottom: 1px solid #97979755;
+	margin-bottom: 22px;
+}
+.orders-container {
+	padding: 0 80px;
+}
+.orders-container .order-list {
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px;
+	margin-right: 8px;
+	overflow: hidden;
+	overflow-y: auto;
+	height: 750px;
+}
+.order-item {
+	border-bottom: 1px solid #97979755;
+	padding: 13px 0;
+}
+.orders-container > div > div > div > div > div > div > .order.sent {
+	color: #1ed762;
+}
+.orders-container > div > div > div > div > div > div > .order.pending {
+	color: #367ff4;
+}
+.orders-container > div > div > div > div > div > div > .order.hold {
+	color: #ff0000;
+}
+.order-overview {
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px;
+	height: 100%;
+	margin-left: 8px;
+}
 /*** Footer ***/
 footer {
 	margin-top: auto;

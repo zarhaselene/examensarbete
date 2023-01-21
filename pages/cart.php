@@ -22,11 +22,14 @@ Template::header('Cart'); ?>
 <section class="shopping-cart position-relative">
 
     <?php if (!$products) : ?>
-        <a class="go-back-btn" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
-
+        <div class="empty-cart-container display-flex direction-column align-items-center justify-center">
+            <iframe class="lottie-animation" frameBorder="0" src="https://embed.lottiefiles.com/animation/134454"></iframe>
+            <h2 class="p-t-2">Your Cart is Empty</h2>
+            <p class="p-t-2">Looks like you haven't added anything to your cart yet.</p>
+            <a href="/exa/index.php" class="btn full-btn">Continue shopping</a>
+        </div>
         <!-- No products  -->
     <?php elseif ($_SESSION["cart"]) : ?>
-
         <form action="/exa/scripts/post-place-order.php" method="post">
             <div class="cart-wrapper row">
                 <div class="col-16 display-flex direction-column justify-center">
@@ -35,14 +38,11 @@ Template::header('Cart'); ?>
                         </a>
                     </div>
                     <div class="wrapper display-flex direction-column">
-
                         <div class="heading display-flex align-items-center">
                             <h2>Shopping cart</h2>
                             <span class="p-h-5 color-pink"><b><?= $cart_count ?> items</b> </span>
                         </div>
-
                         <div class="cart-items-container">
-
                             <?php foreach ($products as $product) : ?>
                                 <div class="cart-item m-b-4 display-flex align-items-center">
                                     <input type="hidden" name="id" value="<?= $product->id ?>">
@@ -55,10 +55,8 @@ Template::header('Cart'); ?>
                                     </div>
                                 </div>
                                 <div class="hr"></div>
-
                             <?php endforeach ?>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-8 display-flex direction-column justify-center">
@@ -89,8 +87,6 @@ Template::header('Cart'); ?>
                                         </div>
                                         <a href="#" class="color-pink text-underline">Edit</a>
                                     </div>
-
-
                                     <fieldset>
                                         <div class="row noborder-row">
                                             <div id="card"></div>
@@ -98,15 +94,12 @@ Template::header('Cart'); ?>
                                     </fieldset>
                                 </form>
                             </div>
-
                             <div class="discount-code m-t-50">
                                 <h3>Do you have any discount code?</h3>
                                 <p><small>Only one discount code per order can be applied.</small></p>
                                 <input class="dcode" type="text" placeholder="Your code here">
                                 <input class="discount-btn" type="button" value="APPLY">
                             </div>
-
-
                             <div class="total m-t-50">
                                 <div class="subtotal display-flex justify-between">
                                     <p>Subtotal (<?= $cart_count ?> items)</p>
@@ -132,15 +125,14 @@ Template::header('Cart'); ?>
                         </div>
                 </div>
             <?php endif; ?>
-
             <?php if (!$is_logged_in) : ?>
                 <p>You need to be logged in to place an order</p>
             <?php endif; ?>
             </div>
             </div>
         </form>
-        <!-- <form action="/exa/scripts/post-empty-cart.php" method="post">
+        <form action="/exa/scripts/post-empty-cart.php" method="post">
             <button class="empty-cart-btn btn full-btn" type="submit" name="empty_cart">Empty Cart</button>
-        </form> -->
+        </form>
     <?php endif ?>
 </section>

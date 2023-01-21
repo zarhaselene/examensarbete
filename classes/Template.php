@@ -201,7 +201,8 @@ class Template
 
                 <!-- Swiper JS -->
                 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
+                <!-- Lottie player -->
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             </footer>
         </body>
 

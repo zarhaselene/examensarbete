@@ -1728,6 +1728,24 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 .shopping-cart {
 	height: 100vh;
 }
+/*If cart is empty styling*/
+.empty-cart-container {
+	background-color: white;
+	height: 100%;
+	padding: 80px;
+	text-align: center;
+}
+.lottie-animation {
+	width: 500px;
+	height: 500px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/*If cart is not empty styling*/
 .shopping-cart > form > div > div.col-8 {
 	background-color: #f8f8f8;
 	color: #3b3b3b;
@@ -2347,6 +2365,10 @@ footer {
 	}
 	.col-16 > div.wrapper > div.heading h2 {
 		padding-bottom: 8px;
+	}
+	.lottie-animation {
+		width: 300px;
+		height: 300px;
 	}
 	.sidebar .bx-menu {
 		display: none;

@@ -116,7 +116,21 @@ Template::header("Admin Dashboard");
 
                                     <td><?= $order->order_date ?></td>
 
-                                    <td class="td-status"><span class="red"><?= $order->status ?></span></td>
+                                    <td class="td-status">
+                                        <span class="order 
+    <?php
+                            if ($order->status === "Pending") {
+                                echo "pending";
+                            } elseif ($order->status === "Sent") {
+                                echo "sent";
+                            } elseif ($order->status === "Hold") {
+                                echo "hold";
+                            }
+    ?>
+    ">
+                                            <?= $order->status ?>
+                                        </span>
+                                    </td>
                                     <td class="td-edit th-edit-role">
 
                                         <select name="status" id="status">

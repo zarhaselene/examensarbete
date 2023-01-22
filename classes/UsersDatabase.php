@@ -23,7 +23,7 @@ class UsersDatabase extends Database
         $user = null;
 
         if ($db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
             $user->set_password_hash($db_user['password-hash']);
         }
         return $user;
@@ -47,35 +47,20 @@ class UsersDatabase extends Database
         $user = null;
 
         if ($db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
             $user->set_password_hash($db_user['password-hash']);
         }
         return $user;
     }
 
-    public function get_one_by_id($id)
-    {
-        $query = "SELECT * FROM users WHERE `users`.`id` = ? ";
-
-        $stmt = mysqli_prepare($this->conn, $query);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-        $db_user = mysqli_fetch_assoc($result);
-
-        $user = new User($db_user["username"], $db_user["role"], $db_user['id']);
-        return $user;
-    }
-
-    // Get five
+    // Get five users
     public function get_five()
     {
         $query = "SELECT * FROM users ORDER BY ID DESC LIMIT 5";
         $result = mysqli_query($this->conn, $query);
         $db_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($db_users as $db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
             $users[] = $user;
         }
         return $users;
@@ -88,13 +73,13 @@ class UsersDatabase extends Database
         $result = mysqli_query($this->conn, $query);
         $db_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($db_users as $db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
             $users[] = $user;
         }
         return $users;
     }
 
-    // Create
+    // Create user
     public function create(User $user)
     {
         $query = "INSERT INTO users (username, `password-hash`, `role`) VALUES (?, ?, ?)";
@@ -116,7 +101,7 @@ class UsersDatabase extends Database
             return false;
         }
     }
-    // Update    
+    // Update user role
     public function update($role, $id)
     {
         $query = "UPDATE users SET `role` = ? WHERE id = ?";
@@ -129,7 +114,29 @@ class UsersDatabase extends Database
 
         return $success;
     }
-    // Delete
+    // Update username
+    public function update_my_username(User $user, $id)
+    {
+        $query = "UPDATE `users` SET `username` = ? WHERE `users`.`id` = ?";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+        $stmt->bind_param("si", $user->username, $id);
+
+        return $stmt->execute();
+    }
+
+    // Update account information
+    public function update_account(User $user, $id)
+    {
+        $query = "UPDATE `users` SET `firstname` = ?, `lastname` = ?, `email` = ? WHERE `users`.`id` = ?";
+
+        $stmt = mysqli_prepare($this->conn, $query);
+        $stmt->bind_param("sssi", $user->firstname, $user->lastname, $user->email, $id);
+
+        return $stmt->execute();
+    }
+
+    // Delete user
     public function delete($id)
     {
         $query = "DELETE FROM users WHERE id = ?";
@@ -142,7 +149,7 @@ class UsersDatabase extends Database
 
         return $success;
     }
-
+    // Get or Create user from google login 
     public function get_google_user(User $user)
     {
         $db_user = $this->get_one_by_username($user->username);
@@ -158,7 +165,7 @@ class UsersDatabase extends Database
             $success = $stmt->execute();
 
             if ($success) {
-                $user = $this->get_one_by_id($stmt->insert_id);
+                $user = $this->get_user_by_id($stmt->insert_id);
             } else {
 
                 var_dump($stmt->error);

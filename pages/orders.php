@@ -3,11 +3,25 @@ require_once __DIR__ . "/../classes/Template.php";
 require_once __DIR__ . "/../classes/OrdersDatabase.php";
 require_once __DIR__ . "/../classes/UsersDatabase.php";
 
-$logged_in_user = $_SESSION["user"];
+
+// Check if user is logged in
+$is_logged_in = isset($_SESSION['user']);
+$logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+
+// Check if user has correct role
+$allowed_roles = array("admin", "customer");
+$user_has_allowed_role = $is_logged_in && in_array($logged_in_user->role, $allowed_roles);
+
+if (!$user_has_allowed_role) {
+    http_response_code(401);
+    die('Access denied, create an account to access this page.');
+}
+
+$user = $_SESSION["user"];
 
 $orders_db = new OrdersDatabase();
 
-$orders = $orders_db->get_order_by_user_id($logged_in_user->id);
+$orders = $orders_db->get_order_by_user_id($user->id);
 
 Template::header("My account - Orders");
 ?>

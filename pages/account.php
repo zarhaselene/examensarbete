@@ -2,13 +2,27 @@
 require_once __DIR__ . "/../classes/Template.php";
 require_once __DIR__ . "/../classes/UsersDatabase.php";
 
-$logged_in_user = $_SESSION["user"];
 
-$username = $logged_in_user->username;
-$role = $logged_in_user->role;
-$firstname = $logged_in_user->firstname;
-$lastname = $logged_in_user->lastname;
-$email = $logged_in_user->email;
+// Check if user is logged in
+$is_logged_in = isset($_SESSION['user']);
+$logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
+
+// Check if user has correct role
+$allowed_roles = array("admin", "customer");
+$user_has_allowed_role = $is_logged_in && in_array($logged_in_user->role, $allowed_roles);
+
+if (!$user_has_allowed_role) {
+    http_response_code(401);
+    die('Access denied, create an account to access this page.');
+}
+$user = $_SESSION["user"];
+
+
+$username = $user->username;
+$role = $user->role;
+$firstname = $user->firstname;
+$lastname = $user->lastname;
+$email = $user->email;
 
 
 Template::header("My account "); ?>
@@ -66,7 +80,7 @@ Template::header("My account "); ?>
             <div>
                 <p>Danger zone</p>
                 <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?= $logged_in_user->id ?>">
+                    <input type="hidden" name="id" value="<?= $user->id ?>">
                     <button type="submit" class="reset-btn-styling"><i class='bx bx-trash'>Delete my account</i></button>
                 </form>
             </div>

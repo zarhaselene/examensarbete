@@ -70,7 +70,7 @@ Template::header("Admin Dashboard");
                                     <td>
                                         <div class="td-currency display-flex align-items-center">
                                             <span>$</span>
-                                            <?= $product->price ?>
+                                            <?= $product->price ?>.00
                                         </div>
                                     </td>
                                     <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->

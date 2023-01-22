@@ -30,8 +30,7 @@ Template::header("Update product"); ?>
             <?php
             if ($product == null) :
             ?>
-
-                <h2>No product</h2>
+                <h2>No product to edit</h2>
             <?php else : ?>
 
                 <div class="admin-edit-product-container">
@@ -70,15 +69,9 @@ Template::header("Update product"); ?>
                                     <i class='bx bx-image'></i>
                                     <img id="imgPreview" src="#" alt="" />
                                 </div>
-                                <!-- <div class="file">
-                                    <input type="file" id="photo" name="image" accept="image/*" required>
-                                </div> -->
                                 <label for="photo" class="upload-photo btn full-btn display-flex align-items-center">
                                     <i class='bx bxs-image-add'></i> Choose file</label>
                                 <input id="photo" type="file" id="photo" name="image" accept="image/*" required>
-
-
-
                                 <div class="submit">
                                     <button type="submit" class="btn full-btn">Save</button>
                                 </div>

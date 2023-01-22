@@ -28,7 +28,7 @@ if (isset($_GET["code"])) {
 
 
         $db = new UsersDatabase();
-        $user = new User($data["email"], 'customer');
+        $user = new User($data["email"], 'customer', '', '', '', '',);
 
         $user = $db->get_google_user($user);
 

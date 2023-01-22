@@ -5,16 +5,25 @@ class User
     public $id;
     public $username;
     public $role;
-
+    
     private $password_hash;
 
-    public function __construct($username, $role, $id = 0)
+    public $firstname;
+    public $lastname;
+    public $email;
+    public $img_url;
+
+    public function __construct($username, $role, $firstname, $lastname, $email, $img_url, $id = 0)
     {
         if ($id > 0) {
             $this->id = $id;
         }
         $this->username = $username;
         $this->role = $role;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->email = $email;
+        $this->img_url = $img_url;
     }
 
     function hash_password($password)

@@ -18,7 +18,7 @@ if (
 
     $users_db = new UsersDatabase();
     // creating new user object with username and role as customer
-    $user = new User($_POST['username'], 'customer');
+    $user = new User($_POST['username'], 'customer', '', '', '', '',);
     // hashing the password
     $user->hash_password($password);
     // checking if user with the same username already exists

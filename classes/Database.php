@@ -4,7 +4,7 @@ class Database
     private $host = "localhost";
     private $user = "root";
     private $pass = "root";
-    private $db = "examensarbete_db";
+    private $db = "exa_db";
 
 
     protected $conn;

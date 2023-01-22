@@ -48,7 +48,7 @@ function addToCart(event) {
 	const formData = new FormData(form);
 
 	// Send the form data to the server using a POST request to the specified URL
-	fetch("/exa/scripts/post-add-to-cart.php", {
+	fetch("/exa/scripts/add-to-cart.php", {
 		method: "POST",
 		body: formData,
 	})

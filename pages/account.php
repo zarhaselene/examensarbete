@@ -77,11 +77,10 @@ Template::header("My account "); ?>
             </div>
 
             <!-- Delete My account -->
-            <div>
-                <p>Danger zone</p>
-                <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">
+            <div class="danger-zone">
+                    <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $user->id ?>">
-                    <button type="submit" class="reset-btn-styling"><i class='bx bx-trash'>Delete my account</i></button>
+                    <button type="submit" class="btn m-z danger-btn"></i>Delete my account</button>
                 </form>
             </div>
         </div>

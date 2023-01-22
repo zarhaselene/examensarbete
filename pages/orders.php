@@ -29,7 +29,7 @@ Template::header("My account - Orders");
                     <a href="#">Orders</a>
                 </li>
                 <li>
-                    <a href="/exa/pages/account.php">My account</a>
+                    <a href="/exa/pages/account.php">Account</a>
                 </li>
             </ul>
         </div>

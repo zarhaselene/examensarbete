@@ -1827,6 +1827,22 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 .discount > p > b {
 	font-size: 1rem;
 }
+#discount-message {
+	transform: translateY(90%);
+	transition: transform 0.3s ease-in-out;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+#discount-message.show {
+	transform: translateY(120%);
+}
+#discount-message.hide {
+	display: none;
+}
+
 #pay {
 	border-radius: 5px;
 }
@@ -1858,7 +1874,7 @@ div.products > table > tbody > tr > td > div > input[type="number"] {
 
 .payment label {
 	width: 15%;
-	min-width: 70px;
+	min-width: 100px;
 	padding: 11px 0;
 	overflow: hidden;
 	text-overflow: ellipsis;

@@ -43,9 +43,6 @@ Template::header('Cart'); ?>
                                 <h2>Shopping cart</h2>
                                 <span class="p-h-5 color-pink"><b><?= $cart_count ?> items</b> </span>
                             </div>
-                            <div id="myDiv">
-
-                            </div>
                         </div>
                         <div class="cart-items-container">
                             <?php foreach ($products as $product) : ?>
@@ -69,24 +66,26 @@ Template::header('Cart'); ?>
                     <div class="payment-wrapper">
                         <div class="cell payment">
                             <form>
+                                <h3 class="p-b-2">Account Details</h3>
+
                                 <fieldset>
                                     <div class="row">
-                                        <label for="payment-name" data-tid="elements_payments.form.name_label">Name</label>
-                                        <input id="payment-name" data-tid="elements_payments.form.name_placeholder" type="text" placeholder="Jane Doe" required="" autocomplete="name">
+                                        <label for="payment-name" data-tid="elements_payments.form.firstname_label">First name</label>
+                                        <input id="payment-name" data-tid="elements_payments.form.firstname_placeholder" type="text" placeholder="Jane" required="" autocomplete="first name" value="<?= $logged_in_user->firstname ?>">
                                     </div>
                                     <div class="row">
-                                        <label for="payment-email" data-tid="elements_payments.form.email_label">Email</label>
-                                        <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email">
+                                        <label for="payment-name" data-tid="elements_payments.form.lastname_label">Last name</label>
+                                        <input id="payment-name" data-tid="elements_payments.form.lastname_placeholder" type="text" placeholder="Doe" required="" autocomplete="last name" value="<?= $logged_in_user->lastname ?>">
                                     </div>
                                     <div class="row noborder-row">
-                                        <label for="payment-phone" data-tid="elements_payments.form.phone_label">Phone</label>
-                                        <input id="payment-phone" data-tid="elements_payments.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="" autocomplete="tel">
+                                        <label for="payment-email" data-tid="elements_payments.form.email_label">Email</label>
+                                        <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email" value="<?= $logged_in_user->email ?>">
                                     </div>
                                 </fieldset>
                                 <div class="display-flex justify-between m-t-4">
                                     <div class="payment-method">
-                                        <h3 class="">Payment method</h3>
-                                        <small class="">Credit Card</small>
+                                        <h3>Payment method</h3>
+                                        <small>Credit Card</small>
 
                                     </div>
                                     <a href="#" class="color-pink text-underline">Edit</a>
@@ -101,8 +100,12 @@ Template::header('Cart'); ?>
                         <div class="discount-code m-t-50">
                             <h3>Do you have any discount code?</h3>
                             <p><small>Only one discount code per order can be applied.</small></p>
-                            <input class="dcode" type="text" placeholder="Your code here">
-                            <input class="discount-btn" type="button" value="APPLY">
+                            <div class="position-relative">
+
+                                <input class="dcode" type="text" placeholder="Your code here">
+                                <input class="discount-btn" type="button" value="APPLY">
+                                <small id="discount-message"></small>
+                            </div>
                         </div>
                         <div class="total m-t-50">
                             <div class="subtotal display-flex justify-between">

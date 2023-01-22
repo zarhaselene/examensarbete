@@ -144,6 +144,30 @@ $(document).ready(() => {
 	});
 });
 
+// Discount message in cart
+$(document).ready(function () {
+	// Add a click event listener to the button with class "discount-btn"
+	$(".discount-btn").click(function () {
+		// Get the value of the input with class "dcode"
+		var inputValue = $(".dcode").val();
+		// Check if inputValue is not an empty string
+		if (inputValue) {
+			$("#discount-message").text(
+				'The discount code "' +
+					inputValue +
+					'" is unfortunately not in our system.'
+			);
+			// Remove the class "hide" from the element with id "discount-message"
+			$("#discount-message").toggleClass("hide", false);
+			// Add the class "show" to the element with id "discount-message"
+			$("#discount-message").toggleClass("show", true);
+		} else {
+			$("#discount-message").toggleClass("show", false);
+			$("#discount-message").toggleClass("hide", true);
+		}
+	});
+});
+
 //Stripe
 const stripe = Stripe(
 	"pk_test_51Lhw5LFTqC3gmBoBORalC2bvcmn7BuJOTK02v3KHhpbeMmEDlsxdwj3Z8l89RDLenlgAMySP8LcY48x3hbu48yTW004JYNb8Xg"

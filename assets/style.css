@@ -2094,7 +2094,7 @@ i.bx.bx-image {
 	margin-right: 8px;
 	overflow: hidden;
 	overflow-y: auto;
-	height: 710px;
+	height: 78vh;
 }
 .order-item {
 	border-bottom: 1px solid #97979755;
@@ -2105,48 +2105,38 @@ i.bx.bx-image {
 .order-item:hover {
 	background-color: rgba(247, 245, 245, 0.454);
 }
-.order-item.active:after {
-	content: "";
-	height: 100%;
-	width: 2.3px;
-	position: absolute;
-	left: 0;
-	bottom: 0;
 
-	background-color: #ef6d9f;
-}
-
-.orders-container > div > .col-7 > ul > li > div > .order.sent {
+.orders-container > ul > li > div > .order.sent {
 	color: #1ed762;
 }
-.orders-container > div > .col-7 > ul > li > div > .order.sent::before {
+.orders-container > ul > li > div > .order.sent::before {
 	content: "\f058";
 	font-family: "FontAwesome";
 	display: inline-block;
 	margin-right: 5px;
 	color: #5fd840;
 }
-.orders-container > div > .col-7 > ul > li > div > .order.pending {
+.orders-container > ul > li > div > .order.pending {
 	color: #367ff4;
 }
-.orders-container > div > .col-7 > ul > li > div > .order.pending::before {
+.orders-container > ul > li > div > .order.pending::before {
 	content: "\f466";
 	font-family: "FontAwesome";
 	display: inline-block;
 	margin-right: 5px;
 	color: #98c0ff;
 }
-.orders-container > div > .col-7 > ul > li > div > .order.canceled {
+.orders-container > ul > li > div > .order.canceled {
 	color: #ff0000;
 }
-.orders-container > div > .col-7 > ul > li > div > .order.canceled::before {
+.orders-container > ul > li > div > .order.canceled::before {
 	content: "\f06a";
 	font-family: "FontAwesome";
 	display: inline-block;
 	margin-right: 5px;
 	color: #f8736c;
 }
-.orders-container > div > div.col-7 > ul > li > div > div > span:nth-child(2) {
+.orders-container > ul > li > div > div > span:nth-child(2) {
 	color: #8e8e8e;
 	font-size: 0.9rem;
 	padding-top: 8px;
@@ -2286,9 +2276,7 @@ footer {
 		padding: 40px 50px 50px 50px;
 		color: white;
 	}
-	.banner.display-flex.direction-column.justify-center.align-items-start
-		> div
-		> p {
+	.banner > div > p {
 		color: white;
 	}
 	.laptop-pink {
@@ -2488,6 +2476,9 @@ footer {
 	.lr-small-wrapper {
 		width: auto;
 	}
+	.orders-container {
+		padding: 0 20px;
+	}
 }
 /* Small tablet */
 @media only screen and (max-width: 555px) {
@@ -2559,6 +2550,9 @@ footer {
 	}
 	.col-16 > div.wrapper > div.heading h2 {
 		padding-bottom: 8px;
+	}
+	.orders-container {
+		padding: 0 20px;
 	}
 	.lottie-animation {
 		width: 300px;

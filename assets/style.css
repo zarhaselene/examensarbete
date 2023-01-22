@@ -202,7 +202,7 @@ a {
 	background-color: #303030;
 	color: white;
 }
-.tooltip {
+.tool-tip {
 	position: absolute;
 	bottom: -50px;
 	background: white;
@@ -2156,6 +2156,17 @@ i.bx.bx-image {
 	color: #ef6d9f !important;
 	border-bottom: 3px solid #ef6d9f;
 	padding: 8.5px 0;
+}
+
+.account-container {
+	padding: 0 180px;
+	height: 78%;
+}
+.account {
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px;
+	height: 100%;
 }
 
 /*** Footer ***/

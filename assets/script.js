@@ -20,7 +20,7 @@ $(document).ready(function () {
 //Place order btn tooltip (shows when user ain't logged in)
 $(document).ready(function () {
 	// select the tooltip element
-	let tooltip = $(".tooltip");
+	let tooltip = $(".tool-tip");
 	// set the initial opacity to 0
 	tooltip.css("opacity", "0");
 	// bind the hover event to the element with the class "grey-cart-button"

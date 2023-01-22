@@ -128,7 +128,7 @@ Template::header('Cart'); ?>
                                 <?php if (!$is_logged_in) : ?>
                                     <div class="not-logged-in position-relative display-flex direction-column align-items-center">
 
-                                        <div class="tooltip">
+                                        <div class="tool-tip">
                                             You need to login to place an order.
                                         </div>
                                         <div class="grey-cart-button btn m-z">

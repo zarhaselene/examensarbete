@@ -1,16 +1,17 @@
 <?php
 require_once __DIR__ . "/../classes/Template.php";
-require_once __DIR__ . "/../classes/OrdersDatabase.php";
 require_once __DIR__ . "/../classes/UsersDatabase.php";
 
 $logged_in_user = $_SESSION["user"];
 
-$orders_db = new OrdersDatabase();
+$username = $logged_in_user->username;
+$role = $logged_in_user->role;
+$firstname = $logged_in_user->firstname;
+$lastname = $logged_in_user->lastname;
+$email = $logged_in_user->email;
 
-$orders = $orders_db->get_order_by_user_id($logged_in_user->id);
 
-Template::header("My account - Orders");
-?>
+Template::header("My account "); ?>
 <section class="my-account">
     <div class="go-back-container">
         <a class="go-back" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
@@ -19,8 +20,8 @@ Template::header("My account - Orders");
 
     <div class="account-nav display-flex direction-column align-items-start justify-end">
         <div class="heading m-z display-flex align-items-center">
-            <h2>Your Orders</h2>
-            <p class=" p-h-1">(<?= count($orders) ?>)</p>
+            <h2>Account settings</h2>
+
         </div>
         <div class="account-navbar">
             <ul class="display-flex align-items-center">
@@ -28,102 +29,50 @@ Template::header("My account - Orders");
                     <a href="/exa/pages/orders.php">Orders</a>
                 </li>
                 <li class="current">
-                    <a href="#">My account</a>
+                    <a href="#">Account</a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="orders-container">
-        <div class="row">
-            <div class="col-7">
+    <div class="account-container">
+        <div class="account">
+            <h2>Your Information</h2>
+            <p>View and update your information here.</p>
+            <a href="/exa/pages/edit-account.php" class="text-underline color-pink">Edit</a>
+            <div class="user-information">
+                <p>Username: <?= $username ?> </p>
+                <?php
+                if (!$firstname) {
+                    echo "<p>First name: Not added yet</p>";
+                } else {
+                    echo "<p>First name: $firstname</p>";
+                }
 
-                <ul class="order-list">
-                    <h2 class="p-l-5 p-b-2">Orders History</h2>
-                    <?php foreach ($orders as $order) :
-                        $products = $orders_db->get_products_by_order($order->id);
-                        $total_price = 0;
-                        $product_count = 0;
-                        foreach ($products as $product) :
-                            $total_price += $product->price;
-                            $product_count++;
-                        endforeach;
-                    ?>
-                        <li class="order-item">
-                            <div class="display-flex align-items-center justify-between">
-                                <p class="order-id">
-                                    <b>#4812<?= $order->id ?></b>
-                                </p>
-                                <span class=" order 
-                                        <?php
-                                        if ($order->status === "Pending") {
-                                            echo  "pending";
-                                        } elseif ($order->status === "Sent") {
-                                            echo "sent";
-                                        } elseif ($order->status === "Canceled") {
-                                            echo "canceled";
-                                        } ?>
-                                        ">
-                                    <?= $order->status ?>
-                                </span>
-                            </div>
-                            <div class="display-flex justify-between">
-                                <div class="display-flex direction-column">
-                                    <span><b>$<?= $total_price ?>.00</b></span>
-                                    <span><?= $product_count ?> Items</span>
-                                </div>
-                                <small> <?= $order->order_date ?>
-                                </small>
-                            </div>
+                if (!$lastname) {
+                    echo "<p>Last name: Not added yet</p>";
+                } else {
+                    echo "<p>Last name: $lastname</p>";
+                }
 
-                        </li>
-
-
-                    <?php endforeach; ?>
-                </ul>
-
+                if (!$email) {
+                    echo "<p>Email: Not added yet</p>";
+                } else {
+                    echo "<p>Email: $email</p>";
+                }
+                ?>
             </div>
-            <div class="col-17">
-                <div class="order-overview">
 
-                </div>
+            <!-- Delete My account -->
+            <div>
+                <p>Danger zone</p>
+                <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= $logged_in_user->id ?>">
+                    <button type="submit" class="reset-btn-styling"><i class='bx bx-trash'>Delete my account</i></button>
+                </form>
             </div>
         </div>
-
     </div>
 </section>
-<!-- 
-<?php foreach ($orders as $order) :
-    $products = $orders_db->get_products_by_order($order->id);
-
-    $total_price = 0;
-?>
-                    <p>
-                        <b>Order (# <?= $order->id ?>)</b>
-                        [<?= $order->status ?>]
-                    </p>
-
-                    <?php foreach ($products as $product) :
-                        $total_price += $product->price;
-                    ?>
-                        <div class="profile-show-all">
-                            <p class="link">
-                                <?php echo $product->title ?>
-                                <?php echo " - $" . $product->price ?>
-                            </p>
-                        </div>
-
-                    <?php endforeach; ?>
-
-                    <div class="total-price">
-                        <p>
-                            <?php echo "Total price: $" . $total_price ?>
-                        </p>
-                    </div>
-
-                    <br>
-                <?php endforeach; ?>
- -->
-
 
 <?
 Template::footer();

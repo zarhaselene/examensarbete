@@ -23,7 +23,7 @@ class UsersDatabase extends Database
         $user = null;
 
         if ($db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['id']);
             $user->set_password_hash($db_user['password-hash']);
         }
         return $user;
@@ -47,7 +47,7 @@ class UsersDatabase extends Database
         $user = null;
 
         if ($db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['id']);
             $user->set_password_hash($db_user['password-hash']);
         }
         return $user;
@@ -60,7 +60,7 @@ class UsersDatabase extends Database
         $result = mysqli_query($this->conn, $query);
         $db_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($db_users as $db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['id']);
             $users[] = $user;
         }
         return $users;
@@ -73,7 +73,7 @@ class UsersDatabase extends Database
         $result = mysqli_query($this->conn, $query);
         $db_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($db_users as $db_user) {
-            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['img-url'], $db_user['id']);
+            $user = new User($db_user['username'], $db_user['role'], $db_user['firstname'], $db_user['lastname'], $db_user['email'], $db_user['id']);
             $users[] = $user;
         }
         return $users;

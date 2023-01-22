@@ -12,7 +12,7 @@ $username = $_POST["username"];
 if (isset($username) && isset($id) && $user_info->id === $id) {
 
     $db = new UsersDatabase();
-    $user = new User($username, '', '', '', '', '',);
+    $user = new User($username);
 
     $success = $db->update_my_username($user, $id);
 } else {

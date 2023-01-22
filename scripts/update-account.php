@@ -13,7 +13,7 @@ $email = $_POST["email"];
 
 if (isset($firstname) && isset($lastname) && isset($email) && isset($id) && $user_info->id === $id) {
     $db = new UsersDatabase();
-    $user = new User('', '', $firstname, $lastname, $email,'');
+    $user = new User('', '', $firstname, $lastname, $email);
 
     $success = $db->update_account($user, $id);
 } else {

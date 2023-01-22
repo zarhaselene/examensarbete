@@ -46,9 +46,9 @@ Template::header("My account "); ?>
                     <input type="submit" class="btn full-btn" value="Change username">
                 </form>
                 <form action="/exa/scripts/update-account.php" method="post">
-                    <input type="text" id="firstname" class="user-info" required name="firstname" placeholder="First Name" value="<?= $logged_in_user->firstname ?>">
-                    <input type="text" id="lastname" class="user-info" required name="lastname" placeholder="Last Name" value="<?= $logged_in_user->lastname ?>">
-                    <input type="email" id="email" class="user-info" required name="email" placeholder="Email" value="<?= $logged_in_user->email ?>">
+                    <input type="text" id="firstname" class="user-info" name="firstname" placeholder="First Name" value="<?= $logged_in_user->firstname ?>">
+                    <input type="text" id="lastname" class="user-info" name="lastname" placeholder="Last Name" value="<?= $logged_in_user->lastname ?>">
+                    <input type="email" id="email" class="user-info" name="email" placeholder="Email" value="<?= $logged_in_user->email ?>">
                     <input type="hidden" name="id" value="<?= $logged_in_user->id; ?>">
                     <input type="submit" class="btn full-btn" value="Update Info">
                 </form>

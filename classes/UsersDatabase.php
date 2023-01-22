@@ -69,7 +69,7 @@ class UsersDatabase extends Database
     // Get all
     public function get_all()
     {
-        $query = "SELECT * FROM users";
+        $query = "SELECT * FROM users ORDER BY ID ASC";
         $result = mysqli_query($this->conn, $query);
         $db_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($db_users as $db_user) {

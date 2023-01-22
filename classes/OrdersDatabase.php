@@ -47,7 +47,7 @@ class OrdersDatabase extends Database
     // Get all
     public function get_all_orders()
     {
-        $query = "SELECT * FROM orders";
+        $query = "SELECT * FROM orders ORDER BY ID DESC";
         $result = mysqli_query($this->conn, $query);
         $db_orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
         $orders = [];
@@ -61,7 +61,7 @@ class OrdersDatabase extends Database
         return $orders;
     }
 
-    // Get all
+    // Get five orders
     public function get_five()
     {
         $query = "SELECT * FROM orders ORDER BY ID DESC LIMIT 5";

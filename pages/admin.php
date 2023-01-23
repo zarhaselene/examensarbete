@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../classes/Template.php';
-
 require_once __DIR__ . "/../classes/User.php";
 require_once __DIR__ . "/../classes/Order.php";
 require_once __DIR__ . "/../classes/Message.php";
@@ -9,7 +8,6 @@ require_once __DIR__ . '/../classes/ProductsDatabase.php';
 require_once __DIR__ . '/../classes/UsersDatabase.php';
 require_once __DIR__ . '/../classes/OrdersDatabase.php';
 require_once __DIR__ . '/../classes/MessagesDatabase.php';
-
 
 //Check if logged user is admin
 $is_logged_in = isset($_SESSION['user']);
@@ -63,8 +61,6 @@ foreach ($messages as $message) {
 }
 $read_count = count($read);
 
-
-
 //Calandar setup
 $time = time();
 $date = date('F Y');
@@ -78,12 +74,8 @@ $dayOfWeek = date('w', $firstDay);
 
 Template::header("Admin Dashboard");
 ?>
-
 <section class="dashboard">
-    <?php
-    Template::sidebar();
-
-    ?>
+    <?php Template::sidebar(); ?>
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
             <h2 class="heading">Dashboard</h2>
@@ -134,9 +126,8 @@ Template::header("Admin Dashboard");
                             <div class="display-flex direction-column">
                                 <a href="/exa/pages/admin-products.php" class="progress-total">
                                     <p class="progress-total"><b>Total products</b></p>
-                                </a> <span class="color-grey">( X products live)</span>
+                                </a> <span class="color-grey">(<?= count($products) ?> products live)</span>
                             </div>
-
                         </div>
                         <div class="progress display-flex align-items-center">
                             <p class="progress-count"><?= count($messages) ?></p>
@@ -145,9 +136,7 @@ Template::header("Admin Dashboard");
                                     <p class="progress-total"><b>Total messages</b></p>
                                 </a> <span class="color-grey">(<?= $read_count ?> read messages)</span>
                             </div>
-
                         </div>
-
                     </div>
                     <div class="orders-overview m-v-4">
                         <div class="orders-heading p-b-2 display-flex align-items-center justify-between">
@@ -156,7 +145,6 @@ Template::header("Admin Dashboard");
                                 <a href="/exa/pages/admin-orders.php" class=" color-white">See all</a>
                             </button>
                         </div>
-
                         <div class="orders-wrapper">
                             <div class="orders-top">
                                 <div class="orders-headings">
@@ -189,7 +177,6 @@ Template::header("Admin Dashboard");
                                     <th abbr="Friday" scope="col" title="Friday">FRI</th>
                                     <th abbr="Saturday" scope="col" title="Saturday">SAT</th>
                                     <th abbr="Sunday" scope="col" title="Sunday">SUN</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -199,7 +186,6 @@ Template::header("Admin Dashboard");
                                         echo ('<td colspan="' . $dayOfWeek . '"> </td>');
                                     }
                                     for ($i = 1; $i <= $daysInMonth; $i++) {
-
                                         if ($i == $numDay) {
                                             echo ('<td id="today">');
                                         } else {
@@ -223,7 +209,6 @@ Template::header("Admin Dashboard");
                                 <a href="/exa/pages/admin-users.php" class=" color-white">See all</a>
                             </button>
                         </div>
-
                         <?php foreach ($newest_users as $user) :
                             $username = $user->username;
                             $first_letter = substr($username, 0, 1); ?>

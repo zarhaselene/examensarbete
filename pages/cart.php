@@ -18,17 +18,14 @@ $is_logged_in = isset($_SESSION['user']);
 $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
 
 Template::header('Cart'); ?>
-
 <section class="shopping-cart position-relative">
-
-    <?php if (!$products) : ?>
+    <?php if (!$products) : ?> <!-- If no products  -->
         <div class="empty-cart-container display-flex direction-column align-items-center justify-center">
             <iframe class="lottie-animation" frameBorder="0" src="https://embed.lottiefiles.com/animation/134454"></iframe>
             <h2 class="p-t-2">Your Cart is Empty</h2>
             <p class="p-t-2">Looks like you haven't added anything to your cart yet.</p>
             <a href="/exa/index.php" class="btn full-btn">Continue shopping</a>
         </div>
-        <!-- No products  -->
     <?php elseif ($_SESSION["cart"]) : ?>
         <form action="/exa/scripts/post-place-order.php" method="post">
             <div class="cart-wrapper row">
@@ -62,12 +59,10 @@ Template::header('Cart'); ?>
                     </div>
                 </div>
                 <div class="col-8 display-flex direction-column justify-center">
-
                     <div class="payment-wrapper">
                         <div class="cell payment">
                             <form>
                                 <h3 class="p-b-2">Account Details</h3>
-
                                 <fieldset>
                                     <div class="row">
                                         <label for="payment-name" data-tid="elements_payments.form.firstname_label">First name</label>
@@ -86,7 +81,6 @@ Template::header('Cart'); ?>
                                     <div class="payment-method">
                                         <h3>Payment method</h3>
                                         <small>Credit Card</small>
-
                                     </div>
                                     <a href="#" class="color-pink text-underline">Edit</a>
                                 </div>
@@ -101,7 +95,6 @@ Template::header('Cart'); ?>
                             <h3>Do you have any discount code?</h3>
                             <p><small>Only one discount code per order can be applied.</small></p>
                             <div class="position-relative">
-
                                 <input class="dcode" type="text" placeholder="Your code here">
                                 <input class="discount-btn" type="button" value="APPLY">
                                 <small id="discount-message"></small>
@@ -130,7 +123,6 @@ Template::header('Cart'); ?>
                                 <?php endif; ?>
                                 <?php if (!$is_logged_in) : ?>
                                     <div class="not-logged-in position-relative display-flex direction-column align-items-center">
-
                                         <div class="tool-tip">
                                             You need to login to place an order.
                                         </div>
@@ -141,10 +133,8 @@ Template::header('Cart'); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
             </div>
         </form>

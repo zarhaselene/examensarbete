@@ -5,10 +5,8 @@ session_start();
 $success = false;
 
 if (isset($_POST["id"])) {
-
     $db = new UsersDatabase();
     $userId = $_POST["id"];
-
     $success = $db->delete($userId);
 } else {
     echo "Invalid input";

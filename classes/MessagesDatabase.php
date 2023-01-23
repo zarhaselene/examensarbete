@@ -14,7 +14,6 @@ class MessagesDatabase extends Database
         $result = $stmt->get_result();
         $db_message = mysqli_fetch_assoc($result);
         $message = null;
-
         if ($db_message) {
             $message = new Message(
                 $db_message["name"],
@@ -35,7 +34,6 @@ class MessagesDatabase extends Database
         $result = mysqli_query($this->conn, $query);
         $db_messages = mysqli_fetch_all($result, MYSQLI_ASSOC);
         $messages = [];
-
         foreach ($db_messages as $db_message) {
             $db_id = $db_message['id'];
             $db_name = $db_message['name'];
@@ -43,8 +41,6 @@ class MessagesDatabase extends Database
             $db_msg = $db_message['message'];
             $db_date = $db_message['date'];
             $db_status = $db_message['status'];
-
-
             $messages[] = new Message($db_name, $db_email, $db_msg, $db_date, $db_status, $db_id);
         }
         return $messages;

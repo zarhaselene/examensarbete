@@ -20,7 +20,6 @@ if (isset($_POST['product-id'])) {
             'success' => true,
             'message' => 'Product added to cart successfully',
             'cartCount' => count($_SESSION['cart']),
-
         ];
         echo json_encode($response);
         die();

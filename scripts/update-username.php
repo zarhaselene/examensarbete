@@ -4,7 +4,6 @@ require_once __DIR__ . "/../classes/UsersDatabase.php";
 session_start();
 
 $success = false;
-
 $user_info = $_SESSION["user"];
 $id = (int)$_POST["id"];
 $username = $_POST["username"];
@@ -13,7 +12,6 @@ if (isset($username) && isset($id) && $user_info->id === $id) {
 
     $db = new UsersDatabase();
     $user = new User($username);
-
     $success = $db->update_my_username($user, $id);
 } else {
     echo "ERROR: Invalid input";

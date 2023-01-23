@@ -14,19 +14,15 @@ if (!$is_admin) {
 $messages_db = new MessagesDatabase();
 $messages = $messages_db->get_all();
 
-
 Template::header("Admin Dashboard");
 ?>
-
 <section class="dashboard">
     <?php
     Template::sidebar();
-
     ?>
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
             <h2 class="heading">Messages</h2>
-
             <div class="messages-container">
                 <div class="messages">
                     <?php foreach ($messages as $message) : ?>
@@ -47,14 +43,12 @@ Template::header("Admin Dashboard");
                             <div class="message-link display-flex justify-end">
                                 <a class="color-pink see-more" href="/exa/pages/admin-message.php?id=<?= $message->id ?>">See more</a>
                             </div>
-
                             <div class="message-delete display-flex justify-start">
                                 <form action="/exa/admin-scripts/post-delete-message.php" method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="id" value="<?= $message->id ?>">
                                     <button type="submit" class="reset-btn-styling"><i class='bx bx-trash color-black'></i></button>
                                 </form>
                             </div>
-
                         </div>
                     <?php endforeach; ?>
                 </div>

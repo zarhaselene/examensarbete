@@ -17,11 +17,9 @@ $products = $products_db->get_all();
 
 Template::header("Admin Dashboard");
 ?>
-
 <section class="dashboard">
     <?php
     Template::sidebar();
-
     ?>
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
@@ -36,7 +34,6 @@ Template::header("Admin Dashboard");
                     <input type="submit" value="Add new product">
                 </form>
             </div>
-
             <div class="products">
                 <table class="m-t-50" cellspacing="0">
                     <thead>
@@ -48,20 +45,17 @@ Template::header("Admin Dashboard");
                             <th>Price</th>
                             <th class="th-status">Edit</th>
                             <th class="th-delete">Delete</th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($products as $product) : ?>
                             <tr>
                                 <form action="/exa/admin-scripts/post-update-product.php" method="post" class="edit-form">
-
                                     <td>#<?= $product->id ?></td>
                                     <td><?= $product->title ?></td>
                                     <td>
                                         <img src="<?= $product->img_url ?>" alt="">
                                     </td>
-
                                     <td>
                                         <div class="td-desc">
                                             <?= $product->description ?>
@@ -73,13 +67,11 @@ Template::header("Admin Dashboard");
                                             <?= $product->price ?>.00
                                         </div>
                                     </td>
-                                    <!-- <td class="td-status"><span class="red"><?= $order->status ?></span></td> -->
                                     <td class="td-edit">
                                         <a href="/exa/pages/admin-edit-product.php?id=<?= $product->id ?>">
                                             <i class=' bx bxs-edit color-black'></i>
                                         </a>
                                     </td>
-
                                 </form>
                                 <td class="td-delete">
                                     <form action="/exa/admin-scripts/post-delete-product.php" method="post" enctype="multipart/form-data">
@@ -93,5 +85,5 @@ Template::header("Admin Dashboard");
                 </table>
             </div>
         </div>
-
+    </div>
 </section>

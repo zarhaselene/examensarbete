@@ -18,7 +18,6 @@ Template::header("Register");
                 <div class="heading m-z">
                     <h2>Create Account</h2>
                 </div>
-
                 <div class="lr-form p-t-3">
                     <div class="form-container" id="registerForm">
                         <form action="/exa/scripts/post-register-user.php" method="post" class="form">

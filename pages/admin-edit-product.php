@@ -16,14 +16,11 @@ if (!isset($_GET['id'])) {
 }
 
 $products_db = new ProductsDatabase();
-
 $product = $products_db->get_one($_GET['id']);
 
 Template::header("Update product"); ?>
 <section class="dashboard">
-
     <?= Template::sidebar(); ?>
-
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container display-flex direction-column align-items-center position-relative">
             <h2 class="heading">Edit <?= $product->title ?></h2>
@@ -32,13 +29,11 @@ Template::header("Update product"); ?>
             ?>
                 <h2>No product to edit</h2>
             <?php else : ?>
-
                 <div class="admin-edit-product-container">
                     <form class="edit-product-form" action="/exa/admin-scripts/post-update-product.php?id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-12 col-24-tablet display-flex direction-column">
                                 <div class="add-product-info">
-
                                     <div class="form-item">
                                         <label for="title">
                                             <h3>Set title</h3>
@@ -50,7 +45,6 @@ Template::header("Update product"); ?>
                                             <h3>Set price</h3>
                                         </label>
                                         <input type="number" name="price" value="<?= $product->price ?>">
-
                                     </div>
                                     <div class="form-item">
                                         <label for="description">
@@ -61,7 +55,6 @@ Template::header("Update product"); ?>
                                 </div>
                             </div>
                             <div class="col-12 col-24-tablet display-flex direction-column justify-evenly align-items-start">
-
                                 <label for="image">
                                     <h3>Choose a product image</h3>
                                 </label>
@@ -77,12 +70,10 @@ Template::header("Update product"); ?>
                                         <button type="submit" class="btn m-z full-btn">Save</button>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </form>
                 </div>
-
             <?php
             endif; ?>
         </div>

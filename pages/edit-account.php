@@ -10,18 +10,14 @@ $firstname = $logged_in_user->firstname;
 $lastname = $logged_in_user->lastname;
 $email = $logged_in_user->email;
 
-
 Template::header("My account "); ?>
 <section class="my-account">
     <div class="go-back-container">
         <a class="go-back" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
-
     </div>
-
     <div class="account-nav display-flex direction-column align-items-start justify-end">
         <div class="heading m-z display-flex align-items-center">
             <h2>Account settings</h2>
-
         </div>
         <div class="account-navbar">
             <ul class="display-flex align-items-center">
@@ -39,7 +35,6 @@ Template::header("My account "); ?>
             <h2>Edit Your Information</h2>
             <a href="/exa/pages/account.php" class="text-underline color-pink">Back</a>
             <div class="user-information">
-
                 <form action="/exa/scripts/update-username.php" method="post">
                     <input type="text" id="username" class="user-info" required name="username" placeholder="Username" value="<?= $logged_in_user->username ?>">
                     <input type="hidden" name="id" value="<?= $logged_in_user->id; ?>">
@@ -52,21 +47,8 @@ Template::header("My account "); ?>
                     <input type="hidden" name="id" value="<?= $logged_in_user->id; ?>">
                     <input type="submit" class="btn full-btn" value="Update Info">
                 </form>
-
-
             </div>
-            <?php
-            // $username 
-            // $img_url
-            // $email
-            // $lastname
-            // $firstname
-            ?>
-            <!-- Delete My account -->
-
         </div>
     </div>
 </section>
-
-<?
-Template::footer();
+<? Template::footer();

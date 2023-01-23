@@ -15,7 +15,6 @@ if (
 ) {
     $username = $_POST["username"];
     $password = $_POST["password"];
-
     $users_db = new UsersDatabase();
     // creating new user object with username and role as customer
     $user = new User($_POST['username'], 'customer', '', '', '', '',);
@@ -23,7 +22,6 @@ if (
     $user->hash_password($password);
     // checking if user with the same username already exists
     $existing_user = $users_db->get_one_by_username($username);
-
     if ($existing_user) {
         header('Location: /exa/pages/register.php?error=invalid_register_username');
         die();

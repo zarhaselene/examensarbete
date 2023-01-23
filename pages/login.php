@@ -61,7 +61,6 @@ Template::header("Login");
                 </div>
                 <p>Sign up and discover a great amount of new opportunities!</p>
                 <a href="/exa/pages/register.php" class="regi-btn btn full-btn">Sign up</a>
-
             </div>
         </div>
     </div>

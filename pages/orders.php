@@ -3,7 +3,6 @@ require_once __DIR__ . "/../classes/Template.php";
 require_once __DIR__ . "/../classes/OrdersDatabase.php";
 require_once __DIR__ . "/../classes/UsersDatabase.php";
 
-
 // Check if user is logged in
 $is_logged_in = isset($_SESSION['user']);
 $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
@@ -18,19 +17,14 @@ if (!$user_has_allowed_role) {
 }
 
 $user = $_SESSION["user"];
-
 $orders_db = new OrdersDatabase();
-
 $orders = $orders_db->get_order_by_user_id($user->id);
 
-Template::header("My account - Orders");
-?>
-
+Template::header("My account - Orders");?>
 <section class="my-account">
     <div class="go-back-container">
         <a class="go-back color-pink" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
     </div>
-
     <div class="account-nav display-flex direction-column align-items-start justify-end">
         <div class="heading m-z display-flex align-items-center">
             <h2>Your Orders</h2>
@@ -57,13 +51,10 @@ Template::header("My account - Orders");
                 foreach ($products as $product) :
                     $total_price += $product->price;
                     $product_count++;
-                endforeach;
-            ?>
+                endforeach;?>
                 <li class="order-item">
                     <div class="display-flex align-items-center justify-between">
-                        <p class="order-id">
-                            <b>#4812<?= $order->id ?></b>
-                        </p>
+                        <p class="order-id"><b>#4812<?= $order->id ?></b></p>
                         <span class=" order 
                                         <?php
                                         if ($order->status === "Pending") {
@@ -90,5 +81,4 @@ Template::header("My account - Orders");
         </ul>
     </div>
 </section>
-<?
-Template::footer();
+<? Template::footer();

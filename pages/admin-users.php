@@ -17,11 +17,9 @@ $users = $users_db->get_all();
 
 Template::header("Admin Dashboard");
 ?>
-
 <section class="dashboard">
     <?php
     Template::sidebar();
-
     ?>
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
@@ -43,7 +41,6 @@ Template::header("Admin Dashboard");
                     </form>
                 </div>
             </div>
-
             <div class="users">
                 <table class="m-t-50" cellspacing="0">
                     <thead>
@@ -62,10 +59,8 @@ Template::header("Admin Dashboard");
                             <tr>
                                 <form action="/exa/admin-scripts/post-update-user.php" method="post">
                                     <td>#<input type="hidden" name="id" value="<?= $user->id ?>"><?= $user->id ?></td>
-
                                     <td><?= $user->username ?></td>
                                     <td><?= $user->role ?></td>
-
                                     <td class="td-edit th-edit-role">
                                         <select name="role" id="role">
                                             <option value="role" selected disabled>Change role</option>
@@ -89,5 +84,5 @@ Template::header("Admin Dashboard");
                 </table>
             </div>
         </div>
-
+    </div>
 </section>

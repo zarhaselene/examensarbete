@@ -6,7 +6,6 @@ class Database
     private $pass = "root";
     private $db = "exa_db";
 
-
     protected $conn;
 
     public function __construct()

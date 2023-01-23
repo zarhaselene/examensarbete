@@ -230,34 +230,3 @@ var card = elements.create("card", {
 
 // Mount the card element to the element with ID "card"
 card.mount("#card");
-
-// $(document).ready(function () {
-// 	// Default behavior: show details of newest order
-// 	$(".order-item:first").addClass("active");
-// 	var orderId = $(".order-item:first").data("order-id");
-// 	getOrderDetails(orderId);
-
-// 	// Handle click events on order ID elements
-// 	$(".order-id").click(function () {
-// 		$(".order-id").removeClass("active");
-// 		$(this).addClass("active");
-// 		var orderId = $(this).data("order-id");
-// 		$("#order-id-input").val(orderId);
-// 		getOrderDetails();
-// 	});
-
-// 	function getOrderDetails() {
-// 		var orderId = $("#order-id-input").val();
-// 		$.ajax({
-// 			url: "/exa/scripts/order_details.php",
-// 			type: "POST",
-// 			data: { order_id: orderId },
-// 			success: function (response) {
-// 				$(".order-overview").html(response);
-// 			},
-// 			error: function () {
-// 				console.log("Error retrieving order details");
-// 			},
-// 		});
-// 	}
-// });

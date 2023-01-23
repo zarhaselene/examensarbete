@@ -5,7 +5,6 @@ require_once __DIR__ . "/ProductsDatabase.php ";
 require_once __DIR__ . "/Product.php ";
 require_once __DIR__ . "/Order.php";
 require_once __DIR__ . "/OrdersDatabase.php ";
-
 require_once __DIR__ . "/ProductOrder.php";
 
 
@@ -15,20 +14,14 @@ class OrdersDatabase extends Database
     public function create(Order $order)
     {
         $query = "INSERT INTO orders (`user-id`, `status`, `order-date`) VALUES (?,?,?)";
-
         $stmt = mysqli_prepare($this->conn, $query);
-
         $stmt->bind_param("iss", $order->user_id, $order->status, $order->order_date);
-
         $products = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-
         $success = $stmt->execute();
-
         if (!$success) {
             var_dump($stmt->error);
             die("Error creating order");
         }
-
         //insert orderID and productID into productsorders table and foreach product in cart
         $orderID = $this->conn->insert_id;
         foreach ($products as $product) {
@@ -98,7 +91,6 @@ class OrdersDatabase extends Database
             $status = $db_order["status"];
             $order_date = $db_order["order-date"];
             $id = $db_order["id"];
-
             $orders[] = new Order($user_id, $status, $order_date, $id);
         }
         return $orders;
@@ -108,17 +100,11 @@ class OrdersDatabase extends Database
     public function get_order_by_id($id)
     {
         $query = "SELECT * FROM orders WHERE id = ?";
-
         $stmt = mysqli_prepare($this->conn, $query);
-
         $stmt->bind_param("i", $id);
-
         $stmt->execute();
-
         $result = $stmt->get_result();
-
         $db_order = mysqli_fetch_assoc($result);
-
         $order = null;
 
         if ($db_order) {
@@ -126,7 +112,6 @@ class OrdersDatabase extends Database
             $db_user_id = $db_order["user-id"];
             $db_status = $db_order["status"];
             $db_order_date = $db_order["order-date"];
-
             $order = new Order($db_user_id, $db_status, $db_order_date, $db_id);
         }
 
@@ -137,11 +122,8 @@ class OrdersDatabase extends Database
     public function update_order($status, $id)
     {
         $query = "UPDATE orders SET `status` = ? WHERE id = ?";
-
         $stmt = mysqli_prepare($this->conn, $query);
-
         $stmt->bind_param("si", $status, $id);
-
         return $stmt->execute();
     }
 
@@ -149,13 +131,9 @@ class OrdersDatabase extends Database
     public function delete_order($id)
     {
         $query = "DELETE FROM orders WHERE id = ?";
-
         $stmt = mysqli_prepare($this->conn, $query);
-
         $stmt->bind_param("i", $id);
-
         $success = $stmt->execute();
-
         return $success;
     }
 

@@ -5,9 +5,7 @@ class User
     public $id;
     public $username;
     public $role;
-
     private $password_hash;
-
     public $firstname;
     public $lastname;
     public $email;

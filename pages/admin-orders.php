@@ -28,23 +28,6 @@ $users = $users_db->get_all();
 $orders_db = new OrdersDatabase();
 $orders = $orders_db->get_all_orders();
 
-// $user_id = $users_db->get_user_by_id($id);
-// $order_id = $orders_db->get_order_by_id($id);
-
-// $username_by_id = $orders_db->get_username_by_order_id($order_id);
-
-// $order_id = $orders_db->get_order_by_user_id($orders);
-// $customer_orders = $orders_db->get_order_by_user_id($logged_in_user->id);
-
-
-
-/*
-TODO
-if user-id(order) is the same as id(user) get username
-if orders(order-id) == productsorders(order-id)
-
-*/
-
 $canceled_orders = [];
 $sent_orders = [];
 $pending_orders = [];
@@ -60,13 +43,10 @@ foreach ($orders as $order) {
 }
 
 Template::header("Admin Dashboard");
-
 ?>
-
 <section class="dashboard">
     <?php
     Template::sidebar();
-
     ?>
     <div class="admin-dashboard display-flex align-items-center justify-center">
         <div class="admin-container">
@@ -100,8 +80,6 @@ Template::header("Admin Dashboard");
                             <th class="th-edit">Edit</th>
                             <th class="th-save">Status</th>
                             <th class="th-delete">Delete</th>
-
-
                         </tr>
                     </thead>
                     <tbody>
@@ -110,12 +88,7 @@ Template::header("Admin Dashboard");
                                 <form action="/exa/admin-scripts/post-update-order.php" method="post">
                                     <td>#<input type="hidden" name="id" value="<?= $order->id ?>"><?= $order->id ?></td>
                                     <td>#<?= $order->user_id ?></td>
-                                    <!-- <td><?= $username_by_id->username ?></td> -->
-
-
-
                                     <td><?= $order->order_date ?></td>
-
                                     <td class="td-status">
                                         <span class="order 
                                         <?php
@@ -131,19 +104,16 @@ Template::header("Admin Dashboard");
                                         </span>
                                     </td>
                                     <td class="td-edit th-edit-role">
-
                                         <select name="status" id="status">
                                             <option value="status" selected disabled>Change status</option>
                                             <option value="Pending">Pending</option>
                                             <option value="Sent">Sent</option>
                                             <option value="Canceled">Canceled</option>
                                         </select>
-
                                     </td>
                                     <td class="td-save">
                                         <button type="submit" class="reset-btn-styling"><i class='bx bx-save'></i></button>
                                     </td>
-
                                 </form>
                                 <td class="td-delete">
                                     <form action="/exa/admin-scripts/post-delete-order.php" method="post" enctype="multipart/form-data">

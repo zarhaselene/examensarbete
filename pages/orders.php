@@ -28,8 +28,7 @@ Template::header("My account - Orders");
 
 <section class="my-account">
     <div class="go-back-container">
-        <a class="go-back" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
-
+        <a class="go-back color-pink" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
     </div>
 
     <div class="account-nav display-flex direction-column align-items-start justify-end">

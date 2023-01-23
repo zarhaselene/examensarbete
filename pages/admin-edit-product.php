@@ -36,7 +36,7 @@ Template::header("Update product"); ?>
                 <div class="admin-edit-product-container">
                     <form class="edit-product-form" action="/exa/admin-scripts/post-update-product.php?id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-12 display-flex direction-column">
+                            <div class="col-12 col-24-tablet display-flex direction-column">
                                 <div class="add-product-info">
 
                                     <div class="form-item">
@@ -60,7 +60,7 @@ Template::header("Update product"); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 display-flex direction-column justify-evenly align-items-start">
+                            <div class="col-12 col-24-tablet display-flex direction-column justify-evenly align-items-start">
 
                                 <label for="image">
                                     <h3>Choose a product image</h3>
@@ -69,12 +69,15 @@ Template::header("Update product"); ?>
                                     <i class='bx bx-image'></i>
                                     <img id="imgPreview" src="#" alt="" />
                                 </div>
-                                <label for="photo" class="upload-photo btn full-btn display-flex align-items-center">
-                                    <i class='bx bxs-image-add'></i> Choose file</label>
-                                <input id="photo" type="file" id="photo" name="image" accept="image/*" required>
-                                <div class="submit">
-                                    <button type="submit" class="btn full-btn">Save</button>
+                                <div class="btns display-flex align-items-center">
+                                    <label for="photo" class="upload-photo btn m-z full-btn display-flex align-items-center">
+                                        <i class='bx bxs-image-add'></i> Choose file</label>
+                                    <input id="photo" type="file" id="photo" name="image" accept="image/*" required>
+                                    <div class="submit">
+                                        <button type="submit" class="btn m-z full-btn">Save</button>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </form>

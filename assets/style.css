@@ -259,7 +259,7 @@ a {
 
 .row {
 	display: flex;
-	/* flex-wrap: wrap; */
+	flex-wrap: wrap;
 	width: 100%;
 	min-height: 100%;
 	flex-direction: row;
@@ -445,6 +445,9 @@ z = 0
 	margin: 0 10px;
 }
 /*margin vertical*/
+.m-v-1 {
+	margin: 10px 0;
+}
 .m-v-4 {
 	margin: 25px 0;
 }
@@ -583,9 +586,9 @@ body {
 }
 *::-webkit-scrollbar {
 	width: 0.6em;
+	height: 0.6em;
 }
 *::-webkit-scrollbar-track {
-	/* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
 	background: none;
 }
 *::-webkit-scrollbar-thumb {
@@ -1676,14 +1679,6 @@ select {
 	margin-bottom: 10px;
 }
 
-.admin-dashboard .orders,
-.admin-dashboard .products,
-.admin-dashboard .users {
-	overflow-x: auto;
-	width: 100%;
-	height: 650px;
-}
-
 /*** Tables ***/
 table {
 	width: 100%;
@@ -2050,6 +2045,7 @@ label.upload-photo.btn.full-btn {
 	padding: 15px;
 	cursor: pointer;
 	border-radius: 12px;
+	margin: 0 10px !important;
 }
 label.upload-photo.btn.full-btn > i {
 	font-size: 1.5rem;
@@ -2097,12 +2093,12 @@ i.bx.bx-image {
 .account-nav {
 	height: 13vh;
 	background-color: white;
-	padding: 0 80px;
+	padding: 0 180px;
 	border-bottom: 1px solid #97979755;
 	margin-bottom: 22px;
 }
 .orders-container {
-	padding: 0 80px;
+	padding: 0 180px;
 }
 .orders-container .order-list {
 	background-color: white;
@@ -2170,7 +2166,7 @@ i.bx.bx-image {
 }
 .go-back-container {
 	background-color: white;
-	padding: 8px 80px;
+	padding: 8px 180px;
 	border-bottom: 1px solid #97979755;
 }
 .account-navbar ul {
@@ -2200,6 +2196,9 @@ i.bx.bx-image {
 	padding: 30px;
 	height: 100%;
 	position: relative;
+}
+.user-information .my-email {
+	word-break: break-all;
 }
 .danger-zone {
 	position: absolute;
@@ -2267,11 +2266,16 @@ i.bx.bx-image {
 .single-msg {
 	overflow: hidden;
 	overflow-y: auto;
-	height: 500px;
+	height: 100%;
+	max-height: 430px;
 	background-color: #fff;
 	box-shadow: inset 0 0 10px #5656561f;
 	border-radius: 10px;
 	padding: 10px 20px;
+}
+
+.single-msg p {
+	font-size: 1rem;
 }
 
 .single-message .message-info {
@@ -2283,17 +2287,11 @@ i.bx.bx-image {
 .message-info p {
 	font-size: 1rem;
 }
-.admin-dashboard > div > div > form > div > a {
-	position: absolute;
-	left: 40px;
-	bottom: 20px;
+
+.single-message-btns button,
+.single-message-btns a {
 	font-size: 1rem;
-}
-.mark-as {
-	position: absolute;
-	right: 40px;
-	bottom: 20px;
-	font-size: 1rem;
+	margin: 5px !important;
 }
 /*** Footer ***/
 footer {
@@ -2355,6 +2353,18 @@ footer {
 	}
 	.messages {
 		grid-template-columns: repeat(3, 1fr);
+	}
+	.go-back-container {
+		padding: 8px 80px;
+	}
+	.account-nav {
+		padding: 0 80px;
+	}
+	.orders-container {
+		padding: 0 80px;
+	}
+	.account-container {
+		padding: 0 80px;
 	}
 }
 /* Laptop */
@@ -2470,14 +2480,13 @@ footer {
 		width: calc((100% / 24) * 12);
 	}
 	.col-24-tablet {
-		width: 100%;
+		width: 100% !important;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 	}
-
 	.logo {
 		padding-left: 20px;
 	}
@@ -2509,7 +2518,7 @@ footer {
 	.logo img {
 		width: 90%;
 	}
-	body > section.p-standard.USP > div > div:nth-child(2) {
+	.USP > div > div:nth-child(2) {
 		flex-direction: column-reverse;
 	}
 	.container > .intro-section {
@@ -2590,6 +2599,31 @@ footer {
 	.orders-container {
 		padding: 0 20px;
 	}
+	.admin-edit-product-container {
+		height: auto;
+	}
+	.add-product-info {
+		width: 100%;
+		height: auto;
+	}
+	.btns {
+		flex-direction: column;
+	}
+	label.upload-photo.btn.full-btn {
+		margin: 10px 0 !important;
+	}
+	.account-container {
+		padding: 0 40px;
+	}
+	.go-back-container {
+		padding: 8px 40px;
+	}
+	.account-nav {
+		padding: 0 40px;
+	}
+	.orders-container {
+		padding: 0 40px;
+	}
 }
 /* Small tablet */
 @media only screen and (max-width: 555px) {
@@ -2624,6 +2658,15 @@ footer {
 	}
 	.messages {
 		grid-template-columns: repeat(1, 1fr);
+	}
+	.single-message .message-info {
+		flex-direction: column-reverse;
+		text-align: center;
+		align-items: center;
+	}
+	.name-email,
+	.status-sent {
+		align-items: center;
 	}
 }
 
@@ -2676,6 +2719,12 @@ footer {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	.single-message-btns {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
 	}
 	.sidebar .bx-menu {
 		display: none;

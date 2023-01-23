@@ -28,8 +28,7 @@ $email = $user->email;
 Template::header("My account "); ?>
 <section class="my-account">
     <div class="go-back-container">
-        <a class="go-back" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
-
+        <a class="go-back color-pink" href="/exa/index.php"> <i class='bx bx-arrow-back'></i> Continue shopping</a>
     </div>
 
     <div class="account-nav display-flex direction-column align-items-start justify-end">
@@ -50,9 +49,9 @@ Template::header("My account "); ?>
     </div>
     <div class="account-container">
         <div class="account">
+            <a href="/exa/pages/edit-account.php" class="text-underline color-pink">Edit</a>
             <h2>Your Information</h2>
             <p>View and update your information here.</p>
-            <a href="/exa/pages/edit-account.php" class="text-underline color-pink">Edit</a>
             <div class="user-information">
                 <p>Username: <?= $username ?> </p>
                 <?php
@@ -71,14 +70,14 @@ Template::header("My account "); ?>
                 if (!$email) {
                     echo "<p>Email: Not added yet</p>";
                 } else {
-                    echo "<p>Email: $email</p>";
+                    echo "<p class='my-email'>Email: $email</p>";
                 }
                 ?>
             </div>
 
             <!-- Delete My account -->
             <div class="danger-zone">
-                    <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">
+                <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $user->id ?>">
                     <button type="submit" class="btn m-z danger-btn"></i>Delete my account</button>
                 </form>

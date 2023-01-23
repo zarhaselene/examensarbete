@@ -31,15 +31,13 @@ Template::header("Admin Dashboard");
                     <div class="single-message display-flex direction-column">
 
                         <div class="message-info m-b-6 display-flex align-items-center justify-between">
-                            <div class="display-flex direction-column justify-center align-items-start">
+                            <div class="name-email display-flex direction-column justify-center align-items-start">
                                 <p>Name: <?= $message->name ?></p>
-                                <br>
                                 <p>Email: <?= $message->email ?></p>
 
                             </div>
-                            <div class="display-flex direction-column justify-center align-items-end">
+                            <div class="status-sent display-flex direction-column justify-center align-items-end">
                                 <p>Status: <?= $message->status ?></p>
-                                <br>
 
                                 <p>Sent: <?= $message->date ?></p>
                             </div>
@@ -49,17 +47,20 @@ Template::header("Admin Dashboard");
                             <p><?= $message->message ?></p>
 
                         </div>
-                        <?php if ($message->status == "Read") : ?>
-                            <input type="hidden" name="id" value="<?= $message->id ?>">
-                            <input type="hidden" name="status" value="Unread">
-                            <button type="submit" value="Unread" class="btn full-btn mark-as">Mark as Unread</button>
+                        <div class="single-message-btns display-flex align-items-center justify-between">
+                            <?php if ($message->status == "Read") : ?>
+                                <input type="hidden" name="id" value="<?= $message->id ?>">
+                                <input type="hidden" name="status" value="Unread">
+                                <button type="submit" value="Unread" class="btn m-z full-btn mark-as">Mark as Unread</button>
 
-                        <?php else : ?>
-                            <input type="hidden" name="id" value="<?= $message->id ?>">
-                            <input type="hidden" name="status" value="Read">
-                            <button type="submit" value="Read" class="btn m-z full-btn mark-as">Mark as Read</button>
-                        <?php endif; ?>
-                        <a href="/exa/pages/admin-messages.php" class="btn m-z full-btn back">Go back </a>
+                            <?php else : ?>
+                                <input type="hidden" name="id" value="<?= $message->id ?>">
+                                <input type="hidden" name="status" value="Read">
+                                <button type="submit" value="Read" class="btn m-z full-btn mark-as">Mark as Read</button>
+                            <?php endif; ?>
+                            <a href="/exa/pages/admin-messages.php" class="btn m-z full-btn back">Go back </a>
+
+                        </div>
 
                     </div>
                 </form>

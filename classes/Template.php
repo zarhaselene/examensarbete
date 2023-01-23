@@ -9,7 +9,6 @@ class Template
     public static function header($title)
     {
 ?>
-
         <!DOCTYPE html>
         <html lang="en">
 
@@ -27,21 +26,16 @@ class Template
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Varela+Round&display=swap" rel="stylesheet">
-
             <!-- Font Awesome -->
             <script src="https://kit.fontawesome.com/6310c3f0d1.js" crossorigin="anonymous"></script>
-
             <!-- Boxicons CSS -->
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
             <!-- Swiper's CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-
             <!-- jQuery -->
             <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
             <!-- JS -->
             <script src="/exa/assets/script.js" defer></script>
-
             <!-- Swiper JS -->
             <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
             <!-- Lottie player -->
@@ -59,23 +53,18 @@ class Template
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
         // check if logged in user's role is 'admin' and set the value of $is_admin variable accordingly
         $is_admin = $is_logged_in && $logged_in_user->role == 'admin';
-
-        // $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         ?>
             <nav class="navigation row display-flex p-v-2">
                 <div class="logo col-4 col-12-tablet display-flex align-items-center">
                     <a href="/exa/index.php"> <img src="/exa/assets/img/logos/logo.png" alt="logo"></a>
                 </div>
-
                 <div class="icons col-20 col-12-tablet display-flex align-items-center justify-end">
-
                     <!-- If not logged in -->
                     <?php if (!$is_logged_in) : ?>
                         <div class="login" id="login-button">
                             <a href="/exa/pages/login.php"><i class="icon fa-solid fa-user color-white"></i></a>
                         </div>
                     <?php endif; ?>
-
                     <!-- If logged in -->
                     <?php if ($is_logged_in) : ?>
                         <div class="logged-in-user hide-tablet display-flex align-items-center">
@@ -89,15 +78,11 @@ class Template
                             </form>
                             </p>
                         </div>
-
                         <?php if ($is_admin) : ?>
                             <div class="dashboard"><a href="/exa/pages/admin.php"><i class="icon fa-solid fa-gear color-white"></i></a></div>
-
                         <?php endif; ?>
                         <div class="accountorders"><a href="/exa/pages/orders.php" class="color-white"><i class="icon fa-solid fa-user color-white"></i></a></div>
-
                     <?php endif; ?>
-
                     <!-- Always show -->
                     <span id="message"></span>
                     <div class="cart">
@@ -108,30 +93,21 @@ class Template
                             </div>
                         </a>
                     </div>
-
                 </div>
-
             </nav>
-
         <?php
     }
-
     public static function sidebar()
-
     {
         $is_logged_in = isset($_SESSION['user']);
         $logged_in_user = $is_logged_in ? $_SESSION['user'] : null;
-
         // get the username of the logged in user
         $username = $logged_in_user->username;
         // get the first letter of the username by using the substr function
         $first_letter = substr($username, 0, 1);
-
         ?>
             <div class="sidebar">
-
                 <i class='sb-icon bx bx-menu' id="open-btn" onclick="toggleSidebar()"></i>
-
                 <ul class="sidebar-list">
                     <li>
                         <a href="/exa/pages/admin.php" class="sidebar-list-item">
@@ -168,6 +144,11 @@ class Template
                         </a>
                         <span class="tooltip">Messages</span>
                     </li>
+                    <li class="show-tablet">
+                        <a href="/exa/index.php" class="sidebar-list-item">
+                            <i class='bx bx-log-out' id="log_out"></i>
+                        </a>
+                    </li>
 
                     <li class="profile">
                         <div class="profile-image text-uppercase">
@@ -184,10 +165,8 @@ class Template
         <?php
     }
 
-
     public static function footer()
     { ?>
-
             <footer class="display-flex align-items-center">
                 <div class="content-large display-flex align-items-center justify-between">
                     <div class="footer-logo">
@@ -201,10 +180,7 @@ class Template
                             <i class="fa-brands fa-pinterest"></i>
                         </div>
                     </div>
-
                 </div>
-
-
             </footer>
         </body>
 

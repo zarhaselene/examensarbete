@@ -406,15 +406,6 @@ a {
 }
 
 /* Margin and padding  */
-/*
-z = 0
-1 = 10
-2 = 15
-3 = 20
-4 = 25
-5 = 35
-6 = 40
-*/
 /*removes all margins*/
 .m-z {
 	margin: 0 !important;
@@ -677,7 +668,6 @@ nav p {
 /* Hero slider style  */
 .hero {
 	position: relative;
-	/* min-height: 100vh; */
 }
 
 .swiper {
@@ -894,14 +884,12 @@ nav p {
 
 /*** Music ***/
 .text-block-md {
-	/*Fix later so its reusable*/
 	position: relative;
 	z-index: 1;
 	width: 100%;
 	max-width: 530px;
 }
 .content-standard {
-	/*Fix later so its reusable*/
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -967,7 +955,7 @@ nav p {
 
 .products h4:before {
 	/*Pink line over heading*/
-	left: 48%; /*Center ?*/
+	left: 48%;
 }
 .products-container {
 	display: grid;
@@ -1413,6 +1401,11 @@ textarea:focus {
 	overflow-x: auto;
 	height: 100vh;
 }
+
+.admin-dashboard > div > div {
+	flex-wrap: nowrap;
+}
+
 .sidebar.open ~ .admin-dashboard {
 	left: 250px;
 	width: calc(100% - 250px);
@@ -1699,7 +1692,7 @@ thead th {
 	position: sticky;
 	top: 0;
 	background: #f9f9fb;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 }
 
 th {
@@ -2470,6 +2463,52 @@ footer {
 }
 /* Tablet */
 @media only screen and (max-width: 768px) {
+	.admin-dashboard {
+		left: 0;
+		width: 100vw;
+		height: 91vh;
+		position: relative;
+		padding-top: 45px;
+	}
+	.sidebar {
+		position: absolute;
+		left: 0;
+		top: unset;
+		bottom: 0;
+		height: 9vh;
+		width: 100%;
+		background: white;
+		padding: 6px 14px;
+		z-index: 99;
+		transition: all 0.5s ease;
+	}
+	.sidebar li {
+		position: relative;
+		margin: 8px;
+		list-style: none;
+	}
+	.sidebar .sidebar-list {
+		margin-top: 0;
+		height: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	.sidebar li a .sb-links-name,
+	#open-btn,
+	.profile-image,
+	.sidebar > ul > li.profile,
+	.sidebar li .tooltip {
+		display: none;
+	}
+	thead th {
+		position: unset;
+	}
+	th {
+		padding: 10px 3px;
+	}
+
 	.hide-tablet {
 		display: none;
 	}

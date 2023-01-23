@@ -31,7 +31,7 @@ class MessagesDatabase extends Database
     // Get all
     public function get_all()
     {
-        $query = "SELECT * FROM messages";
+        $query = "SELECT * FROM messages ORDER BY ID DESC";
         $result = mysqli_query($this->conn, $query);
         $db_messages = mysqli_fetch_all($result, MYSQLI_ASSOC);
         $messages = [];
@@ -58,6 +58,15 @@ class MessagesDatabase extends Database
         $stmt->bind_param("sssss", $message->name, $message->email, $message->message, $message->date, $message->status);
         $success = $stmt->execute();
         return $success;
+    }
+
+    //Update
+    public function update($status, $id)
+    {
+        $query = "UPDATE messages SET `status` = ? WHERE id = ?";
+        $stmt = mysqli_prepare($this->conn, $query);
+        $stmt->bind_param("si", $status, $id);
+        return $stmt->execute();
     }
 
     // Delete

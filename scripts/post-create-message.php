@@ -9,8 +9,10 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $email = $_POST['email'];
     $message_text = $_POST['message'];
     $date = date("Y-m-d H:i:s");
+    $status = "Unread";
+
     $messages_db = new MessagesDatabase();
-    $message = new Message($name, $email, $message_text, $date);
+    $message = new Message($name, $email, $message_text, $date, $status);
     $success = $messages_db->create($message);
     if ($success) {
         $response = [

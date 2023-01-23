@@ -21,6 +21,7 @@ class MessagesDatabase extends Database
                 $db_message["email"],
                 $db_message["message"],
                 $db_message["date"],
+                $db_message["status"],
                 $id
             );
         }
@@ -41,8 +42,10 @@ class MessagesDatabase extends Database
             $db_email = $db_message['email'];
             $db_msg = $db_message['message'];
             $db_date = $db_message['date'];
+            $db_status = $db_message['status'];
 
-            $messages[] = new Message($db_name, $db_email, $db_msg, $db_date, $db_id);
+
+            $messages[] = new Message($db_name, $db_email, $db_msg, $db_date, $db_status, $db_id);
         }
         return $messages;
     }
@@ -50,9 +53,9 @@ class MessagesDatabase extends Database
     // Create
     public function create(Message $message)
     {
-        $query = "INSERT INTO messages (`name`, email, `message`, `date`) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO messages (`name`, email, `message`, `date`, `status`) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
-        $stmt->bind_param("ssss", $message->name, $message->email, $message->message, $message->date);
+        $stmt->bind_param("sssss", $message->name, $message->email, $message->message, $message->date, $message->status);
         $success = $stmt->execute();
         return $success;
     }

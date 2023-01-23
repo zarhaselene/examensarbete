@@ -6,8 +6,9 @@ class Message
     public $email;
     public $message;
     public $date;
+    public $status;
 
-    public function __construct($name, $email, $message, $date, $id = 0)
+    public function __construct($name, $email, $message, $date, $status, $id = 0)
     {
         if ($id > 0) {
             $this->id = $id;
@@ -16,5 +17,6 @@ class Message
         $this->email = $email;
         $this->message = $message;
         $this->date = $date;
+        $this->status = $status;
     }
 }

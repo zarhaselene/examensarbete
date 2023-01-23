@@ -1056,7 +1056,12 @@ textarea:focus {
 	width: 100%;
 	text-align: left;
 }
-
+#confirmation {
+	opacity: 0;
+}
+#confirmation.active {
+	opacity: 1;
+}
 /*** Login/Register page ***/
 .lr-wrapper {
 	height: 100vh;

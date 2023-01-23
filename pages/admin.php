@@ -3,10 +3,13 @@ require_once __DIR__ . '/../classes/Template.php';
 
 require_once __DIR__ . "/../classes/User.php";
 require_once __DIR__ . "/../classes/Order.php";
+require_once __DIR__ . "/../classes/Message.php";
 
 require_once __DIR__ . '/../classes/ProductsDatabase.php';
 require_once __DIR__ . '/../classes/UsersDatabase.php';
 require_once __DIR__ . '/../classes/OrdersDatabase.php';
+require_once __DIR__ . '/../classes/MessagesDatabase.php';
+
 
 //Check if logged user is admin
 $is_logged_in = isset($_SESSION['user']);
@@ -21,6 +24,7 @@ if (!$is_admin) {
 $products_db = new ProductsDatabase();
 $users_db = new UsersDatabase();
 $orders_db = new OrdersDatabase();
+$messages_db = new MessagesDatabase();
 
 $newest_users = $users_db->get_five();
 $newest_orders = $orders_db->get_five();
@@ -28,6 +32,7 @@ $newest_orders = $orders_db->get_five();
 $users = $users_db->get_all();
 $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
+$messages = $messages_db->get_all();
 
 $admins = [];
 foreach ($users as $user) {
@@ -124,7 +129,7 @@ Template::header("Admin Dashboard");
 
                         </div>
                         <div class="progress display-flex align-items-center">
-                            <p class="progress-count">0</p>
+                            <p class="progress-count"><?= count($messages) ?></p>
                             <div class="display-flex direction-column">
                                 <a href="/exa/pages/admin-messages.php" class="progress-total">
                                     <p class="progress-total"><b>Total messages</b></p>
@@ -219,14 +224,11 @@ Template::header("Admin Dashboard");
                                 <div class="profile-name text-capitalize">
                                     <p><?= $user->username ?></p>
                                 </div>
-
                             </div>
-
                         <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </section>

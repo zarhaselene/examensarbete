@@ -39,10 +39,10 @@ class MessagesDatabase extends Database
             $db_id = $db_message['id'];
             $db_name = $db_message['name'];
             $db_email = $db_message['email'];
-            $db_message = $db_message['message'];
+            $db_msg = $db_message['message'];
             $db_date = $db_message['date'];
 
-            $messages[] = new message($db_name, $db_email, $db_message, $db_date, $db_id);
+            $messages[] = new Message($db_name, $db_email, $db_msg, $db_date, $db_id);
         }
         return $messages;
     }

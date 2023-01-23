@@ -70,6 +70,41 @@ function addToCart(event) {
 			}
 		});
 }
+function sendMessage(event) {
+	// Prevent default form submission behavior
+	event.preventDefault();
+	// Get the form data from the form with ID "form-send-message"
+	const form = document.getElementById("form-send-message");
+	const formData = new FormData(form);
+
+	// Send the form data to the server using a POST request to the specified URL
+	fetch("/exa/scripts/post-create-message.php", {
+		method: "POST",
+		body: formData,
+	})
+		.then(function (response) {
+			// Convert the server response to JSON format
+			return response.json();
+		})
+		.then(function (data) {
+			// If the request was successful
+			if (data.success) {
+				// Update the confirmation
+				document.getElementById("confirmation").innerHTML = data.confirmation;
+				// Add the "active" class to the confirmation
+				document.getElementById("confirmation").classList.add("active");
+				// Reset the form
+				form.reset();
+				// Remove the "active" class from the confirmation after 1000ms
+				setTimeout(() => {
+					document.getElementById("confirmation").classList.remove("active");
+				}, 2000);
+			} else {
+				// Update the confirmation
+				document.getElementById("confirmation").innerHTML = data.confirmation;
+			}
+		});
+}
 
 // Sliders
 const swiperContainers = document.querySelectorAll(".slider");

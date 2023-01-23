@@ -42,6 +42,10 @@ class Template
             <!-- JS -->
             <script src="/exa/assets/script.js" defer></script>
 
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+            <!-- Lottie player -->
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </head>
 
         <body>
@@ -158,7 +162,7 @@ class Template
                         <span class="tooltip">Users</span>
                     </li>
                     <li>
-                        <a href="#" class="sidebar-list-item">
+                        <a href="/exa/pages/admin-messages.php" class="sidebar-list-item">
                             <i class='bx bx-chat'></i>
                             <span class="sb-links-name">Messages</span>
                         </a>
@@ -200,10 +204,7 @@ class Template
 
                 </div>
 
-                <!-- Swiper JS -->
-                <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-                <!-- Lottie player -->
-                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
             </footer>
         </body>
 

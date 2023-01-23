@@ -454,9 +454,9 @@ Template::navbar();
         </div>
 
         <div class="contact-container display-flex direction-column align-items-center">
-        
 
-            <form action="/exa/scripts/post-create-message.php" method="post" class="contact-form display-flex direction-column align-items-center">
+
+            <form action="/exa/scripts/post-create-message.php" method="post" id="form-send-message" onsubmit="return sendMessage(event)" class="contact-form display-flex direction-column align-items-center">
                 <div class="name">
                     <input type="text" name="name" placeholder="Your name"><br>
                 </div>
@@ -474,7 +474,7 @@ Template::navbar();
                     </button>
                 </div>
             </form>
-            <p id="confirmation"></p>
+            <p id="confirmation" class="confirmation p-t-2"></p>
         </div>
     </div>
 </section>

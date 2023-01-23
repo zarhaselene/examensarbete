@@ -241,6 +241,9 @@ a {
 .align-items-start {
 	align-items: flex-start;
 }
+.align-items-end {
+	align-items: flex-end;
+}
 .justify-center {
 	justify-content: center;
 }
@@ -523,6 +526,12 @@ z = 0
 .p-b-2 {
 	padding-bottom: 15px;
 }
+.p-b-3 {
+	padding-bottom: 20px;
+}
+.p-b-6 {
+	padding-bottom: 40px;
+}
 
 /* Extra */
 .m-t-50 {
@@ -550,6 +559,9 @@ z = 0
 }
 .color-grey {
 	color: #9e9999;
+}
+.color-darkgrey {
+	color: #6c6c6c;
 }
 .color-red {
 	color: #cc2424;
@@ -2195,6 +2207,94 @@ i.bx.bx-image {
 	bottom: 0;
 	padding: 20px 50px;
 }
+
+/*** Admin Messages Page ***/
+.messages-container {
+	overflow: hidden;
+	overflow-y: auto;
+	height: auto;
+	padding: 20px;
+}
+.messages {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+}
+.messages p {
+	font-size: 1.1rem;
+}
+
+.message {
+	position: relative;
+	padding: 20px;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.message-delete {
+	position: absolute;
+	left: 17px;
+	bottom: 17px;
+	font-size: 1.2rem;
+}
+.message-delete .bx-trash:hover {
+	color: #ff0000;
+}
+.message-link {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+.message-link .see-more:hover {
+	text-decoration: underline;
+}
+.single-message {
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	height: 80vh;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.single-msg {
+	overflow: hidden;
+	overflow-y: auto;
+	height: 500px;
+	background-color: #fff;
+	box-shadow: inset 0 0 10px #5656561f;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+
+.single-message .message-info {
+	background-color: #fff;
+	box-shadow: inset 0 0 10px #5656561f;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+.message-info p {
+	font-size: 1rem;
+}
+.admin-dashboard > div > div > form > div > a {
+	position: absolute;
+	left: 40px;
+	bottom: 20px;
+	font-size: 1rem;
+}
+.mark-as {
+	position: absolute;
+	right: 40px;
+	bottom: 20px;
+	font-size: 1rem;
+}
 /*** Footer ***/
 footer {
 	margin-top: auto;
@@ -2252,6 +2352,9 @@ footer {
 	.welcome-image {
 		height: 115%;
 		margin-right: 0;
+	}
+	.messages {
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 /* Laptop */
@@ -2349,6 +2452,9 @@ footer {
 		padding-right: 40px;
 	}
 	.products-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.messages {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
@@ -2516,6 +2622,9 @@ footer {
 	.discount-btn {
 		width: 27%;
 	}
+	.messages {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 /* Large phone */
@@ -2562,6 +2671,11 @@ footer {
 	.lottie-animation {
 		width: 300px;
 		height: 300px;
+	}
+	.admin-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	.sidebar .bx-menu {
 		display: none;

@@ -34,14 +34,6 @@ $products = $products_db->get_all();
 $orders = $orders_db->get_all_orders();
 $messages = $messages_db->get_all();
 
-$admins = [];
-foreach ($users as $user) {
-    if ($user->role == 'admin') {
-        array_push($admins, $user);
-    }
-}
-$admin_count = count($admins);
-
 //To see how many new orders there is. All new orders have Pending as status
 $pending_orders = [];
 $sent_orders = [];
@@ -54,6 +46,24 @@ foreach ($orders as $order) {
 }
 $pending_count = count($pending_orders);
 $sent_count = count($sent_orders);
+
+$admins = [];
+foreach ($users as $user) {
+    if ($user->role == 'admin') {
+        array_push($admins, $user);
+    }
+}
+$admin_count = count($admins);
+
+$read = [];
+foreach ($messages as $message) {
+    if ($message->status == 'Read') {
+        array_push($read, $message);
+    }
+}
+$read_count = count($read);
+
+
 
 //Calandar setup
 $time = time();
@@ -99,7 +109,7 @@ Template::header("Admin Dashboard");
                             <img src="/exa/assets/img/illustrations/pink_girl.png" alt="">
                         </div>
                     </div>
-                    <h2 class="heading m-z p-v-4">Progress overview</h2>
+                    <h2 class="heading m-z p-v-4">Overview</h2>
                     <div class="progress-overview">
                         <div class="progress display-flex align-items-center">
                             <p class="progress-count"><?= count($users) ?></p>
@@ -133,7 +143,7 @@ Template::header("Admin Dashboard");
                             <div class="display-flex direction-column">
                                 <a href="/exa/pages/admin-messages.php" class="progress-total">
                                     <p class="progress-total"><b>Total messages</b></p>
-                                </a> <span class="color-grey">( X messages answered)</span>
+                                </a> <span class="color-grey">(<?= $read_count ?> read messages)</span>
                             </div>
 
                         </div>

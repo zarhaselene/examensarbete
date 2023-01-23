@@ -82,7 +82,7 @@ class OrdersDatabase extends Database
     // Get by user id 
     public function get_order_by_user_id($user_id)
     {
-        $query = "SELECT * FROM orders WHERE `user-id` = ?";
+        $query = "SELECT * FROM orders WHERE `user-id` = ? ORDER BY ID DESC";
         $stmt = mysqli_prepare($this->conn, $query);
         $stmt->bind_param("i", $user_id);
         $success = $stmt->execute();

@@ -81,8 +81,8 @@ class Template
                         <div class="logged-in-user hide-tablet display-flex align-items-center">
                             <p>
                             <p class="color-white p-h-1">Logged in as: </p>
-                            <p class="color-pink text-uppercase p-h-2"> <?= $logged_in_user->username ?> </p>
-                            <form class="logout-btn " action="/exa/scripts/post-logout.php" method="post">
+                            <p class="color-pink text-uppercase "> <?= $logged_in_user->username ?> </p>
+                            <form class="logout-btn p-h-2" action="/exa/scripts/post-logout.php" method="post">
                                 <button class="reset-btn-styling icon p-z color-white" type="submit">
                                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 </button>

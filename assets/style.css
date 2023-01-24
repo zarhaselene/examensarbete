@@ -630,6 +630,11 @@ nav p {
 	padding: 15px;
 	font-size: 1.3em;
 }
+nav > .icons > div > a > i:hover,
+nav > .icons > div > form > button > i:hover {
+	color: #fe9aae;
+	transition: all 0.2s ease;
+}
 .cart {
 	position: relative;
 }

@@ -311,7 +311,6 @@ Template::navbar();
         <div class="products-container">
             <?php
             foreach ($products as $product) : ?>
-
                 <div class="product-card display-flex direction-column align-items-center">
                     <div class="product-image image">
                         <img src="<?= $product->img_url ?>" alt="">
@@ -327,10 +326,11 @@ Template::navbar();
                         <h5 class="title p-t-1"><?= $product->title ?></h5>
                         <p class="price p-t-2">$ <?= $product->price ?></p>
                     </div>
-                    <form id="form-add-to-cart">
+                    <form id="form-add-to-cart-<?= $product->id ?>">
                         <input type="hidden" name="product-id" value="<?= $product->id ?>">
                         <button class="btn full-btn" onclick="addToCart(event)">Add to cart</button>
                     </form>
+
 
                 </div>
             <?php

@@ -34,13 +34,11 @@ $(document).ready(function () {
 
 //Add to cart
 function addToCart(event) {
-	// Prevent default form submission behavior
 	event.preventDefault();
-	// Get the form data from the form with ID "form-add-to-cart"
-	const form = document.getElementById("form-add-to-cart");
-	const formData = new FormData(form);
-
-	// Send the form data to the server using a POST request to the specified URL
+	const form = event.target.closest("form");
+	const productId = form.querySelector("input[name='product-id']").value;
+	const formData = new FormData();
+	formData.append("product-id", productId);
 	fetch("/exa/scripts/add-to-cart.php", {
 		method: "POST",
 		body: formData,

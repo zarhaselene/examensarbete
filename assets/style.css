@@ -197,6 +197,14 @@ a {
 	max-width: 150px;
 	position: absolute;
 	top: 0;
+	cursor: pointer;
+}
+
+.empty-cart-btn:hover {
+	background-color: #ef6d9f;
+	-webkit-transform: translateY(2px);
+	-ms-transform: translateY(2px);
+	transform: translateY(2px);
 }
 .grey-cart-button {
 	display: flex;

@@ -324,7 +324,7 @@ Template::navbar();
                             <i class="fa-regular fa-star color-grey"></i>
                         </span>
                         <h5 class="title p-t-1"><?= $product->title ?></h5>
-                        <p class="price p-t-2">$ <?= $product->price ?></p>
+                        <p class="price p-t-2">$ <?= $product->price ?>.00</p>
                     </div>
                     <form id="form-add-to-cart-<?= $product->id ?>">
                         <input type="hidden" name="product-id" value="<?= $product->id ?>">

@@ -44,7 +44,6 @@ Template::header("My account "); ?>
     </div>
     <div class="account-container">
         <div class="account">
-            <a href="/exa/pages/edit-account.php" class="text-underline color-pink">Edit</a>
             <h2>Your Information</h2>
             <p>View and update your information here.</p>
             <div class="user-information">
@@ -67,6 +66,8 @@ Template::header("My account "); ?>
                 }
                 ?>
             </div>
+            <a href="/exa/pages/edit-account.php" class="text-underline color-pink">Edit information</a>
+
             <!-- Delete My account -->
             <div class="danger-zone">
                 <form action="/exa/scripts/delete-account.php" method="post" enctype="multipart/form-data">

@@ -66,17 +66,18 @@ Template::header('Cart'); ?>
                                 <fieldset>
                                     <div class="row">
                                         <label for="payment-name" data-tid="elements_payments.form.firstname_label">First name</label>
-                                        <input id="payment-name" data-tid="elements_payments.form.firstname_placeholder" type="text" placeholder="Jane" required="" autocomplete="first name" value="<?= $logged_in_user->firstname ?>">
+                                        <input id="payment-name" data-tid="elements_payments.form.firstname_placeholder" type="text" placeholder="Jane" required="" autocomplete="first name" value="<?= $is_logged_in ? $logged_in_user->firstname : '' ?>">
                                     </div>
                                     <div class="row">
                                         <label for="payment-name" data-tid="elements_payments.form.lastname_label">Last name</label>
-                                        <input id="payment-name" data-tid="elements_payments.form.lastname_placeholder" type="text" placeholder="Doe" required="" autocomplete="last name" value="<?= $logged_in_user->lastname ?>">
+                                        <input id="payment-name" data-tid="elements_payments.form.lastname_placeholder" type="text" placeholder="Doe" required="" autocomplete="last name" value="<?= $is_logged_in ? $logged_in_user->lastname : '' ?>">
                                     </div>
                                     <div class="row noborder-row">
                                         <label for="payment-email" data-tid="elements_payments.form.email_label">Email</label>
-                                        <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email" value="<?= $logged_in_user->email ?>">
+                                        <input id="payment-email" data-tid="elements_payments.form.email_placeholder" type="email" placeholder="janedoe@gmail.com" required="" autocomplete="email" value="<?= $is_logged_in ? $logged_in_user->email : '' ?>">
                                     </div>
                                 </fieldset>
+
                                 <div class="display-flex justify-between m-t-4">
                                     <div class="payment-method">
                                         <h3>Payment method</h3>

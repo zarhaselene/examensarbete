@@ -458,14 +458,14 @@ Template::navbar();
 
             <form action="/exa/scripts/post-create-message.php" method="post" id="form-send-message" onsubmit="return sendMessage(event)" class="contact-form display-flex direction-column align-items-center">
                 <div class="name">
-                    <input type="text" name="name" placeholder="Your name"><br>
+                    <input type="text" name="name" placeholder="Your name" required><br>
                 </div>
 
                 <div class="email">
-                    <input type="email" name="email" placeholder="Your email address"> <br>
+                    <input type="email" name="email" placeholder="Your email address" required> <br>
                 </div>
                 <div class="message">
-                    <textarea type="text" name="message" placeholder="Your message.."></textarea>
+                    <textarea type="text" name="message" placeholder="Your message.." required></textarea>
                 </div>
                 <div class="submit">
                     <button type="submit" class=" btn full-btn color-white">
